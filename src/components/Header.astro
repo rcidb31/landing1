@@ -54,4 +54,20 @@ import '../styles/animations.css';
         </div>
     </nav>
 </header>
-
+<script>
+    // Esperar a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.getElementById('burger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      // Verificar si los elementos existen
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      } else {
+        console.error('No se encontraron los elementos burger o mobileMenu');
+      }
+    });
+  </script>
+  
