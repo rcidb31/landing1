@@ -1,0 +1,69 @@
+---
+import '../styles/animations.css';
+---
+
+<header class="header">
+    <!-- logo -->
+    <nav class="container mx-auto flex items-center h-20">
+        <div>
+          <img src="/logo3.png" alt="Logo" class="w-24 h-24 lg:w-32 lg:h-32" /> 
+        </div>   
+        
+        <!-- Botón del menú burger -->
+         <div class="lg:hidden ml-auto">
+            <button id="burger" class="text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+         </div>
+        <!-- Enlaces de navegación escritorio -->
+         <div class="ml-auto hidden lg:flex">
+            <ul id="menu" class="hidden lg:flex space-x-5 list-none m-0">
+                <li>
+                    <a href="/" class="text-white hover:text-gray-400 transition-colors duration-300">Home</a>
+                </li>
+                <li>
+                    <a href="/about" class="text-white hover:text-gray-400 transition-colors duration-300">About</a>
+                </li>
+                <li>
+                    <a href="/projects" class="text-white hover:text-gray-400 transition-colors duration-300">Projects</a>
+                </li>
+                <li>
+                    <a href="/contact" class="text-white hover:text-gray-400 transition-colors duration-300">Contact</a>
+                </li>
+            </ul>
+         </div>
+        
+        <!-- Menú desplegable móvil -->
+         <div id="mobileMenu" class="lg:hidden hidden">
+            <ul class="flex flex-col space-y-2 list-none m-0 p-4">
+                <li>
+                    <a href="/" class="text-cyan-400 hover:text-gray-400 transition-colors duration-300">Home</a>
+                </li>
+                <li>
+                    <a href="/about" class="text-white hover:text-gray-400 transition-colors duration-300">About</a>
+                </li>
+                <li>
+                    <a href="/projects" class="text-white hover:text-gray-400 transition-colors duration-300">Projects</a>
+                </li>
+                <li>
+                    <a href="/contact" class="text-white hover:text-gray-400 transition-colors duration-300">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Script para manejar la funcionalidad del menú burger -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+    
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+</script>
+

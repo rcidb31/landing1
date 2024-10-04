@@ -1,0 +1,57 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel = "stylesheet" href = "/landing1/src/styles/animations.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	    <Header/>
+	<body>
+	    <slot/>
+  </body>
+	   <Footer/>
+	   <script src="/src/js/main.js"></script>
+</html>
+
+
+
+
+<style is:global>
+	:root {
+    color-scheme: light dark;
+}
+/*estilo general*/
+html {
+	font-family: 'Montserrat', sans-serif; /* Cambiamos la fuente principal a Montserrat */
+}
+
+body {
+	background-image: linear-gradient(to right,#4b79a1 ,#283e51);
+	color: #333; /* Color de texto más oscuro para mejor contraste */
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    flex-direction: column; /* Asegura que header y footer se alineen verticalmente */
+    min-height: 100vh; /* Asegura que el contenido ocupe toda la altura de la ventana */
+}
+
+
+footer {background-image: linear-gradient(to right, #434343 0%, black 100%);color: white;padding: 1rem;width: 100%;}
+
+</style>
