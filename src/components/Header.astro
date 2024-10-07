@@ -8,7 +8,6 @@ import '../styles/animations.css';
         <div>
           <img src="/logo3.png" alt="Logo" class="w-24 h-24 lg:w-32 lg:h-32" /> 
         </div>   
-        
         <!-- Botón del menú burger -->
          <div class="lg:hidden ml-auto">
             <button id="burger" class="text-white focus:outline-none">
@@ -33,8 +32,7 @@ import '../styles/animations.css';
                     <a href="/contact" class="text-white hover:text-gray-400 transition-colors duration-300">Contact</a>
                 </li>
             </ul>
-         </div>
-        
+         </div>    
         <!-- Menú desplegable móvil -->
          <div id="mobileMenu" class="lg:hidden hidden">
             <ul class="flex flex-col space-y-2 list-none m-0 p-4">
@@ -54,6 +52,7 @@ import '../styles/animations.css';
         </div>
     </nav>
 </header>
+<!-- burger independizar script -->
 <script>
     // Esperar a que el DOM esté listo
     document.addEventListener('DOMContentLoaded', () => {
