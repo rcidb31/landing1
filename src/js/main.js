@@ -31,4 +31,5 @@ prevButton.addEventListener('click', () => {
   updateSlidePosition();
 });
 
-window.addEventListener('resize', updateSlidePosition);
+
+

@@ -3,34 +3,34 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/animations.css';
 ---
 
-<Layout title="Rcid Portfolio.">
-	
+<Layout title="Raul_cid Portfolio.">
         <main class="container mx-auto p-9">
-			    <div>
-				<img src="logos3s.png" alt="raul cid" class="ml-auto mr-auto mt-1 w-96 mx-auto">
-		        </div>
-			   <!--iconos redes sociales -->
-			    <div class="flex justify-center space-x-4 mr-auto -mt-10">
-					<div class = "social-logo">
-						<a href="https://github.com/rcidb31" target="_blank">
-						<img src="/git-blue.svg" alt="GitHub" class="w-6 h-6">
-						</a>
+			    <section id="logo">
+					<img src="logos3s.png" alt="raul cid" class="ml-auto mr-auto mt-1 w-96 mx-auto">
 					</div>
-					    
-			        <div class ="social-logo">
-						<a href="https://www.linkedin.com/in/raul-cid-62285748/" target="_blank">
-						<img src="/Linkedin.svg" alt="LinkedIn" class="w-6 h-6">
-						</a>
+					 <!--iconos redes sociales -->
+					 <div class="flex justify-center space-x-4 mr-auto -mt-10">
+						<div class = "social-logo">
+							<a href="https://github.com/rcidb31" target="_blank">
+							<img src="/git-blue.svg" alt="GitHub" class="w-6 h-6">
+							</a>
+						</div>
+							
+						<div class ="social-logo">
+							<a href="https://www.linkedin.com/in/raul-cid-62285748/" target="_blank">
+							<img src="/Linkedin.svg" alt="LinkedIn" class="w-6 h-6">
+							</a>
+						</div>
+							
+						<div class="social-logo">
+							<a href="https://www.instagram.com/guitargasmo/" target="_blank">
+							<img src="/insta.svg" alt="LinkedIn" class="w-6 h-6">
+							</a>
+						</div>				    
 					</div>
-					    
-			        <div class="social-logo">
-						<a href="https://www.instagram.com/guitargasmo/" target="_blank">
-						<img src="/insta.svg" alt="LinkedIn" class="w-6 h-6">
-						</a>
-					</div>				    
-			    </div>
+				</section>
 		        <!-- Presentacion -->
-		        <section class="presentacion">
+		        <section id="presentacion">
 				<div class="object-center p-8 mt-10 bg-gray-900 text-white rounded-xl shadow-2xl max-w-lg mx-auto">
 					<h2 class="text-4xl font-bold mb-6 text-center font-mono tracking-wide">
 						<div>
@@ -137,90 +137,98 @@ import '../styles/animations.css';
 			</div>     
                 </section>
 				<!-- Experiencia laboral linea de tiempo-->
-				<section id= "lineatiempo"class="mt-9 bg-gray-900 text-white py-12">
+				<section id="lineatiempo" class="mt-9 bg-gray-900 text-white py-12 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
 					<div class="container mx-auto px-6">
-						<h2 class="text-4xl font-bold text-center mb-12">
+						<!-- Título de la sección -->
+						<h2 class="text-4xl font-bold text-center mb-10">
 							<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-500">
-								Experiencia Laboral 
+								Experiencia Laboral
 							</span>
 						</h2>
+				
+						<!-- Línea de tiempo -->
 						<div class="relative border-l border-gray-700 pl-6">
 							<!-- Primer evento -->
 							<div class="mb-10 ml-4">
 								<div class="absolute -left-5 top-1 w-3 h-3 bg-blue-600 rounded-full"></div>
 								<h3 class="text-lg font-semibold text-white">Marzo 2024</h3>
-								<p class=" text-gray-300">Proyectos de construcción independientes + Estudios Universitarios de programacion</p>
+								<p class="text-gray-300">Proyectos de construcción independientes + Estudios Universitarios de programación</p>
 							</div>
 							<!-- Segundo evento -->
 							<div class="mb-10 ml-4">
 								<div class="absolute -left-5 top-1 w-3 h-3 bg-blue-600 rounded-full"></div>
 								<h3 class="text-lg font-semibold text-white">Julio 2023</h3>
-								<p class="text-gray-300"> 4 ańos ocupe el cargo Jefe de Calidad Constructura ICF Proyecto Eco-irarrazaval</p>
-								<p class="text-gray-300">Durante 4 años, ocupé el cargo de Encargado de Calidad en Constructora Santolaya, donde fui responsable del sistema de autocontrol de obras, asegurando el cumplimiento de las normas chilenas de construcción.</p>
+								<p class="text-gray-300">4 años ocupé el cargo Jefe de Calidad en Constructora ICF, Proyecto Eco-irarrazaval</p>
+								<p class="text-gray-300">Encargado del sistema de autocontrol de obras, asegurando el cumplimiento de las normas chilenas de construcción.</p>
 								<div class="mt-4 mb-4 flex justify-center">
-									<img src="/ICF.png" alt="Constructora ICF" class=" mr-6 rounded mt-10 w-40 h-20">
-									<img src="/santo.png" alt="Constructora Santolaya" class="auto rounded mt-10 w-40 h-16">
-							    </div>
-                      <!-- slide de imagenes 2 -->
-					<div class="relative w-full max-w-3xl h-auto mx-auto">
-						<!-- Slide container -->
-						<div class="overflow-hidden relative">
-						  <div class="slide-track flex transition-transform duration-700 ease-in-out">
-							<!-- Slide 1 -->
-							<div class="slide w-full flex-shrink-0">
-							  <img src="/slide/img1.png" alt="Slide 1" class="w-full object-cover">
-							</div>
-							<!-- Slide 2 -->
-							<div class="slide w-full flex-shrink-0">
-							  <img src="/slide/img5.png" alt="Slide 2" class="w-full object-cover">
-							</div>
-							<!-- Slide 3 -->
-							<div class="slide w-full flex-shrink-0">
-							  <img src="/slide/img3.png" alt="Slide 3" class="w-full object-cover">
-							</div>
-                            <!-- Slide 4 -->
-							<div class="slide w-full flex-shrink-0">
-								<img src="/slide/img4.png" alt="Slide 4" class="w-full object-cover">
-							  </div>
-							  <!-- Slide 5 -->
-							<div class="slide w-full flex-shrink-0">
-								<img src="/slide/img7.png" alt="Slide 5" class="w-full object-cover">
-							  </div> 
-						  </div>
-						</div>
-						<!-- Prev/Next Buttons -->
-						<button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50">
-						  ◀
-						</button>
-						<button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50">
-						  ▶
-						</button>
-					  </div>
-					        
-				</section>	
-	            <!-- About Me-->
-				<section id="sobre" class="my-40" style="font-family: 'Roboto', sans-serif;">
-					<h2 class="text-4xl font-semibold text-center pb-2 mb-4">
-						<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-200 to-violet-500">
-							About Me
-						</span>
-					</h2>
-					<div class="flex justify-center mt-16">
-						<div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 px-2 mb-4">
-							<div class="bg-gray-900 rounded-lg shadow-lg p-6">
-								<p class="text-gray-300 text-lg leading-relaxed font-extralight">
-									Colaboré en el desarrollo de procesos de control de calidad mediante el software <strong>Calidad Cloud</strong> y la aplicación de las normas chilenas de construcción, incluyendo registros de inspección en tiempo real, tanto online como offline. Implementé reportes semanales para el control de procesos constructivos y sus fallas mediante el análisis de datos del software, y generé planes de acción ante defectos recurrentes. Trabajé en estrecha colaboración con los equipos de diseño para garantizar una experiencia de usuario fluida y funcional para capataces y jefes de terreno.
-								</p>
+									<img src="/ICF.png" alt="Constructora ICF" class="mr-6 rounded w-40 h-20">
+								</div>
 							</div>
 						</div>
-					</div>					
-					<div class="flex flex-wrap h-auto w-auto justify-center space-x-8 mt-8">
-						<img src="/Edi1.jpeg" alt="Descripción de la imagen 1" loading="lazy" class="mt-3 w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:rotate-3 duration-300 ease-in-out">
-						<img src="/edi2.jpeg" alt="Descripción de la imagen 2" loading="lazy" class="w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out">
-						<img src="/edi3.jpeg" alt="Descripción de la imagen 3" loading="lazy" class="mt-3 w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out">
-						<img src="/edi4.jpeg" alt="Descripción de la imagen 4" loading="lazy" class="w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out">
-					</div>					
+				
+						<!-- Slider de imágenes -->
+						<div class="relative w-full max-w-3xl h-auto mx-auto">
+							<!-- Slide container -->
+							<div class="overflow-hidden relative">
+								<div class="slide-track flex transition-transform duration-700 ease-in-out">
+									<!-- Slide 1 -->
+									<div class="slide w-full flex-shrink-0">
+										<img src="/slide/img1.png" alt="Slide 1" class="w-full object-cover">
+									</div>
+									<!-- Slide 2 -->
+									<div class="slide w-full flex-shrink-0">
+										<img src="/slide/img5.png" alt="Slide 2" class="w-full object-cover">
+									</div>
+									<!-- Slide 3 -->
+									<div class="slide w-full flex-shrink-0">
+										<img src="/slide/img3.png" alt="Slide 3" class="w-full object-cover">
+									</div>
+									<!-- Slide 4 -->
+									<div class="slide w-full flex-shrink-0">
+										<img src="/slide/img4.png" alt="Slide 4" class="w-full object-cover">
+									</div>
+									<!-- Slide 5 -->
+									<div class="slide w-full flex-shrink-0">
+										<img src="/slide/img7.png" alt="Slide 5" class="w-full object-cover">
+									</div>
+								</div>
+							</div>
+							<!-- Prev/Next Buttons -->
+							<button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white py-2 px-3 rounded-full">
+								◀
+							</button>
+							<button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white py-2 px-3 rounded-full">
+								▶
+							</button>
+						</div>
+					</div>
 				</section>
+	            <!-- About Me-->
+               <section id="aboutme" class="[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] my-40" style="font-family: 'Roboto', sans-serif;">
+	            <!-- Título de la sección -->
+	            <div class="container mx-auto px-6">
+					<h2 class="text-4xl font-semibold text-center pb-2">
+					  <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-200 to-violet-500">
+						About Me
+					  </span>
+					</h2>
+				  </div>
+                  <div class="flex justify-center mt-16">
+					<div class="w-full sm:w-10/12 md:w-8/12 lg:w-6/12 px-2 mb-4">
+					  <div class="bg-gray-900 rounded-lg shadow-lg p-6">
+						<p class="text-gray-300 text-lg leading-relaxed font-extralight">
+						  Colaboré en el desarrollo de procesos de control de calidad mediante el software <strong>Calidad Cloud</strong> y la aplicación de las normas chilenas de construcción, incluyendo registros de inspección en tiempo real, tanto online como offline. Implementé reportes semanales para el control de procesos constructivos y sus fallas mediante el análisis de datos del software, y generé planes de acción ante defectos recurrentes. Trabajé en estrecha colaboración con los equipos de diseño para garantizar una experiencia de usuario fluida y funcional para capataces y jefes de terreno.
+						</p>
+					  </div>
+					</div>
+				  </div>
+	              <!-- Imágenes -->
+	              <div class="flex flex-wrap justify-center space-x-0 md:space-x-8 space-y-4 md:space-y-0 mt-8">
+		          <img src="/Edi1.jpeg" alt="Descripción de la imagen 1" loading="lazy" class="w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:rotate-3 duration-300 ease-in-out">
+		          <img src="/edi2.jpeg" alt="Descripción de la imagen 2" loading="lazy" class="w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out">
+		          <img src="/edi4.jpeg" alt="Descripción de la imagen 4" loading="lazy" class="w-40 h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out">
+	              </div>
+               </section>
 				<!-- Certificaciones-->
 				<section id="certifications" class="my-16">
 					<h2 class="text-4xl font-semibold text-center pb-6 text-gray-100">
@@ -329,7 +337,8 @@ import '../styles/animations.css';
 						</div>
 					</div>
 				</section>		
-        </main>
+	    </main>
+	</div>
 </Layout>
 
 
