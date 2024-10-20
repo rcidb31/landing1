@@ -67,8 +67,6 @@ elements.forEach(element => {
 
 
 ///////////////////////// MENU RESPONSIVE /////////////////////////
-
-
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -91,3 +89,6 @@ if (burger && mobileMenu) {
 } else {
     console.warn('No se encontraron los elementos burger o mobileMenu');
 }
+
+
+

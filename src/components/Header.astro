@@ -1,10 +1,9 @@
 <header class="header">
-    <!-- Logo -->
-    <nav class="container mx-auto flex items-center h-20">
+    <nav class="container mx-auto flex justify-between items-center">
         <div>
             <img src="/logo3.png" alt="Logo" class="w-24 h-24 lg:w-32 lg:h-32" /> 
         </div>   
-        <!-- Botón del menú burger -->
+        <!-- Botón burger (solo visible en pantallas pequeñas) -->
         <div class="lg:hidden ml-auto">
             <button id="burger" class="text-white focus:outline-none" aria-label="Toggle menu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
@@ -12,39 +11,24 @@
                 </svg>
             </button>
         </div>
-        <!-- Enlaces de navegación escritorio -->
+        <!-- Menú de escritorio (visible en pantallas grandes) -->
         <div class="ml-auto hidden lg:flex">
-            <ul id="menu" class="space-x-5 list-none m-0">
-                <li>
-                    <a href="#logo" class="text-white hover:text-gray-400 transition-colors duration-300">Home</a>
-                </li>
-                <li>
-                    <a href="#aboutme" class="text-white hover:text-gray-400 transition-colors duration-300">About</a>
-                </li>
-                <li>
-                    <a href="#pro" class="text-white hover:text-gray-400 transition-colors duration-300">Projects</a>
-                </li>
-                <li>
-                    <a href="#closing" class="text-white hover:text-gray-400 transition-colors duration-300">Contact</a>
-                </li>
+            <ul class="space-x-5 list-none m-0 flex items-center">
+                <li><a href="#logo" class="text-white hover:text-gray-400 transition-colors duration-300">Home</a></li>
+                <li><a href="#aboutme" class="text-white hover:text-gray-400 transition-colors duration-300">About</a></li>
+                <li><a href="#pro" class="text-white hover:text-gray-400 transition-colors duration-300">Projects</a></li>
+                <li><a href="#closing" class="text-white hover:text-gray-400 transition-colors duration-300">Contact</a></li>
             </ul>
-        </div>    
-        <!-- Menú desplegable móvil -->
+        </div>
+           
+        <!-- Menú móvil (visible solo en pantallas pequeñas al hacer clic) -->
         <div id="mobileMenu" class="lg:hidden hidden absolute top-16 left-0 w-full bg-gray-800 p-4">
-        <ul class="flex flex-col space-y-2 list-none m-0">
-            <li>
-                <a href="#logo" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">Home</a>
-            </li>
-            <li>
-                <a href="#aboutme" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">About</a>
-            </li>
-            <li>
-                <a href="#pro" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">Projects</a>
-            </li>
-            <li>
-                <a href="#closing" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">Contact</a>
-            </li>
-        </ul>
+            <ul class="flex flex-col space-y-2 list-none m-0">
+                <li><a href="#logo" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">Home</a></li>
+                <li><a href="#aboutme" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">About</a></li>
+                <li><a href="#pro" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">Projects</a></li>
+                <li><a href="#closing" class="text-white hover:text-gray-400 transition-colors duration-300 block py-2">Contact</a></li>
+            </ul>
         </div>
     </nav>
 </header>
