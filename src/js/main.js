@@ -44,16 +44,18 @@ const elements = document.querySelectorAll('.animate-on-scroll');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      const animation = entry.target.getAttribute('data-animation'); // Obtener la animación del atributo data
       // Remueve las clases de animación antes de agregarla para forzar la animación
-      entry.target.classList.remove('animate__animated', 'animate__fadeInUp');
+      entry.target.classList.remove('animate__animated', animation);
 
       // Usar setTimeout para permitir que el navegador procese la remoción de clases y luego agregar la animación
       setTimeout(() => {
-        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+        entry.target.classList.add('animate__animated', animation);
       }, 100); // 100ms de retraso para asegurar la transición fluida
     } else {
       // Remueve la clase cuando el elemento no es visible para reiniciar la animación
-      entry.target.classList.remove('animate__animated', 'animate__fadeInUp');
+      const animation = entry.target.getAttribute('data-animation'); // Obtener la animación del atributo data
+      entry.target.classList.remove('animate__animated', animation);
     }
   });
 }, {
@@ -66,7 +68,10 @@ elements.forEach(element => {
 });
 
 
+
 ///////////////////////// MENU RESPONSIVE /////////////////////////
+
+
 const burger = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 
