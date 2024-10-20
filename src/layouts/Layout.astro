@@ -22,7 +22,7 @@ const { title } = Astro.props;
 </head>
 <body>
     <Header />
-    <main class="flex-grow"> <!-- Añadir un main para un mejor semántica -->
+    <main class="flex-grow"> 
         <slot />
     </main>
     
@@ -39,7 +39,7 @@ const { title } = Astro.props;
 
     /* Estilo general */
     html {
-        font-family: 'Montserrat', sans-serif; /* Cambiamos la fuente principal a Montserrat */
+        font-family: 'Montserrat', sans-serif; 
 	}
 	body {
 		background-color: #062036;
@@ -52,7 +52,7 @@ const { title } = Astro.props;
 	}
 
     main {
-        flex-grow: 1; /* Permite que el main ocupe el espacio restante */
+        flex-grow: 1; 
     }
 
     footer {

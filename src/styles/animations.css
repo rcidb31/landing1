@@ -1,3 +1,5 @@
+
+
 @keyframes typing {
   0% { width: 0; }
   50% { width: 100%; }
@@ -7,7 +9,7 @@
   50% { border-color: transparent; }
   100% { border-color: black; } /* Color del cursor */
 }
-
+ /* descripcion landing */
 .typing-text {
   display: inline-block;
   width: 100%;
@@ -46,3 +48,4 @@
   height: auto;
   object-fit: cover;
 }
+
