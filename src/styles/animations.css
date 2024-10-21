@@ -20,13 +20,6 @@
   animation: typing 4s steps(30, end) infinite, blink .75s step-end infinite;
 }
 
-.social-logo {
-  transition: transform 0.3s ease-in-out; /* Animación suave */
-}
-
-.social-logo:hover {
-  transform: scale(1.2); /* Aumenta el tamaño al 120% */
-}
 
 /* Estilo para el subtítulo o descripción */
 .subtitle {
@@ -39,7 +32,10 @@
 
 
 .header {
-  background-image: linear-gradient(to right, #141E30, #243B55);}
+  background-image: linear-gradient(to right, #141E30, #4a1ac6);
+  color :#fff;
+}
+
 
 
   /* Añadido para que el tamaño del slide sea adaptable */
