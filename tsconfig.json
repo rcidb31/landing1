@@ -1,3 +1,13 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "node",
+    "outDir": "./dist", // Especifica un directorio de salida para los archivos compilados
+    "rootDir": "./src"  // Asegúrate de que este sea el directorio correcto para tus archivos de entrada
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "src/js/main.js"] // Excluye el archivo problemático
 }

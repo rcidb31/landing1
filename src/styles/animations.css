@@ -1,47 +1,33 @@
-
-
 @keyframes typing {
-  0% { width: 0; }
-  50% { width: 100%; }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
   50% { border-color: transparent; }
-  100% { border-color: black; } /* Color del cursor */
+  100% { border-color: black; }
 }
- /* descripcion landing */
+
 .typing-text {
   display: inline-block;
-  width: 100%;
-  max-width: 100%;
-  white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid black; /* Simula el cursor de escritura */
-  animation: typing 4s steps(30, end) infinite, blink .75s step-end infinite;
+  white-space: nowrap;
+  animation: typing 2.5s steps(30, end) infinite, blink 0.75s step-end infinite;
 }
 
-
-/* Estilo para el subtítulo o descripción */
 .subtitle {
-  font-family: 'Montserrat';
-  src: url('/fonts/Montserrat-Regular.woff2') format('woff2'),
-       url('/fonts/Montserrat-Regular.woff') format('woff');
+  font-family: 'Montserrat', sans-serif; /* Agrega una fuente alternativa */
   font-weight: 400;
-  font-style: normal;
 }
-
 
 .header {
   background-image: linear-gradient(to right, #141E30, #4a1ac6);
-  color :#fff;
+  color: #fff;
 }
 
-
-
-  /* Añadido para que el tamaño del slide sea adaptable */
 .slide img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
-
