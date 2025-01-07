@@ -22,7 +22,7 @@ const { title } = Astro.props;
 </head>
 <body>
     <Header />
-    <main class="flex-grow"> 
+    <main class="flex-grow container mx-auto px-4 sm:px-6 md:px-8">
         <slot />
     </main>
     <Footer />
@@ -39,11 +39,12 @@ const { title } = Astro.props;
     html {
         font-family: 'Montserrat', sans-serif; 
     }
-    body {   
-        background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);  
-            background-attachment: fixed;
-            background-size: cover;
+    body {
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    background-attachment: scroll; /* Cambia a scroll para móviles */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
-    }
 </style>
  
