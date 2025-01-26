@@ -71,29 +71,25 @@ elements.forEach(element => {
 
 ///////////////////////// MENU RESPONSIVE /////////////////////////
 
+    // Elementos
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-const burger = document.getElementById('burger');
-const mobileMenu = document.getElementById('mobileMenu');
-
-// Verificar si los elementos existen
-if (burger && mobileMenu) {
-    // Función para alternar el menú móvil
-    const toggleMobileMenu = () => {
+    // Toggle menú móvil
+    burger.addEventListener('click', () => {
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', !expanded);
         mobileMenu.classList.toggle('hidden');
-    };
+        mobileMenu.classList.toggle('block');
+    });
 
-    // Agregar evento al botón burger
-    burger.addEventListener('click', toggleMobileMenu);
-
-    // Cerrar el menú al hacer clic en un enlace
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    // Cerrar el menú móvil al hacer clic en un enlace
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
         link.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden'); // Oculta el menú
+            mobileMenu.classList.add('hidden');
+            burger.setAttribute('aria-expanded', false);
         });
     });
-} else {
-    console.warn('No se encontraron los elementos burger o mobileMenu');
-}
 
 
 

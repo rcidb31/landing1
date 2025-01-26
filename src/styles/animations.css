@@ -9,12 +9,16 @@
 }
 
 .typing-text {
-  display: inline-block;
+  display: block;
+  font-family: monospace;
   overflow: hidden;
-  border-right: 2px solid black; /* Simula el cursor de escritura */
+  border-right: 3px solid black; /* Simula el cursor de escritura */
   white-space: nowrap;
-  animation: typing 2.5s steps(30, end) infinite, blink 0.75s step-end infinite;
+  animation: typing 2.5s steps(30, end) infinite, blink 0.35s step-end infinite;
 }
+
+
+
 
 .subtitle {
   font-family: 'Montserrat', sans-serif; /* Agrega una fuente alternativa */
@@ -26,24 +30,14 @@
   color: #fff;
 }
 
+
+
+
+
 .slide img {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-}
-
-
-.neon {
-  background: radial-gradient(circle at center, rgba(255, 0, 150, 0.1), rgba(0, 0, 0, 0.9));
-  box-shadow: 0 0 20px rgba(255, 0, 150, 0.5), 0 0 30px rgba(255, 0, 150, 0.3);
 }
 
 
@@ -63,12 +57,6 @@
   object-fit: cover;
   border-radius: 5px;
   scroll-snap-align: center;
-}
-
-@keyframes gradient-animation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 
