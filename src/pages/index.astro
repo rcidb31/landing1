@@ -2,10 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/animations.css';
 import 'animate.css';
+import Presentacion from '../components/Presentacion.tsx';
 ---
 
 <Layout title="Raul_cid Portfolio.">   
         <main class="container mx-auto p-9">
+
+			
 			    <section id="logo">
 					<div class="mt-24">
 						<img src="logos3s.png" alt="Raúl Cid" class="ml-auto mr-auto mt-10 w-72 mx-auto">
@@ -20,44 +23,8 @@ import 'animate.css';
 						</a>
 					</div>
 			    </section>
-		        <!-- Presentacion -->
-				<section id="presentacion" class="mt-5 ">
-					<div class="max-w-4xl mx-auto text-center px-6">
-						<!-- Título -->
-						<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans tracking-wide">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500">
-								Raúl Cid
-							</span>
-						</h1>
-						
-						<!-- Subtítulo -->
-						<h2 class="typing-text sm:text-xl md:text-2xl font-medium text-black-300 mb-6">
-							Desarrollador Frontend Jr
-						</h2>
-				
-						<!-- Descripción -->
-						<p class="text-base sm:text-lg text-black-400 mb-4 leading-relaxed">
-							 Estudiante universitario de segundo año en programación, con una sólida formación en desarrollo web gracias a un bootcamp intensivo de JavaScript. Durante ocho años, trabajé en el sector de la construcción 🏗️, donde tuve la oportunidad de gestionar el software chileno 🇨🇱 Calidad Cloud en proyectos de edificación 🏢. Ahora, estoy entusiasmado por combinar mi experiencia en construcción con mis conocimientos en programación 💻 para crear soluciones tecnológicas que optimicen y faciliten los procesos en este sector
-						</p>
-				
-						<!-- Email -->
-						<p class="text-sm sm:text-lg text-black-400 hover:text-sky-500 transition-colors duration-300 ease-in-out mb-4">
-							rcidb31@gmail.com
-						</p>
-				
-						<!-- Botones -->
-						 
-						 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-							<a class="btn"href="/Raul_Cid.pdf" download class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
-								Mi CV
-							</a>
-							<a href="mailto:rcidb31@gmail.com" class="bg-violet-500 hover:bg-violet-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
-								E-mail
-							</a>
-						 </div>
-	
-						</div>
-				</section>
+                <!-- react comp-->
+				<Presentacion client:load />
                 <!-- Proyectos -->
                 <section id="pro" class="mt-40">
                     <h2 class="text-4xl font-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
