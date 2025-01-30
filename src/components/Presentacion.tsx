@@ -28,7 +28,7 @@ const Presentacion = () => {
         </h2>
 
         {/* Descripción */}
-        <p className="text-base sm:text-lg text-gray-700 mb-4 leading-relaxed">
+        <p className=" font-extralight text-base sm:text-lg text-gray-700 mb-4 leading-relaxed">
           Estudiante universitario de segundo año en programación, con una sólida formación en desarrollo web gracias a un bootcamp intensivo de JavaScript.
           Durante ocho años, trabajé en el sector de la construcción 🏗️, donde tuve la oportunidad de gestionar el software chileno 🇨🇱 Calidad Cloud en proyectos
           de edificación 🏢. Ahora, estoy entusiasmado por combinar mi experiencia en construcción con mis conocimientos en programación 💻 para crear soluciones
@@ -87,9 +87,9 @@ const Presentacion = () => {
             {/* Botón para copiar el correo */}
             <button
               onClick={copiarCorreo}
-              className="px-4 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600"
+              className="px-4 py-2 bg-green-600 text-white font-bold rounded-lg hover:bg-green-900"
             >
-              Copiar correo
+             ✉️ Copiar correo
             </button>
           </div>
         </div>
