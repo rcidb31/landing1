@@ -35,38 +35,35 @@ prevButton.addEventListener('click', () => {
 });
 
 
-///////////////////////// ANIMACIONES AL HACER SCROLL /////////////////////////
+//////////////////////// ANIMACIONES AL HACER SCROLL /////////////////////////
 
-// Selecciona todos los elementos que quieres animar al hacer scroll
+// Seleccionar todos los elementos que se animarán al hacer scroll
 const elements = document.querySelectorAll('.animate-on-scroll');
 
-// Configura el Intersection Observer
+// Configurar el Intersection Observer
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const animation = entry.target.getAttribute('data-animation'); // Obtener la animación del atributo data
-      // Remueve las clases de animación antes de agregarla para forzar la animación
-      entry.target.classList.remove('animate__animated', animation);
+    
+    const animation = entry.target.dataset.animation; // Obtener la animación del atributo data-animation
 
-      // Usar setTimeout para permitir que el navegador procese la remoción de clases y luego agregar la animación
+    if (entry.isIntersecting) {
+      // Remueve y vuelve a agregar la clase para reiniciar la animación
+      entry.target.classList.remove('animate__animated', animation);
       setTimeout(() => {
         entry.target.classList.add('animate__animated', animation);
-      }, 100); // 100ms de retraso para asegurar la transición fluida
+      }, 100);
     } else {
-      // Remueve la clase cuando el elemento no es visible para reiniciar la animación
-      const animation = entry.target.getAttribute('data-animation'); // Obtener la animación del atributo data
+      // Elimina la animación cuando el elemento deja de ser visible
       entry.target.classList.remove('animate__animated', animation);
     }
   });
-}, {
-  threshold: 0.5 // El 50% del elemento debe estar visible para activar la animación
+}, 
+ {
+   threshold: 0.5 // Se activa cuando el 50% del elemento está visible en la pantalla
 });
 
-// Asocia el Intersection Observer con los elementos
-elements.forEach(element => {
-  observer.observe(element);
-});
-
+    // Asignar el observer a cada elemento con la clase .animate-on-scroll
+     elements.forEach(element => observer.observe(element));
 
 
 ///////////////////////// MENU RESPONSIVE /////////////////////////
