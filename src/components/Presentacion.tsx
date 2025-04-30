@@ -24,15 +24,14 @@ const Presentacion = () => {
 
         {/* Subtítulo */}
         <h2 className=" font-extralight typing-text sm:text-xl md:text-2xl  text-gray-600 mb-6">
-          Desarrollador Frontend Jr 🇨🇱
+          Desarrollador Frontend Jr 🇨🇱 
         </h2>
-
         {/* Descripción */}
         <p className=" text-body sm:text-lg text-black mb-4 leading-relaxed">
           Estudiante universitario de segundo año en programación, con una sólida formación en desarrollo web gracias a un bootcamp intensivo de JavaScript.
-          Durante ocho años, trabajé en el sector de la construcción 🏗️, donde tuve la oportunidad de gestionar el software chileno 🇨🇱 Calidad Cloud en proyectos
+          trabajo en el sector de la construcción 🏗️, el 2017 tuve la oportunidad de gestionar el software chileno 🇨🇱 "Calidad Cloud" en proyectos
           de edificación 🏢. Ahora, estoy entusiasmado por combinar mi experiencia en construcción con mis conocimientos en programación 💻 para crear soluciones
-          tecnológicas que optimicen y faciliten los procesos en este sector.
+          tecnológicas.
         </p>
 
         {/* Botón para abrir modal */}
@@ -78,7 +77,7 @@ const Presentacion = () => {
             {/* Imagen del correo */}
             <div className="mb-4">
               <img
-                src="/email.png"
+                src="/email.webp"
                 alt="Correo"
                 className="w-full h-auto rounded-md"
               />
