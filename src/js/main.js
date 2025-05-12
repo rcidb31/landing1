@@ -35,6 +35,7 @@ prevButton.addEventListener('click', () => {
 });
 
 
+
 //////////////////////// ANIMACIONES AL HACER SCROLL /////////////////////////
 
 // Seleccionar todos los elementos que se animarán al hacer scroll
@@ -66,6 +67,8 @@ const observer = new IntersectionObserver((entries) => {
      elements.forEach(element => observer.observe(element));
 
 
+
+
 ///////////////////////// MENU RESPONSIVE /////////////////////////
 
     // Elementos
@@ -90,3 +93,15 @@ const observer = new IntersectionObserver((entries) => {
 
 
 
+// contador de visitas. 
+
+ let visitas = localStorage.getItem("visitas"); 
+  if (!visitas) {
+    visitas = 1;
+  } else {
+    visitas = parseInt(visitas) + 1;
+  }
+
+  localStorage.setItem("visitas", visitas);
+  document.getElementById("visitas").textContent = 
+    `Esta es tu visita número: ${visitas}`;
