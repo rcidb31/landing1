@@ -23,7 +23,7 @@ import Presentacion from '../components/Presentacion.tsx';
 			    </section>
                 <!-- comp -->
 				<Presentacion client:load />
-                <!-- Proyectos -->
+                <!-- Proyectos desarrollo-->
 				<section>
 				 <section id="pro" class="mt-40">
                     <h2 class="text-2xl ont-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
@@ -31,18 +31,26 @@ import Presentacion from '../components/Presentacion.tsx';
 						 Proyectos en Desarrollo
 						</span>
                     </h2>
-
-                 <div class="grid gap-8 md:grid-cols-2">
-                      <!-- Proyecto LOD -->
-                 <div class="bg-white/10 p-6 rounded-xl shadow-md backdrop-blur">	
-                 <h3 class="text-lg font-semibold text-sky-300 mb-2">📒 Libro de Obras Digital en Desarrollo</h3>
-                 <p class="text-sm text-gray-100 mb-4">
+                <!-- Proyecto LOD -->
+                       <div class="grid md:grid-cols-2 gap-8 items-center px-4 max-w-6xl mx-auto">
+                <!-- Texto -->
+                <div class="bg-white/10 p-6 rounded-xl shadow-lg backdrop-blur-lg">
+                      <h3 class="text-xl font-bold text-sky-300 mb-3">
+                       📒 Libro de Obras Digital en Desarrollo
+                     </h3>
+                     <p class="text-sm text-gray-100 mb-4 leading-relaxed">
                      Aplicación mobile-first pensada para el registro de entregas en terreno, con formularios dinámicos, toma de fotografías, firmas y generación de actas en PDF. Inspirada en procesos reales de control de calidad en obras.
-                 </p>
-				 	<img src="/public/lod.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
-                    <a href="https://cidev.dev/lod" target="_blank" class="text-sky-400 underline">Ver más</a>
+                     </p>
+                     <a href="https://cidev.dev/lod" target="_blank" class="inline-block text-sky-400 underline hover:text-sky-300 transition-colors duration-200">
+                      Ver más
+                   </a>
+                </div>
 
-                 </div>
+  <!-- Imagen -->
+  <div class="flex justify-center">
+    <img src="/public/lod.webp" alt="Proyecto LOD" class="h-52 w-auto object-contain rounded-lg shadow-md">
+  </div>
+</div>
 
 				</section>
                 <!-- Proyectos c -->
