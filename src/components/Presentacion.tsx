@@ -11,10 +11,10 @@ const Presentacion = () => {
       .then(() => alert("Correo copiado al portapapeles"))
       .catch((err) => console.error("Error al copiar el correo:", err));
   };
-
   return (
     <section id="presentacion" className="mt-5">
       <div className="max-w-4xl mx-auto text-center px-6">
+        
         {/* Título */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans tracking-wide">
           <span className="bg-clip-text text-white bg-gradient-to-r from-sky-500 to-violet-500">
@@ -26,6 +26,7 @@ const Presentacion = () => {
         <h2 className=" text-body font-extralight typing-text sm:text-xl md:text-2xl  text-white mb-6">
           Desarrollador Frontend Jr 🇨🇱 
         </h2>
+        
         {/* Descripción */}
         <p className=" text-body sm:text-lg text-white mb-4 leading-relaxed">
           Estudiante universitario de segundo año en programación, con una sólida formación en desarrollo web gracias a un bootcamp intensivo de JavaScript.

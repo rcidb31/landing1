@@ -53,15 +53,16 @@ const observer = new IntersectionObserver((entries) => {
         setTimeout(() => {
         entry.target.classList.add('animate__animated', animation);
        }, 100);
-    } else {
+     }    
+        else {
       // Elimina la animación cuando el elemento deja de ser visible
       entry.target.classList.remove('animate__animated', animation);
      }
    });
  }, 
-   {
+     {
    threshold: 0.5 // Se activa cuando el 50% del elemento está visible en la pantalla
- });
+     });
 
      // Asignar el observer a cada elemento con la clase .animate-on-scroll
      elements.forEach(element => observer.observe(element));
