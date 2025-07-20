@@ -17,17 +17,17 @@ const Presentacion = () => {
       <div className="max-w-4xl mx-auto text-center px-6">
         {/* Título */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans tracking-wide">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500">
+          <span className="bg-clip-text text-white bg-gradient-to-r from-sky-500 to-violet-500">
             Raúl Cid
           </span>
         </h1>
 
         {/* Subtítulo */}
-        <h2 className=" font-extralight typing-text sm:text-xl md:text-2xl  text-gray-600 mb-6">
+        <h2 className=" text-body font-extralight typing-text sm:text-xl md:text-2xl  text-white mb-6">
           Desarrollador Frontend Jr 🇨🇱 
         </h2>
         {/* Descripción */}
-        <p className=" text-body sm:text-lg text-black mb-4 leading-relaxed">
+        <p className=" text-body sm:text-lg text-white mb-4 leading-relaxed">
           Estudiante universitario de segundo año en programación, con una sólida formación en desarrollo web gracias a un bootcamp intensivo de JavaScript.
           trabajo en el sector de la construcción 🏗️, el 2017 tuve la oportunidad de gestionar el software chileno 🇨🇱 "Calidad Cloud" en proyectos
           de edificación 🏢. Ahora, estoy entusiasmado por combinar mi experiencia en construcción con mis conocimientos en programación 💻 para crear soluciones
@@ -37,22 +37,15 @@ const Presentacion = () => {
         {/* Botón para abrir modal */}
         <button
           onClick={() => setIsModalOpen(true)}
-          className="text-sm sm:text-lg text-gray-500 hover:text-sky-500 transition-colors duration-300 ease-in-out mb-4"
-        >
+          className="text-sm sm:text-lg text-white hover:text-sky-500 transition-colors duration-300 ease-in-out mb-4">
           E-mail
         </button>
 
         {/* Botones */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="/Raul_Cid.pdf"
-            download
-            className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105"
-          >
+          <a href="/Raul_Cid.pdf"download className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
             Mi CV
           </a>
-
-        
         </div>
       </div>
 

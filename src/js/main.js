@@ -10,13 +10,13 @@ const nextButton = document.getElementById('next');// Inicializa la posición de
 let currentIndex = 0;
 
 // función para actualizar la posición del slide
-function updateSlidePosition() {
-  const width = slides[currentIndex].clientWidth;
-  track.style.transform = `translateX(-${currentIndex * width}px)`;
-}
+ function updateSlidePosition() {
+   const width = slides[currentIndex].clientWidth;
+   track.style.transform = `translateX(-${currentIndex * width}px)`;
+ }
 // Inicializa la posición del slide al hacer click en el botón next
-nextButton.addEventListener('click', () => {
-  if (currentIndex < slides.length - 1) {
+  nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
     currentIndex++;
   } else {
     currentIndex = 0; // Vuelve al inicio
@@ -25,7 +25,7 @@ nextButton.addEventListener('click', () => {
 });
 
 // Inicializa la posición del slide al hacer click en el botón prev
-prevButton.addEventListener('click', () => {
+  prevButton.addEventListener('click', () => {
   if (currentIndex > 0) {
     currentIndex--;
   } else {
@@ -48,22 +48,22 @@ const observer = new IntersectionObserver((entries) => {
     const animation = entry.target.dataset.animation; // Obtener la animación del atributo data-animation
 
     if (entry.isIntersecting) {
-      // Remueve y vuelve a agregar la clase para reiniciar la animación
-      entry.target.classList.remove('animate__animated', animation);
-      setTimeout(() => {
+        // Remueve y vuelve a agregar la clase para reiniciar la animación
+        entry.target.classList.remove('animate__animated', animation);
+        setTimeout(() => {
         entry.target.classList.add('animate__animated', animation);
-      }, 100);
+       }, 100);
     } else {
       // Elimina la animación cuando el elemento deja de ser visible
       entry.target.classList.remove('animate__animated', animation);
-    }
-  });
-}, 
- {
+     }
+   });
+ }, 
+   {
    threshold: 0.5 // Se activa cuando el 50% del elemento está visible en la pantalla
-});
+ });
 
-    // Asignar el observer a cada elemento con la clase .animate-on-scroll
+     // Asignar el observer a cada elemento con la clase .animate-on-scroll
      elements.forEach(element => observer.observe(element));
 
 
@@ -96,11 +96,11 @@ const observer = new IntersectionObserver((entries) => {
 // contador de visitas. 
 
  let visitas = localStorage.getItem("visitas"); 
-  if (!visitas) {
-    visitas = 1;
-  } else {
+   if (!visitas) {
+         visitas = 1;
+        } else {
     visitas = parseInt(visitas) + 1;
-  }
+      }
 
   localStorage.setItem("visitas", visitas);
   document.getElementById("visitas").textContent = 

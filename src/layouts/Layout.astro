@@ -16,18 +16,18 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/log.ico" />
     <link rel="stylesheet" href="/src/styles/animations.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 </head>
-<body>
-    <Header />
-    <main class="flex-grow container mx-auto px-4 sm:px-6 md:px-8">
+ <body>
+     <Header />
+     <main class="flex-grow container mx-auto px-4 sm:px-6 md:px-8">
         <slot />
-    </main>
-    <Footer />
-    <script src="/src/js/main.js"></script>
-</body>
+     </main>
+     <Footer />
+     <script src="/src/js/main.js"></script>
+ </body>
 </html>
 
 <style is:global>
@@ -37,15 +37,23 @@ const { title } = Astro.props;
 
     /* Estilo general */
     html {
-        font-family: 'Montserrat', sans-serif; 
+        font-family: 'Press Start 2P', monospace;
+        
     }
     body {
-    background-image: linear-gradient(to bottom, #f9f9f9, #e8eff1);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #2e3a59; /* Para texto */ 
-}
+       background: url('/back.png') no-repeat center top;
+       background-size: cover;
+       background-color: #0e1621; /* un azul más oscuro y suave, sin gris verdoso */
+       background-attachment: fixed;
+    }
+    body::before {
+       content: "";
+       position: fixed;
+       top: 0; left: 0; width: 100%; height: 100%;
+       background-color: rgba(0, 0, 0, 0.4); /* oscurece la imagen */
+       z-index: -1;
+    }
+
 
 
 </style>
