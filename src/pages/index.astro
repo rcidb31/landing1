@@ -24,10 +24,32 @@ import Presentacion from '../components/Presentacion.tsx';
                 <!-- comp -->
 				<Presentacion client:load />
                 <!-- Proyectos -->
+				<section>
+				 <section id="pro" class="mt-40">
+                    <h2 class="text-2xl ont-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
+						<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-800">
+						 Proyectos en Desarrollo
+						</span>
+                    </h2>
+
+                 <div class="grid gap-8 md:grid-cols-2">
+                      <!-- Proyecto LOD -->
+                 <div class="bg-white/10 p-6 rounded-xl shadow-md backdrop-blur">	
+                 <h3 class="text-lg font-semibold text-sky-300 mb-2">📒 Libro de Obras Digital en Desarrollo</h3>
+                 <p class="text-sm text-gray-100 mb-4">
+                     Aplicación mobile-first pensada para el registro de entregas en terreno, con formularios dinámicos, toma de fotografías, firmas y generación de actas en PDF. Inspirada en procesos reales de control de calidad en obras.
+                 </p>
+				 	<img src="/public/lod.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
+                    <a href="https://cidev.dev/lod" target="_blank" class="text-sky-400 underline">Ver más</a>
+
+                 </div>
+
+				</section>
+                <!-- Proyectos c -->
                 <section id="pro" class="mt-40">
                     <h2 class="text-2xl ont-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
 						<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-800">
-							Mis Proyectos
+						 Proyectos - comunes
 						</span>
                     </h2>
                 <div class="flex flex-wrap mx-2 justify-center">  
@@ -38,7 +60,7 @@ import Presentacion from '../components/Presentacion.tsx';
 						<img src="/blog.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
 					</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Blog Personal</h3>
-						<p class="text-center text-white"> Astro + taiwind </p>
+						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> Astro + taiwind </p>
 					<!-- Git Taxi-->
 					<a href="https://blog.cidev.dev/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 					     Ver blog  📝
@@ -51,8 +73,8 @@ import Presentacion from '../components/Presentacion.tsx';
 						<div class="flex justify-center">
 						<img src="/arka.webp" alt="Proyecto js" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
 					</div>
-						<h3 class="text-center text-white text-xl font-bold mb-1">Arkanoid JavaScript</h3>
-						<p class="text-center text-white"> Canvas Sprite + Coliciones </p>
+						<h3 class="text-center text-white text-xl font-bold mb-1">Arkanoid Midu</h3>
+						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> JS Canvas Sprite + Coliciones </p>
 					<!-- Git Taxi-->
 					<a href="https://arka.cidev.dev/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 					     juegalo  (web) no movil adpt  🎮
@@ -65,10 +87,10 @@ import Presentacion from '../components/Presentacion.tsx';
 						<div class="flex justify-center">
 						<img src="/taxiaerovia.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
 					</div>
-						<h3 class="text-center text-white text-xl font-bold mb-1">Web Cliente Taxis</h3>
-						<p class="text-center text-white">Taxis Aereopuerto JS + Trello </p>
+						<h3 class="text-center text-white text-xl font-bold mb-1">Web Cliente Taxi</h3>
+						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">WebTaxis Aereopuerto JS + Trello </p>
 					<!-- Git Taxi-->
-					<a href="https://github.com/rcidb31/Taxiaerovia/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+					 <a href="https://github.com/rcidb31/Taxiaerovia/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 						Ver en GitHub
 						</a>
 					</div>
@@ -80,7 +102,7 @@ import Presentacion from '../components/Presentacion.tsx';
 								<img src="/Bulma.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
 							</div>
 								<h3 class="text-center text-white text-xl font-bold mb-1"> Bulma Framework</h3>
-								<p class="text-center text-white">Certificacion CSS Bulma </p>
+								<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">Certificacion CSS Bulma </p>
 						<!-- Github Web-->
 								<a href="https://github.com/rcidb31/bulmnacss/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 								Ver en GitHub
@@ -94,7 +116,7 @@ import Presentacion from '../components/Presentacion.tsx';
 						<img src="/blog5.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
 					</div>
 						<h3 class="text-center text-white  text-xl font-bold mb-1">Cert. Web Desing</h3>
-						<p class="text-center text-white"> HTML + Css web Desing</p>
+						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> HTML + Css web Desing</p>
 				<!-- Github Web-->
 						<a href="https://github.com/rcidb31/blog5/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 						Ver en GitHub
@@ -108,7 +130,7 @@ import Presentacion from '../components/Presentacion.tsx';
 						<img src="/calcu.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-500 ease-in-out group-hover:scale-110">
 						</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Certificación React</h3>
-						<p class="text-center text-white">Calculadora Certificación</p>
+						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">Calculadora Certificación</p>
 						<!-- Github React Link -->
 						<a href="https://react.cidev.dev/" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 						Prueba mi Calcu 🇨🇱
