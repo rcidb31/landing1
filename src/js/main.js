@@ -68,36 +68,32 @@ const observer = new IntersectionObserver((entries) => {
      elements.forEach(element => observer.observe(element));
 
 
-
-
 ///////////////////////// MENU RESPONSIVE /////////////////////////
 
     // Elementos
-    const burger = document.getElementById('burger');
-    const mobileMenu = document.getElementById('mobileMenu');
+   const burger = document.getElementById('burger');
+   const mobileMenu = document.getElementById('mobileMenu');
 
     // Toggle menú móvil
-    burger.addEventListener('click', () => {
+     burger.addEventListener('click', () => {
         const expanded = burger.getAttribute('aria-expanded') === 'true';
         burger.setAttribute('aria-expanded', !expanded);
         mobileMenu.classList.toggle('hidden');
         mobileMenu.classList.toggle('block');
-    });
+     });
 
     // Cerrar el menú móvil al hacer clic en un enlace
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
+     document.querySelectorAll('#mobileMenu a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
             burger.setAttribute('aria-expanded', false);
         });
-    });
-
-
+     });
 
 // contador de visitas. 
 
  let visitas = localStorage.getItem("visitas"); 
-   if (!visitas) {
+    if (!visitas) {
          visitas = 1;
         } else {
     visitas = parseInt(visitas) + 1;

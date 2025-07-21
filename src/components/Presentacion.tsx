@@ -73,12 +73,12 @@ const Presentacion = () => {
          ×
         </button>
 
-         <h2 className="text-lg font-bold mb-4 text-center">Correo de contacto</h2>
+         <h2 className="text-lg font-bold mb-4 text-center">Email de contacto</h2>
          <p className="text-center mb-4">rcidb31@gmail.com</p>
 
         <button
          onClick={copiarCorreo}
-         className="block mx-auto mt-2 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+         className="block mx-auto mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-sky-700">
          Copiar correo
         </button>
       
