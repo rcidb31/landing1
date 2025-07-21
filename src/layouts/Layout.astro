@@ -45,13 +45,15 @@ const { title } = Astro.props;
        background-size: cover;
        background-color: #1522; /* un azul más oscuro y suave, sin gris verdoso */
        background-attachment: fixed;
+       filter: brightness(1.1);
+    
          }
 
     body::before {
        content: "";
        position: fixed;
        top: 0; left: 0; width: 100%; height: 100%;
-       background-color: rgba(0, 0, 0, 0.1); /* oscurece la imagen */
+       background-color: rgba(255, 255, 255, 0.08); /* leve capa blanca */
        z-index: -1;
         }
 
