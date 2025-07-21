@@ -28,12 +28,12 @@
 
 
 .typing-text {
-  display: block;
-  font-family: monospace;
+  display: inline-block;
   overflow: hidden;
-  border-right: 3px solid black; /* Simula el cursor de escritura */
   white-space: nowrap;
-  animation: typing 2.5s steps(30, end) infinite, blink 0.35s step-end infinite;
+  border-right: 3px solid black;
+  width: 26ch; /* ancho del texto simulado */
+  animation: typing 2.5s steps(26, end) forwards, blink 0.75s step-end infinite;
 }
 
 

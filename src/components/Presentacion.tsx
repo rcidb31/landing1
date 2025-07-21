@@ -31,7 +31,7 @@ const Presentacion = () => {
           </span>
         </h1>
 
-        <h2 className="font-extralight sm:text-xl md:text-2xl text-white mb-6">
+        <h2 className="font-extralight sm:text-xl md:text-2xl typing-text text-white mb-6">
           Desarrollador Frontend Jr 🇨🇱
         </h2>
 
