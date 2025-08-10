@@ -258,64 +258,125 @@ import Presentacion from '../components/Presentacion.tsx';
 						<img src="/edi4.jpeg" alt="Edificio3" loading="lazy" class="w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out mb-6">
 					</div>
 				</section>		
-				<!-- Certificaciones-->
-				<section id="certifications" class="my-16 px-4">
-					  <h2 class="text-lg sm:text-3xl md:text-4xl font-semibold text-center pb-6 text-gray-100 animate-on-scroll" data-animation="animate__flipInX">
-						<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-300">
-							Certificaciones </h2>
-					    <div class="flex justify-center mt-8">
-						<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-							<div class="flex flex-col items-center p-4 transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/a32e7174-3a73-4bff-96cc-a7c35c2ab87a" target="_blank" aria-label="Javascript">
-								<img src="/javascript.webp" alt="Certificación JavaScript" class="h-28 w-28 rounded mb-4">
-								</a>								
-								<p class="text-white italic text-sm">JavaScript</p>
-							</div>
-							<div class="flex flex-col items-center  p-4  transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/2dd16662-3b17-4e52-b501-64b22be46e5e" target="_blank" aria-label="Node">
-								<img src="/node.webp" alt="Certificación Node.js" class="h-28 w-28 rounded mb-4">
-							    </a>
-								<p class="text-white italic text-sm">Node.js</p>
-							</div>
-							<div class="flex flex-col items-center  p-4  transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/5c34bbfb-e407-4ebb-a586-3239b47168f0" target="_blank" aria-label="mongo">
-								<img src="/mongodb.webp" alt="Certificación MongoDB" class="h-28 w-28 rounded mb-4">
-								</a>
-								<p class="text-white italic text-sm">MongoDB</p>
-							</div>
-							<div class="flex flex-col items-center  p-4 transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/3d69a6d9-3869-4b68-a640-7973d59684a0" target="_blank" aria-label="bulmacss">
-								<img src="/bulma.webp" alt="Certificación Bulma" class="h-28 w-28 rounded mb-4">
-								</a>
-								<p class="text-white italic text-sm">Bulma</p>
-							</div>
-							<div class="flex flex-col items-center p-4 transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/3b7e959b-0771-431c-9602-6db178b914d8" target="_blank" aria-label="webdesing">
-								<img src="/web.webp" alt="Certificación Desarrollo Web" class="h-28 w-28 rounded mb-4">
-								</a>
-								<p class="text-white italic text-sm">Desarrollo Web</p>
-							</div>
-							<div class="flex flex-col items-center  p-4 transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/8b1d97cd-2e1a-4022-8b6a-cd5b06d0b4c9" target="_blank" aria-label="git">
-								<img src="/git.webp" alt="Certificación Git" class="h-28 w-28 rounded mb-4">
-								</a>
-								<p class="text-white italic text-sm">Git</p>
-							</div>
-							<div class="flex flex-col items-center p-4 transform hover:scale-125 transition-transform duration-300">
-								<a href="https://www.credly.com/badges/048cbeb3-f2a4-4879-b696-092e8152223a" target="_blank" aria-label="cisco">
-								<img src="/cisco.webp" alt="Certificación Cisco" class="h-28 w-28 rounded mb-4">
-								</a>
-								<p class="text-white italic text-sm">Cisco</p>
-							</div>
-							<div class="flex flex-col items-center p-4 transform hover:scale-125 transition-transform duration-300">
-								<a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="react">
-								<img src="/react.webp" alt="Certificación React" class="h-28 w-28 rounded mb-4">
-								</a>
-								<p class="text-white italic text-sm">React</p>
-							</div>
-						</div>
-					    </div>
-				</section>	
+               <!-- Certificaciones -->
+                <section id="certifications" class="my-16 px-4">
+                    <h2
+                      class="text-lg sm:text-3xl md:text-4xl font-semibold text-center pb-6 text-gray-100 animate-on-scroll"
+                      data-animation="animate__flipInX">
+                      <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-300">
+                        Certificaciones
+                      </span>
+                    </h2>
+                     <!-- Filtros por año -->
+                     <div class="flex justify-center gap-2 sm:gap-3 mb-8" role="tablist" aria-label="Filtrar certificaciones por año">
+                       <button data-filter="all" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab" aria-selected="true">Todo</button>
+                       <button data-filter="2025" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab">2025</button>
+                       <button data-filter="2024" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab">2024</button>
+                       <button data-filter="2023" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab">2023</button>
+                     </div>
+
+                     <!-- Grid -->
+                     <div id="cert-grid" class="flex justify-center">
+                       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+
+                    <!--(los años reales en data-year) ==== -->
+                     
+					<figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
+                      <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
+                        <img src="/Net.png" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10"> en Proceso</span>
+                      </figcaption>
+                    </figure> 
+
+					<figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
+                      <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
+                        <img src="/angular.png" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10"> en Proceso</span>
+                      </figcaption>
+                    </figure> 
+                    <!-- 2024 -->
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                      <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
+                        <img src="/react.webp" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        React <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
+                      </figcaption>
+                    </figure>
+            
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                      <a href="https://www.credly.com/badges/048cbeb3-f2a4-4879-b696-092e8152223a" target="_blank" aria-label="Cisco">
+                        <img src="/cisco.webp" alt="Certificación Cisco" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        Cisco <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
+                      </figcaption>
+                    </figure>
+                     
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                      <a href="https://www.credly.com/badges/2dd16662-3b17-4e52-b501-64b22be46e5e" target="_blank" aria-label="Node.js">
+                        <img src="/node.webp" alt="Certificación Node.js" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        Node.js intensive <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
+                      </figcaption>
+                    </figure>
+
+					  <!-- 2023 -->
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <a href="https://www.credly.com/badges/a32e7174-3a73-4bff-96cc-a7c35c2ab87a" target="_blank" aria-label="JavaScript">
+                        <img src="/javascript.webp" alt="Certificación JavaScript" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        JavaScript <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                      </figcaption>
+                    </figure>
+        
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <a href="https://www.credly.com/badges/5c34bbfb-e407-4ebb-a586-3239b47168f0" target="_blank" aria-label="MongoDB">
+                        <img src="/mongodb.webp" alt="Certificación MongoDB" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        MongoDB <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                      </figcaption>
+                    </figure>
+               
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <a href="https://www.credly.com/badges/3d69a6d9-3869-4b68-a640-7973d59684a0" target="_blank" aria-label="Bulma CSS">
+                        <img src="/bulma.webp" alt="Certificación Bulma" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        Bulma <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023<span>
+                      </figcaption>
+                    </figure>
+
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <a href="https://www.credly.com/badges/3b7e959b-0771-431c-9602-6db178b914d8" target="_blank" aria-label="Desarrollo Web">
+                        <img src="/web.webp" alt="Certificación Desarrollo Web" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        Desarrollo Web <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                      </figcaption>
+                    </figure>
+               
+                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <a href="https://www.credly.com/badges/8b1d97cd-2e1a-4022-8b6a-cd5b06d0b4c9" target="_blank" aria-label="Git">
+                        <img src="/git.webp" alt="Certificación Git" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
+                      </a>
+                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                        Git <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                      </figcaption>
+                    </figure>
+                    <!-- Empty state (oculto si hay resultados) -->
+                    <p id="certifications-empty" class="hidden text-center text-white/70 mt-6">
+                      No hay certificaciones para ese año. 
+                    </p>
+                </section>                                
+                <script type="module" src="/src/js/certification.js"></script>
                 <!-- Sección de Estudios-->
                 <section id="education" class="my-16">
                     <h2 class="text-4xl font-semibold text-center pb-6 text-gray-100 animate-on-scroll" data-animation="animate__shakeY">
@@ -378,9 +439,9 @@ import Presentacion from '../components/Presentacion.tsx';
 				<!-- Redes sociales y contenido --> 
 				<section id="socialmedia" class="my-20 px-6">
                    <h2 class="text-3xl md:text-4xl font-semibold text-center text-white mb-8 animate-on-scroll" data-animation="animate__fadeInUp">
-    <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-yellow-500">
-      📡 Encuéntrame en redes
-    </span>
+                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-yellow-500">
+                       📡 Encuéntrame en redes
+                      </span>
                   </h2>
                    <p class="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
                    Estare compartiendo contenido sobre mi transición de la construcción 🚧 al código 👨🏻‍💻. ¡Sígueme para ver más!
