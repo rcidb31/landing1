@@ -23,7 +23,6 @@ let currentIndex = 0;
   }
   updateSlidePosition();
 });
-
 // Inicializa la posición del slide al hacer click en el botón prev
   prevButton.addEventListener('click', () => {
   if (currentIndex > 0) {
@@ -36,9 +35,11 @@ let currentIndex = 0;
 
 
 
+
 //////////////////////// ANIMACIONES AL HACER SCROLL /////////////////////////
 
 // Seleccionar todos los elementos que se animarán al hacer scroll
+
 const elements = document.querySelectorAll('.animate-on-scroll');
 
 // Configurar el Intersection Observer
@@ -68,10 +69,13 @@ const observer = new IntersectionObserver((entries) => {
      elements.forEach(element => observer.observe(element));
 
 
+
+
 ///////////////////////// MENU RESPONSIVE /////////////////////////
 
     // Elementos
-   const burger = document.getElementById('burger');
+
+    const burger = document.getElementById('burger');
    const mobileMenu = document.getElementById('mobileMenu');
 
     // Toggle menú móvil
@@ -90,7 +94,9 @@ const observer = new IntersectionObserver((entries) => {
         });
      });
 
-// contador de visitas. 
+
+
+////////////// contador de visitas //////////////////////
 
  let visitas = localStorage.getItem("visitas"); 
     if (!visitas) {

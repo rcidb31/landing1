@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Click handlers
   buttons.forEach(btn => btn.addEventListener('click', () => applyFilter(btn.dataset.filter)));
 
-  // Permite abrir con hash ?year=2024 o #2024
+  // Permite abrir con hash year=2024 o #2024
   const url = new URL(window.location.href);
   const urlYear = url.searchParams.get('year') || window.location.hash.replace('#', '');
   const initial = ['2023', '2024', '2025'].includes(urlYear) ? urlYear : 'all';
