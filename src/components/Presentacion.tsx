@@ -1,6 +1,4 @@
-import { useState } from "react";
-import { useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 const Presentacion = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,14 +11,13 @@ const Presentacion = () => {
       .catch((err) => console.error("Error al copiar el correo:", err));
   };
 
-
   useEffect(() => {
-         if (isModalOpen) {
-          document.body.classList.add('modal-open');
-          } else {
-          document.body.classList.remove('modal-open');
-           }
-          },[isModalOpen]);
+    if (isModalOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+  }, [isModalOpen]);
 
   return (
     <section id="presentacion" className="min-h-screen px-6 pt-14">
@@ -29,62 +26,64 @@ const Presentacion = () => {
           <span className="bg-clip-text text-white bg-gradient-to-r from-sky-500 to-violet-500">
             Raúl Cid
           </span>
-        </h1>
-
-        <h2 className="font-extralight sm:text-xl md:text-2xl typing-text text-white mb-6">
-          Desarrollador Frontend Jr 🇨🇱
-        </h2>
-
-        <p className="sm:text-lg text-white mb-4 leading-relaxed">
-            Futuro egresado de la carrera de Programación, con sólida formación en desarrollo web gracias a un bootcamp intensivo en JavaScript.
-            Con experiencia en el sector construcción, donde en 2017 gestioné el software chileno "Calidad Cloud" en proyectos de edificación.
-            Actualmente, busco combinar esa experiencia con mis conocimientos en programación para crear soluciones tecnológicas.
-        </p>
-
-        {/* Botón para abrir el modal */}
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="text-sm sm:text-lg text-white hover:text-sky-500 transition-colors duration-300 ease-in-out mb-4">
-          E-mail
-        </button>
-
-         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          </h1>
+          <h2 className="font-extralight text-sm sm:text-lg md:text-2xl typing-text text-white mb-4 tracking-wide leading-snug">
+            Desarrollador Frontend Jr 🇨🇱
+          </h2>
+           <p className="text-white text-sm sm:text-lg leading-loose mb-8 
+               text-center sm:text-justify 
+               max-w-sm sm:max-w-2xl mx-auto px-4">
+               Futuro egresado de la carrera de Programación, con sólida formación en desarrollo web gracias a un bootcamp intensivo en JavaScript. 
+               Con experiencia en el sector construcción, donde en 2017 gestioné el software chileno "Calidad Cloud" en proyectos de edificación. 
+               Actualmente, busco combinar esa experiencia con mis conocimientos en programación para crear soluciones tecnológicas.
+          </p>
+        <div className="flex flex-col items-center space-y-2">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="text-sm sm:text-lg text-white hover:text-sky-500 transition-colors duration-300">
+            E-mail
+          </button>
           <a
             href="/Raul_Cid.pdf"
             download
-            className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+            className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
             Mi CV
-           </a>
-          </div>
-         </div>
-      
-      {/* Modal */}
-    {isModalOpen && (
-  <div
-      className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-60 z-[9999]"
-      onClick={() => setIsModalOpen(false)}>
-    <div
-      className="bg-white text-black p-6 rounded-xl shadow-xl max-w-md w-[90%] relative z-[10000] animate-fade-in"
-      onClick={(e) => e.stopPropagation()}>
-      
-        <button
-         onClick={() => setIsModalOpen(false)}
-         className="absolute top-2 right-2 text-xl text-gray-500 hover:text-red-500 font-bold">
-         ×
-        </button>
-
-         <h2 className="text-lg font-bold mb-4 text-center">Email de contacto</h2>
-         <p className="text-center mb-4">rcidb31@gmail.com</p>
-
-        <button
-         onClick={copiarCorreo}
-         className="block mx-auto mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-sky-700">
-         Copiar correo
-        </button>
-      
+          </a>
         </div>
-       </div>
-     )}
+              {/* Modal */}
+              {isModalOpen && (
+                <div
+                  className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black bg-opacity-60 z-[9999]"
+                  onClick={() => setIsModalOpen(false)}
+                >
+                  <div
+                    role="dialog"
+                    aria-modal="true"
+                    className="bg-white text-black p-6 rounded-xl shadow-xl max-w-md w-[90%] relative z-[10000] animate-fade-in transform scale-95 transition-transform duration-300"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={() => setIsModalOpen(false)}
+                      className="absolute top-2 right-2 text-xl text-gray-500 hover:text-red-500 font-bold"
+                    >
+                      ×
+                    </button>
+        
+                    <h2 className="text-lg font-bold mb-4 text-center">
+                      Email de contacto
+                    </h2>
+                    <p className="text-center mb-4">{email}</p>
+        
+                    <button
+                      onClick={copiarCorreo}
+              className="block mx-auto mt-2 px-4 py-2 bg-purple-600 text-white rounded hover:bg-sky-700"
+            >
+              Copiar correo
+            </button>
+          </div>
+        </div>
+      )}
+      </div>
     </section>
   );
 };
