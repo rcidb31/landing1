@@ -7,67 +7,69 @@ import Presentacion from '../components/Presentacion.tsx';
 
 <Layout title="Raul_cid Portfolio.">   
         <main class="container mx-auto p-9">			
-			    <section id="home">
-					<div class="mt-24">
-						<img src="logos3s.webp" alt="Raúl Cid" class="ml-auto mr-auto mt-10 w-72 mx-auto">
-					</div>
-					<!-- iconos redes sociales -->
-					<div class="flex justify-center space-x-4 mr-auto -mt-13">
-						<a class="transform hover:scale-125 transition-transform duration-300" href="https://github.com/rcidb31" target="_blank" aria-label="GitHub">
+			         <section id="home">
+					   <div class="mt-24">
+					   	<img src="logos3s.webp" alt="Raúl Cid" class="ml-auto mr-auto mt-10 w-72 mx-auto">
+					   </div>
+				     	<!-- iconos redes sociales -->
+				     	<div class="flex justify-center space-x-4 mr-auto -mt-13">
+						      <a class="transform hover:scale-125 transition-transform duration-300" href="https://github.com/rcidb31" target="_blank" aria-label="GitHub">
 						<img src="/git-blue.svg" alt="GitHub Logo" class="w-10 h-10">
-						</a>
-						<a class="transform hover:scale-125 transition-transform duration-300" href="https://www.linkedin.com/in/raul-cid-62285748/" target="_blank" aria-label="LinkedIn">
+						       </a>
+						        <a class="transform hover:scale-125 transition-transform duration-300" href="https://www.linkedin.com/in/raul-cid-62285748/" target="_blank" aria-label="LinkedIn">
 						<img src="/Linkedin.svg" alt="LinkedIn Logo" class="w-10 h-10">
-						</a>
-					</div>
-			    </section>
-                <!-- comp -->
-				<Presentacion client:load />
-                <!-- Proyectos desarrollo-->
-                <section id="pro" class="-mt-2">
-                  <h2 class="flex justify-center items-center gap-2 text-2xl font-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
-                    <!-- Ícono -->
-					 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8 text-sky-400">
-                       <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
-                     </svg>
-                    <!-- Texto con gradiente -->
-                    <span class="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
-                      Proyectos en Desarrollo
-                    </span>
-                  </h2>
-                </section>            
-                <!-- Proyecto p-->
-                <section class="px-4 py-12 bg-gradient-to-b from-[#0e1621] to-[#1a1f2e]">
+						       </a>
+					    </div>
+			         </section>
+               <div class="flex flex-col items-center space-y-8">
+              <Presentacion client:load />
+              <section id="pro">
+                <h2 class="flex items-center gap-2 text-xl sm:text-2xl font-extrabold">
+                  <svg class="w-8 h-8 text-sky-400">...</svg>
+                  <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
+                    Proyectos en Desarrollo
+                  </span>
+                </h2>
+              </section>
+               </div>
+               <!-- Proyecto proceso-->
+               <section class="px-4 py-12 bg-gradient-to-b from-[#0e1621] to-[#1a1f2e]">
                   <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
     
-                  <!-- Texto -->
-                <div class="bg-white/10 p-8 rounded-2xl shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
-                 <h3 class="text-2xl font-extrabold text-sky-300 mb-4">📒 Libro de Obras Digital</h3>
-                    <p class="text-base text-gray-100 leading-relaxed mb-6">
-                       Aplicación <span class="text-sky-400 font-medium">mobile-first</span> 
-				 	   para registro de entregas en terreno. Incluye formularios dinámicos, 
-					   fotografías, firmas y generación de actas PDF. Inspirada en flujos reales de 
-					   <span class="italic">control de calidad</span> en obras.
-                   </p>
-                     <a href="https://github.com/rcidb31/lod" target="_blank"
-                       class="inline-block px-5 py-2 bg-sky-500 text-white rounded-md font-medium hover:bg-sky-400 transition-colors duration-200">
-                       Ver más →
-                      </a>
-				       <!-- Tecnologías -->
-                       <div class="flex items-center gap-4 mt-6">
-                         <img src="/angular.png" alt="Angular" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="Angular">
-                         <img src="/Net.png" alt=".NET" class="h-8 w-8 md:h-10 md:w-10 object-contain" title=".NET">
-                       </div>
-                     </div>
+    <!-- Texto -->
+    <div class="bg-[#0e1621]/80 p-8 rounded-2xl shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
 
-					    <div class="flex ml-56">
-                      <img src="/lod.webp" alt="Proyecto LOD"
-                      class="h-56 md:h-64 w-auto object-contain rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
-                   </div>
-                   </div>
+      <h3 class="text-2xl font-extrabold text-sky-300 mb-4">📒 Libro de Obras Digital</h3>
+      <p class="text-base text-gray-100 leading-relaxed mb-6">
+        Aplicación <span class="text-sky-400 font-medium">mobile-first</span> 
+        para registro de entregas en terreno. Incluye formularios dinámicos, 
+        fotografías, firmas y generación de actas PDF. Inspirada en flujos reales de 
+        <span class="italic">control de calidad</span> en obras.
+      </p>
+      <a href="https://github.com/rcidb31/lod" target="_blank"
+        class="inline-block px-5 py-2 bg-sky-500 text-white rounded-md font-medium hover:bg-sky-400 transition-colors duration-200">
+        Ver más →
+      </a>
+
+      <!-- Tecnologías -->
+      <div class="flex items-center gap-4 mt-6">
+        <img src="/angular.png" alt="Angular" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="Angular">
+        <img src="/Net.png" alt=".NET" class="h-8 w-8 md:h-10 md:w-10 object-contain" title=".NET">
+      </div>
+    </div>
+
+    <!-- Imagen -->
+    <div class="flex justify-center">
+      <img 
+        src="/lod.webp" 
+        alt="Proyecto LOD"
+        class="h-64 md:h-80 w-auto object-contain rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
+    </div>
+                  </div>
+               </section>
                <!-- Imagen -->
                 </section>
-                <!-- Proyectos c -->
+                <!-- Proyectos realizados -->
                 <section id="pro" class="mt-40">
                     <h2 class="flex justify-center items-center text-2xl ont-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
 						 <svg xmlns="http://www.w3.org/2000/svg" 
@@ -75,7 +77,7 @@ import Presentacion from '../components/Presentacion.tsx';
                              viewBox="0 0 24 24" 
                              stroke-width="1.5" 
                              stroke="currentColor" 
-                             class="size-8 text-sky-400">
+                             class="w-10 h-10 sm:w-12 sm:h-12 text-sky-400 flex-shrink-0">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5h6l1.5 1.5h10.5V18A1.5 1.5 0 0 1 19.5 19.5H4.5A1.5 1.5 0 0 1 3 18V7.5z" />
                           </svg>
 					     	  <span class="ml-6 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
@@ -84,7 +86,7 @@ import Presentacion from '../components/Presentacion.tsx';
                     </h2>
                  <div class="flex flex-wrap mx-2 justify-center">  
 							<!-- blog  -->
-				  <div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class="p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
 						<img src="/blog.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
@@ -105,9 +107,9 @@ import Presentacion from '../components/Presentacion.tsx';
 					     Ver blog  📝
 						</a>
 					 </div>
-			    </div>    
-				<!-- Arkanoid JS  -->
-				<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+	        		  </div>    
+	        			<!-- Arkanoid JS  -->
+	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class="p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
 						<img src="/arka.webp" alt="Proyecto js" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
@@ -125,15 +127,15 @@ import Presentacion from '../components/Presentacion.tsx';
 					     juegalox(web) no movil adpt  🎮
 						</a>
 					</div>
-			    </div>    
-			<!-- Taxiaerovia web -->
-				 <div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+	        		    </div>    
+	        		<!-- Taxiaerovia web -->
+	        			 <div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class="p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
 						<img src="/taxiaerovia.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
 					</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Web Cliente Taxi</h3>
-						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">WebTaxis Aereopuerto JS + Trello </p>
+						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">WebTaxis Aereopuerto</p>
 					                        <!-- Logos de tecnologías -->
                        <div class="flex justify-center gap-6 mt-3">
                           <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
@@ -148,9 +150,9 @@ import Presentacion from '../components/Presentacion.tsx';
 						Ver en GitHub
 						</a>
 					 </div>
-			     </div>    
-			<!-- Css Bulma -->
-				<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+	        		     </div>    
+	        		<!-- Css Bulma -->
+	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 						<div class=" p-4 group relative overflow-hidden">
 							<div class="flex justify-center">
 								<img src="/Bulma.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
@@ -171,9 +173,9 @@ import Presentacion from '../components/Presentacion.tsx';
 								Ver en GitHub
 							</a>
 						</div>
-				</div>
-			<!-- Web Desing -->
-				<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+	        			</div>
+	        		<!-- Web Desing -->
+	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class=" p-4 group relative overflow-hidden">
 					<div class="flex justify-center">
 						<img src="/blog5.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
@@ -194,9 +196,9 @@ import Presentacion from '../components/Presentacion.tsx';
 						Ver en GitHub
 					</a>
 					</div>
-				</div>
-            <!-- React -->
-				<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
+	        			</div>
+                    <!-- React -->
+	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class=" p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
 						<img src="/calcu.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-500 ease-in-out group-hover:scale-110">
@@ -217,7 +219,7 @@ import Presentacion from '../components/Presentacion.tsx';
 						Prueba mi Calcu 🇨🇱
 						</a>
 					</div>
-				</div>
+	        			</div>
                 </section>
 			        	<!-- Experiencia laboral linea de tiempo-->
 			        	<section id="lineatiempo" class="mt-32">
@@ -341,128 +343,138 @@ import Presentacion from '../components/Presentacion.tsx';
 						<img src="/edi4.jpeg" alt="Edificio3" loading="lazy" class="w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out mb-6">
 					</div>
 			        	</section>		
-                       <!-- Certificaciones -->
+                     <!-- Certificaciones -->
                 <section id="certifications" class="my-16 px-4">
-                     <h2 class="flex justify-center items-center gap-3 text-lg sm:text-3xl md:text-4xl font-semibold text-center pb-6 text-gray-100 animate-on-scroll"
-                       data-animation="animate__flipInX">
-                       <!-- Ícono -->
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8 text-sky-500">
-                         <path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-					  </svg>
-                       <!-- Texto -->
-                       <span class="ml-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-300">
-                         Certificaciones
-                       </span>
-                     </h2>
-                     <!-- Filtros por año -->
-                     <div class="flex justify-center gap-2 sm:gap-3 mb-8" role="tablist" aria-label="Filtrar certificaciones por año">
-                       <button data-filter="all" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab" aria-selected="true">Todo</button>
-                       <button data-filter="2025" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab">2025</button>
-                       <button data-filter="2024" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab">2024</button>
-                       <button data-filter="2023" class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-white/10 text-white hover:bg-white/20 backdrop-blur border border-white/10 transition" role="tab">2023</button>
-                     </div>
-
-                     <!-- Grid -->
-                     <div id="cert-grid" class="flex justify-center">
-                       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full max-w-6xl">
-
-                    <!--(los años reales en data-year) ==== -->
-                     
-					<figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
-                      <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
-                        <img src="/Net.png" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10"> en Proceso</span>
-                      </figcaption>
-                    </figure> 
-
-					<figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
-                      <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
-                        <img src="/angular.png" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        Angular <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10"> en Proceso</span>
-                      </figcaption>
-                    </figure> 
-                    <!-- 2024 -->
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
-                      <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
-                        <img src="/react.webp" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        React <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
-                      </figcaption>
-                    </figure>
-            
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
-                      <a href="https://www.credly.com/badges/048cbeb3-f2a4-4879-b696-092e8152223a" target="_blank" aria-label="Cisco">
-                        <img src="/cisco.webp" alt="Certificación Cisco" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        Cisco <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
-                      </figcaption>
-                    </figure>
-                     
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
-                      <a href="https://www.credly.com/badges/2dd16662-3b17-4e52-b501-64b22be46e5e" target="_blank" aria-label="Node.js">
-                        <img src="/node.webp" alt="Certificación Node.js" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        Node.js intensive <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
-                      </figcaption>
-                    </figure>
-
-					  <!-- 2023 -->
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
-                      <a href="https://www.credly.com/badges/a32e7174-3a73-4bff-96cc-a7c35c2ab87a" target="_blank" aria-label="JavaScript">
-                        <img src="/javascript.webp" alt="Certificación JavaScript" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        JavaScript <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
-                      </figcaption>
-                    </figure>
-        
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
-                      <a href="https://www.credly.com/badges/5c34bbfb-e407-4ebb-a586-3239b47168f0" target="_blank" aria-label="MongoDB">
-                        <img src="/mongodb.webp" alt="Certificación MongoDB" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        MongoDB <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
-                      </figcaption>
-                    </figure>
-               
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
-                      <a href="https://www.credly.com/badges/3d69a6d9-3869-4b68-a640-7973d59684a0" target="_blank" aria-label="Bulma CSS">
-                        <img src="/bulma.webp" alt="Certificación Bulma" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        Bulma <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023<span>
-                      </figcaption>
-                    </figure>
-
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
-                      <a href="https://www.credly.com/badges/3b7e959b-0771-431c-9602-6db178b914d8" target="_blank" aria-label="Desarrollo Web">
-                        <img src="/web.webp" alt="Certificación Desarrollo Web" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        Desarrollo Web <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
-                      </figcaption>
-                    </figure>
-               
-                    <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
-                      <a href="https://www.credly.com/badges/8b1d97cd-2e1a-4022-8b6a-cd5b06d0b4c9" target="_blank" aria-label="Git">
-                        <img src="/git.webp" alt="Certificación Git" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy" decoding="async">
-                      </a>
-                      <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                        Git <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
-                      </figcaption>
-                    </figure>
-                    <!-- Empty state (oculto si hay resultados) -->
-                    <p id="certifications-empty" class="hidden text-center text-white/70 mt-6">
-                      No hay certificaciones para ese año. 
-                    </p>
-                </section>                                       
+                  <h2 class="flex justify-center items-center gap-3 text-2xl sm:text-3xl md:text-4xl font-extrabold text-center pb-6 animate-on-scroll" 
+                    data-animation="animate__flipInX">
+                    <!-- Ícono -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-10 h-10 md:w-12 md:h-12 text-sky-400">
+                      <path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Texto -->
+                    <span class="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-violet-400">
+                      Certificaciones
+                    </span>
+                  </h2>
+                  <!-- Filtros por año -->
+                  <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8" role="tablist" aria-label="Filtrar certificaciones por año">
+                    <button data-filter="all"
+                      class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-sky-500/20 text-white hover:bg-sky-500/30 border border-sky-400/30 transition"
+                      role="tab" aria-selected="true">Todo</button>
+                    <button data-filter="2025"
+                      class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-sky-500/20 text-white hover:bg-sky-500/30 border border-sky-400/30 transition"
+                      role="tab">2025</button>
+                    <button data-filter="2024"
+                      class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-sky-500/20 text-white hover:bg-sky-500/30 border border-sky-400/30 transition"
+                      role="tab">2024</button>
+                    <button data-filter="2023"
+                      class="year-filter px-4 py-2 rounded-full text-sm sm:text-base bg-sky-500/20 text-white hover:bg-sky-500/30 border border-sky-400/30 transition"
+                      role="tab">2023</button>
+                  </div>
+                
+                  <!-- Grid -->
+                  <div id="cert-grid" class="flex justify-center">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+                      <!-- 2025 -->
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
+                        <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="NetCore 9">
+                          <img src="/Net.png" alt="Certificación NetCore" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">en Proceso</span>
+                        </figcaption>
+                      </figure> 
+                
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
+                        <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="Angular">
+                          <img src="/angular.png" alt="Certificación Angular" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          Angular <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">en Proceso</span>
+                        </figcaption>
+                      </figure> 
+                
+                      <!-- 2024 -->
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                        <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
+                          <img src="/react.webp" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          React <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
+                        </figcaption>
+                      </figure>
+                
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                        <a href="https://www.credly.com/badges/048cbeb3-f2a4-4879-b696-092e8152223a" target="_blank" aria-label="Cisco">
+                          <img src="/cisco.webp" alt="Certificación Cisco" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          Cisco <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
+                        </figcaption>
+                      </figure>
+                      
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                        <a href="https://www.credly.com/badges/2dd16662-3b17-4e52-b501-64b22be46e5e" target="_blank" aria-label="Node.js">
+                          <img src="/node.webp" alt="Certificación Node.js" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          Node.js Intensive <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
+                        </figcaption>
+                      </figure>
+                
+                      <!-- 2023 -->
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                        <a href="https://www.credly.com/badges/a32e7174-3a73-4bff-96cc-a7c35c2ab87a" target="_blank" aria-label="JavaScript">
+                          <img src="/javascript.webp" alt="Certificación JavaScript" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          JavaScript <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                        </figcaption>
+                      </figure>
+                
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                        <a href="https://www.credly.com/badges/5c34bbfb-e407-4ebb-a586-3239b47168f0" target="_blank" aria-label="MongoDB">
+                          <img src="/mongodb.webp" alt="Certificación MongoDB" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          MongoDB <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                        </figcaption>
+                      </figure>
+                
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                        <a href="https://www.credly.com/badges/3d69a6d9-3869-4b68-a640-7973d59684a0" target="_blank" aria-label="Bulma CSS">
+                          <img src="/bulma.webp" alt="Certificación Bulma" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          Bulma <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                        </figcaption>
+                      </figure>
+                
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                        <a href="https://www.credly.com/badges/3b7e959b-0771-431c-9602-6db178b914d8" target="_blank" aria-label="Desarrollo Web">
+                          <img src="/web.webp" alt="Certificación Desarrollo Web" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          Desarrollo Web <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                        </figcaption>
+                      </figure>
+                
+                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                        <a href="https://www.credly.com/badges/8b1d97cd-2e1a-4022-8b6a-cd5b06d0b4c9" target="_blank" aria-label="Git">
+                          <img src="/git.webp" alt="Certificación Git" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                        </a>
+                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
+                          Git <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                  <!-- Empty state -->
+                  <p id="certifications-empty" class="hidden text-center text-white/70 mt-6">
+                    No hay certificaciones para ese año. 
+                  </p>
+                </section>                                
                 <!-- Sección de Estudios-->
                 <section id="education" class="my-16">
                 <section id="education" class="my-16">
@@ -537,13 +549,22 @@ import Presentacion from '../components/Presentacion.tsx';
 						</div>
 					</div>
 			        	</section>
-			        	<!-- Redes sociales y contenido --> 
-			        	<section id="socialmedia" class="my-20 px-6">
-                   <h2 class="text-3xl md:text-4xl font-semibold text-center text-white mb-8 animate-on-scroll" data-animation="animate__fadeInUp">
-                     <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-yellow-500">
-                       📡 Encuéntrame en redes
-                      </span>
-                  </h2>
+			        	<!-- Redes sociales y contenido -->
+                <section> 
+                <h2  class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-8 animate-on-scroll" 
+                   data-animation="animate__fadeInUp">
+                   <!-- Mobile: 2 líneas -->
+                   <span class="block md:hidden bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+                     📡 Encuéntrame
+                   </span>
+                   <span class="block md:hidden bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
+                     en redes
+                   </span>
+                   <!-- Desktop: 1 sola línea -->
+                   <span class="hidden md:inline-block bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500">
+                     📡 Encuéntrame en redes
+                   </span>
+                 </h2>
                    <p class="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
                    Estare compartiendo contenido sobre mi transición de la construcción 🚧 al código 👨🏻‍💻. ¡Sígueme para ver más!
                    </p>
@@ -567,9 +588,9 @@ import Presentacion from '../components/Presentacion.tsx';
                     <span>@cidev.dev</span>
                   </a>
                 </div>
-                       </section>
-				<!-- visita-->
-				<p class="visitas"id="visitas"></p>				
-	    </main>
+                </section>
+				        <!-- visita-->
+				        <p class="visitas"id="visitas"></p>				
+	      </main>
 </Layout>
      
