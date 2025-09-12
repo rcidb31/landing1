@@ -1,0 +1,174 @@
+---
+// Chatbot.astro - Componente del chatbot para cidev.dev
+// Versión corregida sin errores de TypeScript
+
+// Props opcionales para personalizar el chatbot
+export interface Props {
+  title?: string;
+  welcomeMessage?: string;
+  theme?: 'light' | 'dark';
+}
+
+const { 
+  title = "Asistente cidev.dev",
+  welcomeMessage = "¡Hola! 👋 Soy el asistente de cidev.dev. Puedo ayudarte con información sobre proyectos, experiencia técnica y servicios. ¿En qué puedo asistirte?",
+  theme = 'light'
+} = Astro.props;
+---
+
+<!-- Contenedor del chatbot - Posición fija -->
+<div class="chatbot-container">
+    <!-- Botón flotante para abrir/cerrar -->
+    <button 
+        class="chatbot-button" 
+        onclick="toggleChatbot()"
+        aria-label="Abrir chatbot"
+        title="¿Necesitas ayuda? ¡Pregúntame!"
+    >
+        💬
+    </button>
+    
+    <!-- Ventana principal del chatbot -->
+    <div class="chatbot-window" id="chatbotWindow" role="dialog" aria-labelledby="chatbot-title">
+        
+        <!-- Header con título y estado -->
+        <div class="chatbot-header">
+            <h3 id="chatbot-title">{title}</h3>
+            <div class="status">🟢 En línea</div>
+        </div>
+        
+        <!-- Área de mensajes -->
+        <div 
+            class="chatbot-messages" 
+            id="chatbotMessages" 
+            role="log" 
+            aria-live="polite"
+            aria-label="Conversación del chatbot"
+        >
+            <!-- Mensaje de bienvenida inicial -->
+            <div class="message bot">
+                <div class="message-bubble">
+                    {welcomeMessage}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones de acción rápida -->
+        <div class="quick-actions" role="group" aria-label="Acciones rápidas">
+            <button 
+                class="quick-action-btn" 
+                onclick="sendQuickMessage('Ver proyectos')"
+                title="Ver información sobre proyectos"
+            >
+                🚀 Ver proyectos
+            </button>
+            <button 
+                class="quick-action-btn" 
+                onclick="sendQuickMessage('Experiencia técnica')"
+                title="Conocer experiencia y tecnologías"
+            >
+                💻 Experiencia
+            </button>
+            <button 
+                class="quick-action-btn" 
+                onclick="sendQuickMessage('Contacto')"
+                title="Información de contacto"
+            >
+                📧 Contacto
+            </button>
+        </div>
+        
+        <!-- Indicador de escritura -->
+        <div class="typing-indicator" id="typingIndicator" aria-live="polite">
+            El asistente está escribiendo<span class="typing-dots">...</span>
+        </div>
+        
+        <!-- Input y botón de envío -->
+        <div class="chatbot-input">
+            <label for="chatbotInput" class="sr-only">Escribe tu mensaje</label>
+            <input 
+                type="text" 
+                id="chatbotInput" 
+                placeholder="Escribe tu mensaje..." 
+                onkeypress="handleKeyPress(event)"
+                autocomplete="off"
+                aria-label="Campo de mensaje"
+                maxlength="500"
+            >
+            <button 
+                class="send-btn" 
+                onclick="sendMessage()"
+                aria-label="Enviar mensaje"
+                title="Enviar mensaje"
+            >
+                ➤
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Estilos específicos del componente -->
+<style>
+    /* Clase para lectores de pantalla */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    
+    /* Personalización específica si es necesario */
+    .chatbot-container {
+        font-family: system-ui, -apple-system, sans-serif;
+    }
+    
+    /* Tema oscuro (opcional) */
+    .chatbot-window[data-theme="dark"] {
+        background: #2d3748;
+        color: white;
+    }
+    
+    .chatbot-window[data-theme="dark"] .chatbot-messages {
+        background: #1a202c;
+    }
+    
+    .chatbot-window[data-theme="dark"] .message.bot .message-bubble {
+        background: #4a5568;
+        color: #e2e8f0;
+    }
+</style>
+
+<script>
+    // Script inline para inicialización específica del componente
+    // (El JavaScript principal está en chatbot.js)
+    
+    // Función para personalizar el chatbot después de cargar
+    function customizeChatbot() {
+        // Aquí puedes agregar personalizaciones específicas
+        console.log('Chatbot personalizado cargado');
+        
+        // Verificar si el elemento existe antes de acceder a dataset
+        const chatbotWindow = document.querySelector('.chatbot-window') as HTMLElement;
+        if (chatbotWindow) {
+            // Usar getAttribute en lugar de dataset para evitar errores de TypeScript
+            const theme = chatbotWindow.getAttribute('data-theme');
+            if (theme === 'dark') {
+                chatbotWindow.setAttribute('data-theme', 'dark');
+            }
+        }
+    }
+    
+    // Ejecutar cuando se carga el componente
+    if (typeof window !== 'undefined') {
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', customizeChatbot);
+        } else {
+            customizeChatbot();
+        }
+    }
+</script>
