@@ -1,151 +1,99 @@
-// ===== CHATBOT JAVASCRIPT ===== 
-
-// Estado global del chatbot
+// Variables globales
 let chatbotOpen = false;
+let isMobile = window.innerWidth <= 480;
 
-// Base de conocimientos - Aquí puedes personalizar las respuestas
-const knowledgeBase = {
-    proyectos: [
-        "He trabajado en aplicaciones web modernas con Astro, React y Node.js",
-        "Mis proyectos incluyen sitios web responsivos y aplicaciones interactivas",
-        "Tengo experiencia creando desde landing pages hasta aplicaciones full-stack",
-        "Puedes ver mis trabajos más recientes en la sección de proyectos"
-    ],
-    experiencia: [
-        "Trabajo principalmente con HTML, CSS, JavaScript y frameworks modernos",
-        "Tengo experiencia con Astro, React, Vue.js y Node.js",
-        "Me especializo en desarrollo frontend y tengo conocimientos de backend",
-        "También manejo herramientas como Git, Webpack y bases de datos"
-    ],
-    contacto: [
-        "Puedes contactarme directamente a través de mi formulario de contacto",
-        "Estoy disponible para proyectos freelance y colaboraciones",
-        "Mi información completa de contacto está en la página principal",
-        "También puedes encontrarme en LinkedIn y GitHub"
-    ],
-    habilidades: [
-        "Frontend: HTML5, CSS3, JavaScript (ES6+), React, Astro, Vue.js",
-        "Backend: Node.js, Express.js, APIs REST",
-        "Bases de datos: MongoDB, MySQL, PostgreSQL",
-        "Herramientas: Git, VS Code, npm/yarn, Webpack, Vite"
-    ],
-    astro: [
-        "¡Astro es increíble! Lo uso por su excelente rendimiento y SEO",
-        "Me encanta cómo Astro permite combinar diferentes frameworks",
-        "Es perfecto para sitios estáticos y portfolios como este",
-        "Su filosofía de 'islands architecture' es muy eficiente"
-    ]
-};
+// Detectar cambios de tamaño de pantalla
+window.addEventListener('resize', () => {
+    isMobile = window.innerWidth <= 480;
+});
 
-// ===== FUNCIONES PRINCIPALES =====
-
-/**
- * Alterna la visibilidad del chatbot
- */
+// Función principal para toggle del chatbot
 function toggleChatbot() {
-    const window = document.getElementById('chatbotWindow');
-    const button = document.querySelector('.chatbot-button');
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const chatbotButton = document.querySelector('.chatbot-button');
+    const overlay = document.getElementById('chatbotOverlay');
+    const body = document.body;
     
-    if (!window || !button) {
-        console.error('Elementos del chatbot no encontrados');
-        return;
-    }
+    if (!chatbotWindow || !chatbotButton) return;
     
     chatbotOpen = !chatbotOpen;
     
     if (chatbotOpen) {
-        openChatbot(window, button);
+        // Abrir chatbot
+        chatbotWindow.classList.add('show');
+        chatbotButton.classList.add('active');
+        
+        // En móviles, mostrar overlay y prevenir scroll
+        if (isMobile) {
+            if (overlay) {
+                overlay.classList.add('show');
+            }
+            body.classList.add('chatbot-open');
+            body.style.top = `-${window.scrollY}px`;
+        }
+        
+        // Focus en el input
+        setTimeout(() => {
+            const input = document.getElementById('chatbotInput');
+            if (input && !isMobile) { // No hacer focus automático en móviles
+                input.focus();
+            }
+        }, 300);
+        
     } else {
-        closeChatbot(window, button);
+        // Cerrar chatbot
+        chatbotWindow.classList.remove('show');
+        chatbotButton.classList.remove('active');
+        
+        // En móviles, ocultar overlay y restaurar scroll
+        if (isMobile) {
+            if (overlay) {
+                overlay.classList.remove('show');
+            }
+            
+            // Restaurar scroll del body
+            const scrollY = body.style.top;
+            body.classList.remove('chatbot-open');
+            body.style.top = '';
+            if (scrollY) {
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
+            }
+        }
     }
 }
 
-/**
- * Abre el chatbot
- */
-function openChatbot(window, button) {
-    window.classList.add('show');
-    button.classList.add('active');
-    button.innerHTML = '✕';
-    
-    // Focus en el input cuando se abre
-    setTimeout(() => {
-        const input = document.getElementById('chatbotInput');
-        if (input) input.focus();
-    }, 300);
-}
-
-/**
- * Cierra el chatbot
- */
-function closeChatbot(window, button) {
-    window.classList.remove('show');
-    button.classList.remove('active');
-    button.innerHTML = '💬';
-}
-
-/**
- * Envía un mensaje del usuario
- */
+// Función para enviar mensaje
 function sendMessage() {
     const input = document.getElementById('chatbotInput');
+    const messagesContainer = document.getElementById('chatbotMessages');
     
-    if (!input) {
-        console.error('Input del chatbot no encontrado');
-        return;
-    }
+    if (!input || !messagesContainer) return;
     
     const message = input.value.trim();
-    
-    // No enviar mensajes vacíos
     if (!message) return;
-    
-    // Agregar mensaje del usuario
-    addMessage(message, 'user');
     
     // Limpiar input
     input.value = '';
     
-    // Simular respuesta del bot
-    handleBotResponse(message);
-}
-
-/**
- * Envía un mensaje predefinido (botones rápidos)
- */
-function sendQuickMessage(message) {
+    // Agregar mensaje del usuario
     addMessage(message, 'user');
-    handleBotResponse(message);
-}
-
-/**
- * Maneja la respuesta del bot
- */
-function handleBotResponse(userMessage) {
+    
+    // Mostrar indicador de escritura
     showTypingIndicator();
     
-    // Simular tiempo de respuesta realista
-    const responseTime = 800 + Math.random() * 1200; // Entre 0.8 y 2 segundos
-    
+    // Simular respuesta del bot (reemplaza con tu lógica)
     setTimeout(() => {
-        const response = generateResponse(userMessage);
         hideTypingIndicator();
+        const response = getBotResponse(message);
         addMessage(response, 'bot');
-    }, responseTime);
+    }, 1000 + Math.random() * 1000); // Delay aleatorio más realista
 }
 
-/**
- * Agrega un mensaje al chat
- */
+// Función para agregar mensaje
 function addMessage(text, sender) {
     const messagesContainer = document.getElementById('chatbotMessages');
+    if (!messagesContainer) return;
     
-    if (!messagesContainer) {
-        console.error('Contenedor de mensajes no encontrado');
-        return;
-    }
-    
-    // Crear elementos del mensaje
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${sender}`;
     
@@ -153,115 +101,47 @@ function addMessage(text, sender) {
     bubbleDiv.className = 'message-bubble';
     bubbleDiv.textContent = text;
     
-    // Ensamblar mensaje
     messageDiv.appendChild(bubbleDiv);
     messagesContainer.appendChild(messageDiv);
     
-    // Scroll automático al último mensaje
-    scrollToBottom();
+    // Scroll al final
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
-/**
- * Hace scroll al último mensaje
- */
-function scrollToBottom() {
-    const messagesContainer = document.getElementById('chatbotMessages');
-    if (messagesContainer) {
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+// Función para mensaje rápido
+function sendQuickMessage(message) {
+    const input = document.getElementById('chatbotInput');
+    if (input) {
+        input.value = message;
+        sendMessage();
     }
 }
 
-/**
- * Genera respuesta basada en el mensaje del usuario
- */
-function generateResponse(userMessage) {
-    const message = userMessage.toLowerCase();
-    
-    // ===== RESPUESTAS ESPECÍFICAS =====
-    
-    // Saludos
-    if (message.includes('hola') || message.includes('saludos') || message.includes('buenos')) {
-        return "¡Hola! 👋 Me alegra que visites cidev.dev. Soy tu asistente virtual y puedo ayudarte con información sobre proyectos, experiencia técnica y más. ¿Qué te gustaría saber?";
+// Función para manejar Enter
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        sendMessage();
     }
-    
-    // Proyectos
-    if (message.includes('proyecto') || message.includes('trabajo') || message.includes('portfolio')) {
-        return getRandomResponse(knowledgeBase.proyectos);
-    }
-    
-    // Experiencia y habilidades
-    if (message.includes('experiencia') || message.includes('habilidad') || message.includes('tecnolog') || message.includes('stack')) {
-        return getRandomResponse(knowledgeBase.experiencia);
-    }
-    
-    // Contacto
-    if (message.includes('contacto') || message.includes('email') || message.includes('comunicar') || message.includes('escribir')) {
-        return getRandomResponse(knowledgeBase.contacto);
-    }
-    
-    // Astro específicamente
-    if (message.includes('astro')) {
-        return getRandomResponse(knowledgeBase.astro);
-    }
-    
-    // React
-    if (message.includes('react')) {
-        return "¡React es fantástico! Lo uso frecuentemente para crear interfaces interactivas y componentes reutilizables. Es una de mis herramientas favoritas para el desarrollo frontend.";
-    }
-    
-    // JavaScript
-    if (message.includes('javascript') || message.includes('js')) {
-        return "JavaScript es el corazón del desarrollo web moderno. Trabajo con ES6+, frameworks como React y Vue, y también Node.js para el backend. ¿Te interesa algún aspecto específico?";
-    }
-    
-    // Servicios
-    if (message.includes('servicio') || message.includes('precio') || message.includes('costo') || message.includes('freelance')) {
-        return "Ofrezco servicios de desarrollo web, desde sitios estáticos hasta aplicaciones completas. Para presupuestos personalizados, usa el formulario de contacto y hablemos de tu proyecto específico.";
-    }
-    
-    // Agradecimientos
-    if (message.includes('gracias') || message.includes('thanks')) {
-        return "¡De nada! 😊 Estoy aquí para ayudarte. Si tienes más preguntas sobre mis proyectos o experiencia, no dudes en preguntar.";
-    }
-    
-    // Despedidas
-    if (message.includes('adiós') || message.includes('bye') || message.includes('hasta')) {
-        return "¡Hasta luego! 👋 Espero haber sido de ayuda. No olvides revisar mis proyectos y no dudes en contactarme si necesitas algo.";
-    }
-    
-    // ===== RESPUESTA POR DEFECTO =====
-    const defaultResponses = [
-        "Interesante pregunta. ¿Podrías ser más específico sobre qué aspecto te gustaría conocer?",
-        "En cidev.dev encontrarás información detallada sobre eso. ¿Hay algo específico que te gustaría saber?",
-        "Me encanta hablar sobre desarrollo web. ¿Te interesa alguna tecnología en particular?",
-        "Esa es una buena pregunta. Puedo contarte más sobre mis proyectos, experiencia técnica o cómo contactarme.",
-        "¡Perfecto! ¿Te gustaría saber sobre mis proyectos recientes, habilidades técnicas o información de contacto?"
-    ];
-    
-    return getRandomResponse(defaultResponses);
 }
 
-/**
- * Obtiene una respuesta aleatoria de un array
- */
-function getRandomResponse(responseArray) {
-    return responseArray[Math.floor(Math.random() * responseArray.length)];
-}
-
-/**
- * Muestra el indicador de escritura
- */
+// Mostrar indicador de escritura
 function showTypingIndicator() {
     const indicator = document.getElementById('typingIndicator');
     if (indicator) {
         indicator.style.display = 'block';
-        scrollToBottom();
+        
+        // Scroll al final
+        const messagesContainer = document.getElementById('chatbotMessages');
+        if (messagesContainer) {
+            setTimeout(() => {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 100);
+        }
     }
 }
 
-/**
- * Oculta el indicador de escritura
- */
+// Ocultar indicador de escritura
 function hideTypingIndicator() {
     const indicator = document.getElementById('typingIndicator');
     if (indicator) {
@@ -269,91 +149,90 @@ function hideTypingIndicator() {
     }
 }
 
-/**
- * Maneja la tecla Enter en el input
- */
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault(); // Evita el comportamiento por defecto
-        sendMessage();
+// Función para obtener respuesta del bot (personaliza según tus necesidades)
+function getBotResponse(message) {
+    const responses = {
+        'ver proyectos': '🚀 Puedo mostrarte proyectos increíbles desarrollados con tecnologías modernas como React, Node.js, Python y más. ¿Te interesa alguna tecnología en particular?',
+        'proyectos': '🚀 Puedo mostrarte proyectos increíbles desarrollados con tecnologías modernas como React, Node.js, Python y más. ¿Te interesa alguna tecnología en particular?',
+        'experiencia técnica': '💻 Tengo experiencia en desarrollo Full Stack, especializándome en JavaScript, TypeScript, React, Node.js, Python, bases de datos y arquitectura de software. ¿Sobre qué tecnología te gustaría saber más?',
+        'experiencia': '💻 Tengo experiencia en desarrollo Full Stack, especializándome en JavaScript, TypeScript, React, Node.js, Python, bases de datos y arquitectura de software. ¿Sobre qué tecnología te gustaría saber más?',
+        'contacto': '📧 Puedes contactarme a través de mi email o LinkedIn. ¿Prefieres que te comparta los enlaces directos?',
+        'hola': '👋 ¡Hola! Es genial tenerte aquí. ¿En qué puedo ayudarte hoy? Puedo contarte sobre proyectos, experiencia técnica o ayudarte con información de contacto.',
+        'hello': '👋 Hello! Great to have you here. How can I help you today? I can tell you about projects, technical experience, or help you with contact information.'
+    };
+    
+    const lowerMessage = message.toLowerCase();
+    
+    // Buscar coincidencias exactas
+    for (const [key, response] of Object.entries(responses)) {
+        if (lowerMessage.includes(key)) {
+            return response;
+        }
     }
+    
+    // Respuesta por defecto más inteligente
+    if (lowerMessage.includes('react') || lowerMessage.includes('javascript')) {
+        return '⚛️ ¡Excelente! React y JavaScript son mis especialidades. He desarrollado múltiples aplicaciones SPA, hooks personalizados, y optimizado rendimiento. ¿Hay algún aspecto específico que te interese?';
+    }
+    
+    if (lowerMessage.includes('python') || lowerMessage.includes('backend')) {
+        return '🐍 Python es fantástico para backend! He trabajado con Django, FastAPI, y Flask, además de integrar APIs y manejar bases de datos. ¿Te interesa algún framework en particular?';
+    }
+    
+    if (lowerMessage.includes('trabajo') || lowerMessage.includes('colaborar')) {
+        return '🤝 ¡Me encanta colaborar en proyectos interesantes! Cuéntame más sobre lo que tienes en mente. ¿Es desarrollo web, una aplicación móvil, o algo diferente?';
+    }
+    
+    return `🤔 Entiendo que preguntas sobre "${message}". Te puedo ayudar con información sobre proyectos, experiencia técnica, o detalles de contacto. ¿Podrías ser más específico sobre lo que necesitas?`;
 }
 
-// ===== INICIALIZACIÓN =====
-
-/**
- * Inicializa el chatbot cuando se carga la página
- */
-function initChatbot() {
-    console.log('🤖 Chatbot inicializado para cidev.dev');
+// Event listeners cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    // Asegurar estado inicial cerrado
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    const overlay = document.getElementById('chatbotOverlay');
+    const button = document.querySelector('.chatbot-button');
     
-    // Verificar que los elementos existen
-    const requiredElements = [
-        'chatbotWindow',
-        'chatbotMessages', 
-        'chatbotInput',
-        'typingIndicator'
-    ];
+    if (chatbotWindow) chatbotWindow.classList.remove('show');
+    if (overlay) overlay.classList.remove('show');
+    if (button) button.classList.remove('active');
     
-    const missingElements = requiredElements.filter(id => !document.getElementById(id));
-    
-    if (missingElements.length > 0) {
-        console.warn('⚠️ Elementos faltantes del chatbot:', missingElements);
-    }
-    
-    // Agregar event listeners adicionales si es necesario
-    const input = document.getElementById('chatbotInput');
-    if (input) {
-        // Evitar que el formulario se envíe si está dentro de uno
-        input.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                sendMessage();
+    // Event listener para cerrar con overlay
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            if (chatbotOpen) {
+                toggleChatbot();
             }
         });
     }
-}
-
-// ===== FUNCIONES UTILITARIAS =====
-
-/**
- * Limpia el chat (útil para desarrollo/testing)
- */
-function clearChat() {
-    const messagesContainer = document.getElementById('chatbotMessages');
-    if (messagesContainer) {
-        messagesContainer.innerHTML = `
-            <div class="message bot">
-                <div class="message-bubble">
-                    ¡Hola! 👋 Soy el asistente de cidev.dev. Puedo ayudarte con información sobre proyectos, experiencia técnica y servicios. ¿En qué puedo asistirte?
-                </div>
-            </div>
-        `;
+    
+    // Event listener para Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && chatbotOpen) {
+            toggleChatbot();
+        }
+    });
+    
+    // Prevenir que clics dentro de la ventana cierren el chatbot
+    if (chatbotWindow) {
+        chatbotWindow.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
     }
-}
+    
+    // Event listener para el botón cerrar (si existe)
+    const closeButton = document.querySelector('.chatbot-close');
+    if (closeButton) {
+        closeButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (chatbotOpen) {
+                toggleChatbot();
+            }
+        });
+    }
+});
 
-/**
- * Obtiene el historial de mensajes (útil para analytics)
- */
-function getChatHistory() {
-    const messages = document.querySelectorAll('.message');
-    return Array.from(messages).map(msg => ({
-        sender: msg.classList.contains('bot') ? 'bot' : 'user',
-        text: msg.querySelector('.message-bubble').textContent,
-        timestamp: new Date().toISOString()
-    }));
-}
-
-// ===== INICIALIZACIÓN AUTOMÁTICA =====
-
-// Inicializar cuando el DOM esté listo
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initChatbot);
-} else {
-    initChatbot();
-}
-
-// Exponer funciones globalmente para uso en HTML
+// Hacer funciones disponibles globalmente
 window.toggleChatbot = toggleChatbot;
 window.sendMessage = sendMessage;
 window.sendQuickMessage = sendQuickMessage;
