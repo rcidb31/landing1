@@ -92,7 +92,7 @@ const Presentacion = () => {
         )}
       </div>
       
-      <style jsx>{`
+      <style>{`
         @keyframes glow-reveal {
           0% { 
             opacity: 0;
