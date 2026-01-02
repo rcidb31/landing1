@@ -50,7 +50,7 @@ const Presentacion = () => {
             E-mail
           </button>
           <a
-            href="/Raul_Cid.pdf"
+            href="/CvRcid.pdf"
             download
             className="bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
             Mi CV
