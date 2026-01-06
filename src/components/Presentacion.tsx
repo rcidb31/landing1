@@ -37,8 +37,8 @@ const Presentacion = () => {
             text-center  
             max-w-sm sm:max-w-2xl mx-auto px-4 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '1.5s', animationFillMode: 'forwards' }}>
-             Tecnico Programador , con formación Universitaria . 
-             Cuento con experiencia y estudios en el sector de la construcción,en el año 2017 gestioné el software chileno "Calidad Cloud" en proyectos de construcción.
+             Programador,con formación Universitaria. 
+             Ademas Cuento con experiencia y estudios en el sector de la construcción,en el año 2017 gestioné el software chileno "Calidad Cloud" en proyectos de construcción.
              lo que me insipiro en querer estudiar programación. 
              Actualmente, busco combinar esa experiencia con mis conocimientos en programación para crear soluciones tecnológicas.
         </p>

@@ -76,6 +76,103 @@
   scroll-snap-align: center;
 }
 
+/* Estilos mejorados para el slider de galería */
+.slider-gallery {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.slider-image {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: grab;
+  border: 2px solid transparent;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.slider-image:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.4), 0 4px 6px -2px rgba(56, 189, 248, 0.3);
+  border-color: rgba(56, 189, 248, 0.5);
+  z-index: 5;
+}
+
+.slider-image:active {
+  cursor: grabbing;
+  transform: scale(1.02) translateY(-2px);
+}
+
+/* Mejorar la experiencia táctil en móviles */
+@media (hover: none) and (pointer: coarse) {
+  .slider-image {
+    cursor: grab;
+  }
+  
+  .slider-image:active {
+    cursor: grabbing;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 640px) {
+  .slider-image {
+    width: 240px;
+    height: 180px;
+  }
+  
+  .slider-container {
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+}
+
+/* Optimizaciones de rendimiento para el contenedor del slider */
+.slider-container {
+  will-change: scroll-position;
+  transform: translateZ(0);
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+#slider-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  will-change: scroll-position;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mejorar el snap scroll */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
 
 
 .btn {

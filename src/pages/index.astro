@@ -231,32 +231,152 @@ import Presentacion from '../components/Presentacion.tsx';
 						 <div class="relative border-l border-gray-700 pl-6">
 							<!-- Primer evento -->
                 <div class="mb-10 ml-4 relative">
-							  	<h3 class="text-lg font-semibold text-sky-300">	Septiembre 2025 - Actualidad</h3>
+							  	<h3 class="text-lg font-semibold text-sky-300">	Septiembre 2025 - actualidad</h3>
 							      	<p class="text-white">Administrador plataformas chatbot IA servicio al cliente,
 							    		<a href="https://www.lider.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Wallmart Chile 
+							        </a>Wallmart-Chile</p>
 								      </a>front & back oficce RRSS</p>
-                      <img src="/wall.png" alt="Wallmart Chile" class="mt-4 rounded-lg max-w-md h-auto mx-auto">
+                      <img src="/wall.png" alt="Wallmart Chile" class="mt-4 rounded-lg max-w-xs md:max-w-sm w-auto h-auto mx-auto transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-sky-500/50 animate-on-scroll" data-animation="animate__fadeInUp">
 								  	<br>									
 									<br>
 						   <div class="mb-10 ml-4 relative">
 							  	<h3 class="text-lg font-semibold text-sky-300">	Diciembre 2024 - Julio 2025 </h3>
 							        	<p class="text-white">Administrador de Construccion planta cosmetica de 
-								      	<a href="https://www.arensburg.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Arensburg Chile
+								      	<a href="https://www.arensburg.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Arensburg Chile 
+							         </a>American Cosmetic USA Quilicura.</p>
 								       </a>Administracion indpendiente de proyectos de construccion terminaciones.</p>
 								  	 <br>									
 								  	<br>
-							 <div class="mt-5 flex justify-center overflow-x-auto whitespace-nowrap scrollbar-hide px-4">
-								  <div class="slider flex gap-4">
-									    <img src="/planta.webp" alt="Vista de la planta 1" class="object-cover">
-								    	<img src="/2.png" alt="Vista de la planta 2" class="object-cover">
-								    	<img src="/3.png" alt="Vista de la planta 3" class="object-cover">
-								    	<img src="/4.png" alt="Vista de la planta 4" class="object-cover">
-								     	<img src="/5.webp" alt="Vista de la planta 5" class="object-cover">
-								    	<img src="/6.webp" alt="Vista de la planta 6" class="object-cover">
-								    	<img src="/7.webp" alt="Vista de la planta 7" class="object-cover">
-								    	<img src="/8.webp" alt="Vista de la planta 8" class="object-cover">
+							 <!-- Slider de imágenes mejorado -->
+							 <div class="mt-5 relative">
+								  <!-- Hint visual para indicar que se puede deslizar (solo visible en móviles) -->
+								  <div class="text-center mb-3 sm:hidden">
+								    <p class="text-xs text-gray-400 flex items-center justify-center gap-2 animate-pulse">
+								      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
+								      </svg>
+								      Desliza
+								      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+								      </svg>
+								    </p>
 								  </div>
-							  </div>								
+								  
+								  <!-- Contenedor con gradientes laterales para indicar scroll -->
+								  <div class="relative slider-container">
+								    <!-- Gradiente izquierdo (aparece cuando hay scroll a la izquierda) -->
+								    <div id="gradient-left" class="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-[#0e1621] to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300"></div>
+								    <!-- Gradiente derecho (indica que hay más contenido) -->
+								    <div id="gradient-right" class="absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-[#0e1621] to-transparent z-10 pointer-events-none transition-opacity duration-300"></div>
+								    
+								    <!-- Contenedor del slider -->
+								    <div id="slider-scroll" class="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory px-4 cursor-grab" 
+								         style="scrollbar-width: none; -ms-overflow-style: none;"
+								         onscroll="updateGradients(this)">
+								      <div class="slider-gallery flex gap-4">
+								        <img src="/planta.webp" alt="Vista de la planta 1" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/2.png" alt="Vista de la planta 2" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/3.png" alt="Vista de la planta 3" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/4.png" alt="Vista de la planta 4" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/5.webp" alt="Vista de la planta 5" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/6.webp" alt="Vista de la planta 6" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/7.webp" alt="Vista de la planta 7" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/8.webp" alt="Vista de la planta 8" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								      </div>
+								    </div>
+								  </div>
+								  
+								  <!-- Indicador de cantidad de imágenes -->
+								  <div class="text-center mt-3">
+								    <p class="text-xs text-gray-500">Proyectos</p>
+								  </div>
+							  </div>
+							  
+							  <script>
+							    function updateGradients(element: HTMLElement) {
+							      const gradientLeft = document.getElementById('gradient-left');
+							      const gradientRight = document.getElementById('gradient-right');
+							      
+							      if (!gradientLeft || !gradientRight) return;
+							      
+							      const scrollLeft = element.scrollLeft;
+							      const scrollWidth = element.scrollWidth;
+							      const clientWidth = element.clientWidth;
+							      const maxScroll = scrollWidth - clientWidth;
+							      
+							      // Mostrar gradiente izquierdo si hay scroll a la izquierda
+							      if (scrollLeft > 10) {
+							        gradientLeft.style.opacity = '1';
+							      } else {
+							        gradientLeft.style.opacity = '0';
+							      }
+							      
+							      // Mostrar gradiente derecho si hay más contenido a la derecha
+							      if (scrollLeft < maxScroll - 10) {
+							        gradientRight.style.opacity = '1';
+							      } else {
+							        gradientRight.style.opacity = '0';
+							      }
+							    }
+							    
+							    // Inicializar gradientes y funcionalidad de drag al cargar
+							    document.addEventListener('DOMContentLoaded', function() {
+							      const slider = document.getElementById('slider-scroll') as HTMLElement;
+							      if (!slider) return;
+							      
+							      updateGradients(slider);
+							      // Actualizar también al redimensionar
+							      window.addEventListener('resize', () => updateGradients(slider));
+							      
+							      // Funcionalidad de arrastre con el mouse para desktop
+							      let isDown = false;
+							      let startX: number;
+							      let scrollLeft: number;
+							      
+							      slider.addEventListener('mousedown', (e: MouseEvent) => {
+							        isDown = true;
+							        slider.classList.add('cursor-grabbing');
+							        slider.classList.remove('cursor-grab');
+							        startX = e.pageX - slider.offsetLeft;
+							        scrollLeft = slider.scrollLeft;
+							        // Prevenir selección de texto mientras se arrastra
+							        e.preventDefault();
+							        // Prevenir el comportamiento de scroll por defecto
+							        slider.style.scrollBehavior = 'auto';
+							      });
+							      
+							      slider.addEventListener('mouseleave', () => {
+							        isDown = false;
+							        slider.classList.remove('cursor-grabbing');
+							        slider.classList.add('cursor-grab');
+							        slider.style.scrollBehavior = 'smooth';
+							      });
+							      
+							      slider.addEventListener('mouseup', () => {
+							        isDown = false;
+							        slider.classList.remove('cursor-grabbing');
+							        slider.classList.add('cursor-grab');
+							        slider.style.scrollBehavior = 'smooth';
+							      });
+							      
+							      slider.addEventListener('mousemove', (e: MouseEvent) => {
+							        if (!isDown) return;
+							        e.preventDefault();
+							        const x = e.pageX - slider.offsetLeft;
+							        const walk = (x - startX) * 2; // Velocidad de scroll (ajustable)
+							        slider.scrollLeft = scrollLeft - walk;
+							        updateGradients(slider);
+							      });
+							      
+							      // Prevenir el comportamiento de arrastre por defecto de las imágenes
+							      const images = slider.querySelectorAll('.slider-image');
+							      images.forEach((img: Element) => {
+							        img.addEventListener('dragstart', (e: Event) => {
+							          e.preventDefault();
+							        });
+							      });
+							    });
+							  </script>								
 						  </div>
 							<!-- Segundo evento -->
 							  <div class="mb-10 ml-4">
@@ -269,45 +389,139 @@ import Presentacion from '../components/Presentacion.tsx';
 									<a href="https://www.santolaya.cl" target="_blank" class="text-blue-400 underline hover:text-blue-600">Constructora Santolaya</a>, 
 									desempeñé el rol de Inspector de Calidad en Terreno supervisando normativas y sistemas de autocontrol.
 							  	</p>
-						<!-- Slider de imágenes -->
+						<!-- Slider de imágenes mejorado -->
 				        <section>
-				           <div class="mt-20 relative w-full max-w-3xl h-auto mx-auto">
-								<!-- Contenedor del marco -->
-								<div class="p-2 border border-white/20 rounded-2xl shadow-xl bg-white/5 backdrop-blur-sm">
+				           <div class="mt-20 relative w-full max-w-4xl h-auto mx-auto px-4">
+								<!-- Contenedor del marco mejorado -->
+								<div class="relative p-3 sm:p-4 border-2 border-sky-400/30 rounded-3xl shadow-2xl bg-gradient-to-br from-[#0e1621]/90 via-[#1a1f2e]/90 to-[#0e1621]/90 backdrop-blur-md">
+									<!-- Efecto de brillo sutil -->
+									<div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-sky-500/10 via-transparent to-violet-500/10 opacity-50 pointer-events-none"></div>
+									
 									<!-- Slide container -->
-									<div class="overflow-hidden relative">
-										<div class="slide-track flex transition-transform duration-700 ease-in-out">
+									<div class="overflow-hidden relative rounded-2xl">
+										<div id="slide-track-2" class="flex transition-transform duration-700 ease-in-out" style="transform: translateX(0%)">
 											<!-- Slide 1 -->
-											<div class="slide w-full flex-shrink-0">
-												<img src="/slide/img1.png" alt="Slide 1" class="w-full h-64 object-cover rounded-xl shadow-md transition-transform duration-500 hover:scale-105">
+											<div class="slide-2 w-full flex-shrink-0 px-1">
+												<div class="relative group overflow-hidden rounded-xl">
+													<img src="/slide/img1.png" alt="Slide 1" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+													<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+												</div>
 											</div>
 											<!-- Slide 2 -->
-											<div class="slide w-full flex-shrink-0">
-												<img src="/slide/img5.png" alt="Slide 2" class="w-full h-64 object-cover rounded-xl shadow-md transition-transform duration-500 hover:scale-105">
+											<div class="slide-2 w-full flex-shrink-0 px-1">
+												<div class="relative group overflow-hidden rounded-xl">
+													<img src="/slide/img5.png" alt="Slide 2" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+													<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+												</div>
 											</div>
 											<!-- Slide 3 -->
-											<div class="slide w-full flex-shrink-0">
-												<img src="/slide/img3.png" alt="Slide 3" class="w-full h-64 object-cover rounded-xl shadow-md transition-transform duration-500 hover:scale-105">
+											<div class="slide-2 w-full flex-shrink-0 px-1">
+												<div class="relative group overflow-hidden rounded-xl">
+													<img src="/slide/img3.png" alt="Slide 3" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+													<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+												</div>
 											</div>
 											<!-- Slide 4 -->
-											<div class="slide w-full flex-shrink-0">
-												<img src="/slide/img4.png" alt="Slide 4" class="w-full h-64 object-cover rounded-xl shadow-md transition-transform duration-500 hover:scale-105">
+											<div class="slide-2 w-full flex-shrink-0 px-1">
+												<div class="relative group overflow-hidden rounded-xl">
+													<img src="/slide/img4.png" alt="Slide 4" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+													<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+												</div>
 											</div>
 											<!-- Slide 5 -->
-											<div class="slide w-full flex-shrink-0">
-												<img src="/slide/img7.png" alt="Slide 5" class="w-full h-64 object-cover rounded-xl shadow-md transition-transform duration-500 hover:scale-105">
+											<div class="slide-2 w-full flex-shrink-0 px-1">
+												<div class="relative group overflow-hidden rounded-xl">
+													<img src="/slide/img7.png" alt="Slide 5" class="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:brightness-110">
+													<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+												</div>
 											</div>
 										</div>
 									</div>
-									<!-- Prev/Next Buttons -->
-									<button id="prev" class="absolute top-1/2 -left-7 transform -translate-y-1/2 bg-purple-500 bg-opacity-50 text-white py-2 px-3 rounded-full shadow-lg hover:scale-110 transition-all duration-200">
-										◀
+									
+									<!-- Prev/Next Buttons mejorados -->
+									<button id="prev-2" class="absolute top-1/2 left-2 sm:left-4 transform -translate-y-1/2 bg-sky-500/80 hover:bg-sky-500 text-white py-2 px-3 sm:py-3 sm:px-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-sky-400/50 z-20">
+										<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+										</svg>
 									</button>
-									<button id="next" class="absolute top-1/2 -right-7 transform -translate-y-1/2 bg-purple-500 bg-opacity-50 text-white py-2 px-3 rounded-full shadow-lg hover:scale-110 transition-all duration-200">
-										▶
+									<button id="next-2" class="absolute top-1/2 right-2 sm:right-4 transform -translate-y-1/2 bg-sky-500/80 hover:bg-sky-500 text-white py-2 px-3 sm:py-3 sm:px-4 rounded-full shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-sky-400/50 z-20">
+										<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+										</svg>
 									</button>
+									
+									<!-- Indicadores de puntos (dots) -->
+									<div class="flex justify-center gap-2 mt-4 sm:mt-6">
+										<button class="slider-dot-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-sky-400 transition-all duration-300 hover:scale-125" data-slide="0"></button>
+										<button class="slider-dot-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-gray-600 hover:bg-gray-500 transition-all duration-300 hover:scale-125" data-slide="1"></button>
+										<button class="slider-dot-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-gray-600 hover:bg-gray-500 transition-all duration-300 hover:scale-125" data-slide="2"></button>
+										<button class="slider-dot-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-gray-600 hover:bg-gray-500 transition-all duration-300 hover:scale-125" data-slide="3"></button>
+										<button class="slider-dot-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-gray-600 hover:bg-gray-500 transition-all duration-300 hover:scale-125" data-slide="4"></button>
+									</div>
+									
+									<!-- Contador de imágenes -->
+									<div class="text-center mt-3">
+										<p class="text-xs sm:text-sm text-gray-400">Proyecto Eco-Irarrazaval</p>
+									</div>
 								</div>
 				           </div>
+				           
+				           <script>
+				             (function() {
+				               let currentSlide2 = 0;
+				               const totalSlides2 = 5;
+				               const slideTrack2 = document.getElementById('slide-track-2');
+				               const prevBtn2 = document.getElementById('prev-2');
+				               const nextBtn2 = document.getElementById('next-2');
+				               const dots2 = document.querySelectorAll('.slider-dot-2');
+				               
+				               function updateSlider2() {
+				                 if (!slideTrack2) return;
+				                 const translateX = -currentSlide2 * 100;
+				                 slideTrack2.style.transform = `translateX(${translateX}%)`;
+				                 
+				                 // Actualizar dots
+				                 dots2.forEach((dot, index) => {
+				                   const dotElement = dot as HTMLElement;
+				                   if (index === currentSlide2) {
+				                     dotElement.classList.remove('bg-gray-600', 'hover:bg-gray-500', 'w-2.5', 'sm:w-3');
+				                     dotElement.classList.add('bg-sky-400', 'w-8', 'sm:w-10');
+				                   } else {
+				                     dotElement.classList.remove('bg-sky-400', 'w-8', 'sm:w-10');
+				                     dotElement.classList.add('bg-gray-600', 'hover:bg-gray-500', 'w-2.5', 'sm:w-3');
+				                   }
+				                 });
+				               }
+				               
+				               function goToSlide2(index: number) {
+				                 currentSlide2 = index;
+				                 updateSlider2();
+				               }
+				               
+				               function nextSlide2() {
+				                 currentSlide2 = (currentSlide2 + 1) % totalSlides2;
+				                 updateSlider2();
+				               }
+				               
+				               function prevSlide2() {
+				                 currentSlide2 = (currentSlide2 - 1 + totalSlides2) % totalSlides2;
+				                 updateSlider2();
+				               }
+				               
+				               if (prevBtn2) prevBtn2.addEventListener('click', prevSlide2);
+				               if (nextBtn2) nextBtn2.addEventListener('click', nextSlide2);
+				               
+				               dots2.forEach((dot, index) => {
+				                 dot.addEventListener('click', () => goToSlide2(index));
+				               });
+				               
+				               // Auto-play opcional (descomentar si lo deseas)
+				               // setInterval(nextSlide2, 5000);
+				               
+				               // Inicializar
+				               updateSlider2();
+				             })();
+				           </script>
 			        	</section>
 			        	</section>		
 	                    <!-- About Me-->
@@ -386,7 +600,7 @@ import Presentacion from '../components/Presentacion.tsx';
                           <img src="/Net.png" alt="Certificación NetCore" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                          NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">en Proceso</span>
+                          NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">Proceso</span>
                         </figcaption>
                       </figure> 
                 
@@ -395,7 +609,7 @@ import Presentacion from '../components/Presentacion.tsx';
                           <img src="/angular.png" alt="Certificación Angular" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                          Angular <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">en Proceso</span>
+                          Angular <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">Proceso</span>
                         </figcaption>
                       </figure> 
                 
