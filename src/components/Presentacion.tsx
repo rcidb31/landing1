@@ -33,13 +33,13 @@ const Presentacion = () => {
           Desarrollador Frontend Jr 🇨🇱
         </h2>
         
-        <p className="text-white text-sm sm:text-lg leading-loose mb-8 
-            text-center  
+        <p className="text-white text-sm sm:text-lg leading-loose mb-8
+            text-center
             max-w-sm sm:max-w-2xl mx-auto px-4 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '1.5s', animationFillMode: 'forwards' }}>
-             Programador,con formación Universitaria. 
-             Ademas Cuento con experiencia y estudios en el sector de la construcción,en el año 2017 gestioné el software chileno "Calidad Cloud" en proyectos de construcción.
-             lo que me insipiro en querer estudiar programación. 
+             Programador con formación universitaria.
+             Además cuento con experiencia y estudios en el sector de la construcción. En el año 2017 gestioné el software chileno "Calidad Cloud" en proyectos de construcción,
+             lo que me inspiró a estudiar programación.
              Actualmente, busco combinar esa experiencia con mis conocimientos en programación para crear soluciones tecnológicas.
         </p>
         

@@ -7,9 +7,9 @@ import Presentacion from '../components/Presentacion.tsx';
 
 <Layout title="Raul_cid Portfolio.">   
         <main class="container mx-auto p-9">			
-			         <section id="home">
+			          <section id="home">
 					   <div class="mt-24">
-					   	<img src="logos3s.webp" alt="Raúl Cid" class="ml-auto mr-auto mt-10 w-72 mx-auto">
+					   	<img src="logos3s.webp" alt="Raúl Cid" class="ml-auto mr-auto mt-10 w-72 mx-auto" fetchpriority="high">
 					   </div>
 				     	<!-- iconos redes sociales -->
 				     	<div class="flex justify-center space-x-4 mr-auto -mt-13">
@@ -20,8 +20,8 @@ import Presentacion from '../components/Presentacion.tsx';
 						        <img src="/Linkedin.svg" alt="LinkedIn Logo" class="w-10 h-10">
 						       </a>
 					    </div>
-			         </section>
-               <div class="flex flex-col items-center space-y-8">
+			          </section>
+                  <div class="flex flex-col items-center space-y-8">
               <Presentacion client:load />
               <section id="pro">
                 <h2 class="flex items-center gap-2 text-xl sm:text-2xl font-extrabold">
@@ -31,13 +31,13 @@ import Presentacion from '../components/Presentacion.tsx';
                   </span>
                 </h2>
               </section>
-               </div>
-               <!-- Proyecto proceso-->
-               <section class="px-4 py-12 bg-gradient-to-b from-[#0e1621] to-[#1a1f2e]">
+                  </div>
+                <!-- Proyecto proceso-->
+                <section class="px-4 py-12 bg-gradient-to-b from-[#0e1621]/70 to-[#1a1f2e]/70">
                   <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-    
+
                 <!-- Texto -->
-                <div class="bg-[#0e1621]/80 p-8 rounded-2xl shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+                <div class="bg-[#0e1621]/60 p-8 rounded-2xl shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
              
                   <h3 class="text-2xl font-extrabold text-sky-300 mb-4">📒 Libro de Obras Digital</h3>
                   <p class="text-base text-gray-100 leading-relaxed mb-6">Aplicación <span class="text-sky-400 font-medium">mobile-first</span> 
@@ -51,8 +51,8 @@ import Presentacion from '../components/Presentacion.tsx';
                   </a>        
                   <!-- Tecnologías -->
                   <div class="flex items-center gap-4 mt-6">
-                     <img src="/angular.png" alt="Angular" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="Angular">
-                     <img src="/Net.png" alt=".NET" class="h-8 w-8 md:h-10 md:w-10 object-contain" title=".NET">
+                     <img src="/angular.png" alt="Angular" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="Angular" loading="lazy">
+                     <img src="/Net.png" alt=".NET" class="h-8 w-8 md:h-10 md:w-10 object-contain" title=".NET" loading="lazy">
                   </div>
                 </div>
                 <!-- Imagen -->
@@ -63,8 +63,8 @@ import Presentacion from '../components/Presentacion.tsx';
         class="h-64 md:h-80 w-auto object-contain rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
                 </div>
                  </div>
-               </section>
-                   <!-- Imagen -->
+                </section>
+                <!-- Imagen -->
                 </section>
                 <!-- Proyectos realizados -->
                 <section id="pro" class="mt-40">
@@ -86,17 +86,17 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class="p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/blog.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
+						<img src="/blog.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Blog Personal</h3>
 						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> Astro + taiwind </p>
           <!-- Logos de tecnologías -->
          <div class="flex justify-center gap-6 mt-3">
             <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
-              <img src="/astro.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro">
+              <img src="/astro.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro" loading="lazy">
             </div>
             <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-              <img src="/tailwind.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS">
+              <img src="/tailwind.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS" loading="lazy">
             </div>
           </div>
 					<!-- Git-->
@@ -109,14 +109,14 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class="p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/arka.webp" alt="Proyecto js" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
+						<img src="/arka.webp" alt="Proyecto js" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Arkanoid Midu</h3>
 						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> JS Canvas Sprite </p>
 				<!-- Logos de tecnologías -->
            <div class="flex justify-center gap-6 mt-3">
               <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-                <img src="/javascript.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS">
+                <img src="/javascript.png" alt="JavaScript" class="h-8 w-8 object-contain" title="JavaScript" loading="lazy">
               </div>
             </div>				
 						<!-- Git-->
@@ -129,7 +129,7 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			 <div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class="p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/taxiaerovia.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
+						<img src="/taxiaerovia.jpg" alt="Proyecto Taxi Aeropuerto" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Web Cliente Taxi</h3>
 						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">WebTaxis Aereopuerto</p>
@@ -152,7 +152,7 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 						<div class=" p-4 group relative overflow-hidden">
 							<div class="flex justify-center">
-								<img src="/Bulma.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
+								<img src="/Bulma.jpg" alt="Proyecto Bulma Framework" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 							</div>
 								<h3 class="text-center text-white text-xl font-bold mb-1"> Bulma Framework</h3>
 								<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">Certificacion CSS Bulma </p>			
@@ -175,7 +175,7 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class=" p-4 group relative overflow-hidden">
 					<div class="flex justify-center">
-						<img src="/blog5.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110">
+						<img src="/blog5.jpg" alt="Proyecto Web Design" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
 						<h3 class="text-center text-white  text-xl font-bold mb-1">Cert. Web Desing</h3>
 						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> HTML + Css web Desing</p>
@@ -198,7 +198,7 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
 					<div class=" p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/calcu.jpg" alt="Proyecto 1" class="w-auto h-52 rounded mb-2 transform transition-transform duration-500 ease-in-out group-hover:scale-110">
+						<img src="/calcu.jpg" alt="Proyecto Calculadora React" class="w-auto h-52 rounded mb-2 transform transition-transform duration-500 ease-in-out group-hover:scale-110" loading="lazy">
 						</div>
 						<h3 class="text-center text-white text-xl font-bold mb-1">Cert - React</h3>
 						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">Calculadora Cert cursera</p>
@@ -222,11 +222,20 @@ import Presentacion from '../components/Presentacion.tsx';
 			         	<section id="lineatiempo" class="mt-32">
 					      <div class="container mx-auto px-6">
 						<!-- Título de la sección -->
-						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10 animate-on-scroll" data-animation="animate__swing">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-500">
-								Experiencia Laboral
-							</span>
-						</h2>			
+						<div class="mb-10 animate-on-scroll" data-animation="animate__fadeInUp">
+							<div class="flex items-center justify-center gap-3 mb-2">
+								<div class="h-px w-8 bg-gradient-to-r from-transparent to-sky-400"></div>
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-400">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+								</svg>
+								<div class="h-px w-8 bg-gradient-to-l from-transparent to-violet-500"></div>
+							</div>
+							<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+								<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-400 to-violet-500">
+									Experiencia Laboral
+								</span>
+							</h2>
+						</div>			
 						<!-- Línea de tiempo -->
 						 <div class="relative border-l border-gray-700 pl-6">
 							<!-- Primer evento -->
@@ -234,8 +243,8 @@ import Presentacion from '../components/Presentacion.tsx';
 							  	<h3 class="text-lg font-semibold text-sky-300">	Septiembre 2025 - actualidad</h3>
 							      	<p class="text-white">Administrador plataformas chatbot IA servicio al cliente,
 							    		<a href="https://www.lider.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Wallmart Chile 
-								      </a>front & back oficce RRSS</p>
-                      <img src="/wall.png" alt="Wallmart Chile" class="mt-4 rounded-lg max-w-xs md:max-w-sm w-auto h-auto mx-auto transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-sky-500/50 animate-on-scroll" data-animation="animate__fadeInUp">
+								      </a>front & back oficce RRSS whatsapp<p>
+                      <img src="/wall.png" alt="Walmart Chile" class="mt-4 rounded-lg max-w-xs md:max-w-sm w-auto h-auto mx-auto transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-sky-500/50" loading="lazy">
 								  	<br>									
 									<br>
 						   <div class="mb-10 ml-4 relative">
@@ -272,107 +281,34 @@ import Presentacion from '../components/Presentacion.tsx';
 								         style="scrollbar-width: none; -ms-overflow-style: none;"
 								         onscroll="updateGradients(this)">
 								      <div class="slider-gallery flex gap-4">
-								        <img src="/planta.webp" alt="Vista de la planta 1" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/2.png" alt="Vista de la planta 2" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/3.png" alt="Vista de la planta 3" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/4.png" alt="Vista de la planta 4" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/5.webp" alt="Vista de la planta 5" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/6.webp" alt="Vista de la planta 6" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/7.webp" alt="Vista de la planta 7" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
-								        <img src="/8.webp" alt="Vista de la planta 8" class="slider-image snap-center flex-shrink-0 w-[280px] h-[200px] sm:w-[320px] sm:h-[240px] md:w-[400px] md:h-[300px] lg:w-[500px] lg:h-[375px] object-cover rounded-lg">
+								        <img src="/planta.webp" alt="Vista de la planta 1" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/2.png" alt="Vista de la planta 2" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/3.png" alt="Vista de la planta 3" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/4.png" alt="Vista de la planta 4" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/5.webp" alt="Vista de la planta 5" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/6.webp" alt="Vista de la planta 6" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/7.webp" alt="Vista de la planta 7" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/8.webp" alt="Vista de la planta 8" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
 								      </div>
 								    </div>
 								  </div>
 								  
 								  <!-- Indicador de cantidad de imágenes -->
 								  <div class="text-center mt-3">
-								    <p class="text-xs text-gray-500">Proyectos</p>
+								    <p class="text-xs text-gray-500 flex items-center justify-center gap-2">
+								      Proyectos desliza
+								      <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+								      </svg>
+								    </p>
 								  </div>
 							  </div>
 							  
 							  <script>
-							    function updateGradients(element: HTMLElement) {
-							      const gradientLeft = document.getElementById('gradient-left');
-							      const gradientRight = document.getElementById('gradient-right');
-							      
-							      if (!gradientLeft || !gradientRight) return;
-							      
-							      const scrollLeft = element.scrollLeft;
-							      const scrollWidth = element.scrollWidth;
-							      const clientWidth = element.clientWidth;
-							      const maxScroll = scrollWidth - clientWidth;
-							      
-							      // Mostrar gradiente izquierdo si hay scroll a la izquierda
-							      if (scrollLeft > 10) {
-							        gradientLeft.style.opacity = '1';
-							      } else {
-							        gradientLeft.style.opacity = '0';
-							      }
-							      
-							      // Mostrar gradiente derecho si hay más contenido a la derecha
-							      if (scrollLeft < maxScroll - 10) {
-							        gradientRight.style.opacity = '1';
-							      } else {
-							        gradientRight.style.opacity = '0';
-							      }
-							    }
-							    
-							    // Inicializar gradientes y funcionalidad de drag al cargar
-							    document.addEventListener('DOMContentLoaded', function() {
-							      const slider = document.getElementById('slider-scroll') as HTMLElement;
-							      if (!slider) return;
-							      
-							      updateGradients(slider);
-							      // Actualizar también al redimensionar
-							      window.addEventListener('resize', () => updateGradients(slider));
-							      
-							      // Funcionalidad de arrastre con el mouse para desktop
-							      let isDown = false;
-							      let startX: number;
-							      let scrollLeft: number;
-							      
-							      slider.addEventListener('mousedown', (e: MouseEvent) => {
-							        isDown = true;
-							        slider.classList.add('cursor-grabbing');
-							        slider.classList.remove('cursor-grab');
-							        startX = e.pageX - slider.offsetLeft;
-							        scrollLeft = slider.scrollLeft;
-							        // Prevenir selección de texto mientras se arrastra
-							        e.preventDefault();
-							        // Prevenir el comportamiento de scroll por defecto
-							        slider.style.scrollBehavior = 'auto';
-							      });
-							      
-							      slider.addEventListener('mouseleave', () => {
-							        isDown = false;
-							        slider.classList.remove('cursor-grabbing');
-							        slider.classList.add('cursor-grab');
-							        slider.style.scrollBehavior = 'smooth';
-							      });
-							      
-							      slider.addEventListener('mouseup', () => {
-							        isDown = false;
-							        slider.classList.remove('cursor-grabbing');
-							        slider.classList.add('cursor-grab');
-							        slider.style.scrollBehavior = 'smooth';
-							      });
-							      
-							      slider.addEventListener('mousemove', (e: MouseEvent) => {
-							        if (!isDown) return;
-							        e.preventDefault();
-							        const x = e.pageX - slider.offsetLeft;
-							        const walk = (x - startX) * 2; // Velocidad de scroll (ajustable)
-							        slider.scrollLeft = scrollLeft - walk;
-							        updateGradients(slider);
-							      });
-							      
-							      // Prevenir el comportamiento de arrastre por defecto de las imágenes
-							      const images = slider.querySelectorAll('.slider-image');
-							      images.forEach((img: Element) => {
-							        img.addEventListener('dragstart', (e: Event) => {
-							          e.preventDefault();
-							        });
-							      });
+							    import { initScrollSlider } from '../js/slider.js';
+
+							    document.addEventListener('DOMContentLoaded', () => {
+							      initScrollSlider('slider-scroll');
 							    });
 							  </script>								
 						  </div>
@@ -465,63 +401,22 @@ import Presentacion from '../components/Presentacion.tsx';
 				           </div>
 				           
 				           <script>
-				             (function() {
-				               let currentSlide2 = 0;
-				               const totalSlides2 = 5;
-				               const slideTrack2 = document.getElementById('slide-track-2');
-				               const prevBtn2 = document.getElementById('prev-2');
-				               const nextBtn2 = document.getElementById('next-2');
-				               const dots2 = document.querySelectorAll('.slider-dot-2');
-				               
-				               function updateSlider2() {
-				                 if (!slideTrack2) return;
-				                 const translateX = -currentSlide2 * 100;
-				                 slideTrack2.style.transform = `translateX(${translateX}%)`;
-				                 
-				                 // Actualizar dots
-				                 dots2.forEach((dot, index) => {
-				                   const dotElement = dot as HTMLElement;
-				                   if (index === currentSlide2) {
-				                     dotElement.classList.remove('bg-gray-600', 'hover:bg-gray-500', 'w-2.5', 'sm:w-3');
-				                     dotElement.classList.add('bg-sky-400', 'w-8', 'sm:w-10');
-				                   } else {
-				                     dotElement.classList.remove('bg-sky-400', 'w-8', 'sm:w-10');
-				                     dotElement.classList.add('bg-gray-600', 'hover:bg-gray-500', 'w-2.5', 'sm:w-3');
-				                   }
-				                 });
-				               }
-				               
-				               function goToSlide2(index: number) {
-				                 currentSlide2 = index;
-				                 updateSlider2();
-				               }
-				               
-				               function nextSlide2() {
-				                 currentSlide2 = (currentSlide2 + 1) % totalSlides2;
-				                 updateSlider2();
-				               }
-				               
-				               function prevSlide2() {
-				                 currentSlide2 = (currentSlide2 - 1 + totalSlides2) % totalSlides2;
-				                 updateSlider2();
-				               }
-				               
-				               if (prevBtn2) prevBtn2.addEventListener('click', prevSlide2);
-				               if (nextBtn2) nextBtn2.addEventListener('click', nextSlide2);
-				               
-				               dots2.forEach((dot, index) => {
-				                 dot.addEventListener('click', () => goToSlide2(index));
+				             import { initButtonSlider } from '../js/slider.js';
+
+				             document.addEventListener('DOMContentLoaded', () => {
+				               initButtonSlider({
+				                 trackId: 'slide-track-2',
+				                 prevButtonId: 'prev-2',
+				                 nextButtonId: 'next-2',
+				                 dotsClass: 'slider-dot-2',
+				                 totalSlides: 5
 				               });
-				               
-				               // Auto-play opcional (descomentar si lo deseas)
-				               // setInterval(nextSlide2, 5000);
-				               
-				               // Inicializar
-				               updateSlider2();
-				             })();
+				             });
 				           </script>
 			        	</section>
-			        	</section>		
+			        	  </div>
+			        	</div>
+			        	</section>
 	                    <!-- About Me-->
 			        	<section id="aboutme" class="pt-12 my-20 mt-16">
                   <div class="container pb-3 px-3 animate-on-scroll" data-animation="animate__heartBeat">
@@ -545,10 +440,9 @@ import Presentacion from '../components/Presentacion.tsx';
 							<div class="md:p-8 lg:p-10">
 								<h3 class="text-black-300 text-sm sm:text-base md:text-lg leading-relaxed font-light">
 								"Optimicé procesos de control de calidad con el software Calidad Cloud, asegurando el cumplimiento 
-                 de normas chilenas. un sistema de inspecciones en línea y offline, y 
+                 de normas chilenas. un sistema de inspecciones en línea y offline, genere
 								 reportes semanales para detectar fallas y proponer mejoras. 
-								Colaboré con equipos de programacion para adaptar la interfaz a capataces y jefes de terreno.
-								</h3>
+								 Colaboré con equipos de programacion para adaptar la interfaz a las necesidades de la obra.
 							</div>
 						</div>
 					</div>
@@ -716,20 +610,20 @@ import Presentacion from '../components/Presentacion.tsx';
                           <h3 class="text-2xl font-semibold text-sky-300">Analista Programador</h3>
                              <p class="text-green-300 rounded-lg shadow">Universidad Mayor | Enero 2024 - Marzo 2026</p>
                              <p class="text-black-300 mt-4">"Profesionales capacitados para diseñar, gestionar y desarrollar 
-								soluciones tecnológicas con herramientas y buenas prácticas, 
-								respondiendo a necesidades organizacionales en sectores de alto crecimiento."</p>
-                    </div>
+								              soluciones tecnológicas con herramientas y buenas prácticas, 
+								               respondiendo a necesidades organizacionales en sectores de alto crecimiento."</p>
+                     </div>
                         <div class="p-6">
                             <h3 class="text-2xl font-semibold text-sky-300">Bootcamp Fullstack Javascript</h3>
                             <p class="text-green-300 rounded-lg shadow">Programadores Chile | Abril 2021 -  Abril 2022</p>
-                            <p class="text-black-300 mt-4">  Habilidades esenciales que respaldan su conocimiento fundamental en JavaScript tanto para herramientas de frontend como backend relacional </p>
+                            <p class="text-black-300 mt-4">  Habilidades esenciales que respaldan conocimiento fundamental en JavaScript tanto para herramientas de frontend como backend </p>
                         </div>
 						<div class="p-6 ">
                             <h3 class="text-2xl font-semibold text-sky-300">Tecnologo en Construccion
 							</h3>
                             <p class="text-green-300 rounded-lg shadow">Universidad de Santiago de Chile | Marzo 2013 - dic 2016</p>
                             <p class="text-black-300 mt-4">
-								"Profesional capaz de gestionar recursos humanos, materiales y técnicos; supervisar el cumplimiento de especificaciones, 
+								"Profesional capaz de gestionar recursos humanos, materiales y datos técnicos; supervisar el cumplimiento de especificaciones, 
 								estándares de calidad, seguridad y normativas, asegurando la correcta ejecución del proyecto."  </p>
                             </div>
                         </div>
