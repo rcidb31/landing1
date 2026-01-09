@@ -5,8 +5,8 @@ import 'animate.css';
 import Presentacion from '../components/Presentacion.tsx';
 ---
 
-<Layout title="Raul_cid Portfolio.">   
-        <main class="container mx-auto p-9">			
+<Layout title="Raul_cid Portfolio.">
+        <main class="container mx-auto px-3 sm:px-6 md:px-8 py-4">			
 			          <section id="home">
 					   <div class="mt-24">
 					   	<img src="logos3s.webp" alt="Raúl Cid" class="ml-auto mr-auto mt-10 w-72 mx-auto" fetchpriority="high">
@@ -24,7 +24,7 @@ import Presentacion from '../components/Presentacion.tsx';
                   <div class="flex flex-col items-center space-y-8">
               <Presentacion client:load />
               <section id="pro">
-                <h2 class="flex items-center gap-2 text-xl sm:text-2xl font-extrabold">
+                <h2 class="flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-extrabold">
                   <svg class="w-8 h-8 text-sky-400">...</svg>
                   <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 mb-4">
                     Proyecto en Desarrollo
@@ -33,27 +33,27 @@ import Presentacion from '../components/Presentacion.tsx';
               </section>
                   </div>
                 <!-- Proyecto proceso-->
-                <section class="px-4 py-12 bg-gradient-to-b from-[#0e1621]/70 to-[#1a1f2e]/70">
-                  <div class="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+                <section class="px-2 sm:px-4 py-8 sm:py-12 bg-gradient-to-b from-[#0e1621]/70 to-[#1a1f2e]/70 -mx-3 sm:mx-0 rounded-xl">
+                  <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-center max-w-6xl mx-auto px-2 sm:px-4">
 
                 <!-- Texto -->
-                <div class="bg-[#0e1621]/60 p-8 rounded-2xl shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+                <div class="bg-[#0e1621]/60 p-4 sm:p-6 md:p-8 rounded-2xl shadow-xl backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
              
-                  <h3 class="text-2xl font-extrabold text-sky-300 mb-4">📒 Libro de Obras Digital</h3>
+                  <h3 class="text-lg sm:text-xl md:text-2xl font-extrabold text-sky-300 mb-3 sm:mb-4">📒 Libro de Obras Digital</h3>
                   <p class="text-base text-gray-100 leading-relaxed mb-6">Aplicación <span class="text-sky-400 font-medium">mobile-first</span> 
                          para registro de entregas en terreno. Incluye formularios dinámicos, 
                          fotografías, firmas y generación de actas PDF. Inspirada en flujos reales de     
                      <span class="italic">control de calidad</span> en obras.
                   </p>
-                  <a href="https://github.com/rcidb31/lod" target="_blank"
-                   class="inline-block px-5 py-2 bg-sky-500 text-white rounded-md font-medium hover:bg-sky-400 transition-colors duration-200">
-                   Ver más →
-                  </a>        
                   <!-- Tecnologías -->
-                  <div class="flex items-center gap-4 mt-6">
+                  <div class="flex items-center gap-4 mb-6">
                      <img src="/angular.png" alt="Angular" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="Angular" loading="lazy">
                      <img src="/Net.png" alt=".NET" class="h-8 w-8 md:h-10 md:w-10 object-contain" title=".NET" loading="lazy">
                   </div>
+                  <a href="https://github.com/rcidb31/lod" target="_blank"
+                   class="inline-block px-5 py-2 bg-sky-500 text-white rounded-md font-medium hover:bg-sky-400 transition-colors duration-200">
+                   Ver más →
+                  </a>
                 </div>
                 <!-- Imagen -->
                 <div class="flex justify-center">
@@ -67,36 +67,36 @@ import Presentacion from '../components/Presentacion.tsx';
                 <!-- Imagen -->
                 </section>
                 <!-- Proyectos realizados -->
-                <section id="pro" class="mt-40">
-                    <h2 class="flex justify-center items-center text-2xl ont-extrabold text-center pb-2 mb-20 animate-on-scroll" data-animation="animate__pulse">
-						 <svg xmlns="http://www.w3.org/2000/svg" 
-                             fill="none" 
-                             viewBox="0 0 24 24" 
-                             stroke-width="1.5" 
-                             stroke="currentColor" 
-                             class="w-10 h-10 sm:w-12 sm:h-12 text-sky-400 flex-shrink-0">
+                <section id="pro" class="mt-12 sm:mt-20 -mx-3 sm:mx-0">
+                    <h2 class="flex justify-center items-center text-lg sm:text-xl md:text-2xl font-extrabold text-center pb-2 mb-6 sm:mb-10 animate-on-scroll" data-animation="animate__pulse">
+						 <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke-width="1.5"
+                             stroke="currentColor"
+                             class="w-8 h-8 sm:w-12 sm:h-12 text-sky-400 flex-shrink-0">
                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5h6l1.5 1.5h10.5V18A1.5 1.5 0 0 1 19.5 19.5H4.5A1.5 1.5 0 0 1 3 18V7.5z" />
                           </svg>
-					     	  <span class="ml-6 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
-						      Proyectos 
+					     	  <span class="ml-2 sm:ml-6 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
+						      Proyectos
 						     </span>
                     </h2>
-                 <div class="flex flex-wrap mx-2 justify-center">  
+                 <div class="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-4 px-1 sm:px-4">
 							<!-- blog  -->
-	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-					<div class="p-4 group relative overflow-hidden">
+	        			<div class="">
+					<div class="p-2 sm:p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/blog.webp" alt="Proyecto blog" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
+						<img src="/blog.webp" alt="Proyecto blog" class="w-full h-32 sm:h-52 object-cover rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
-						<h3 class="text-center text-white text-xl font-bold mb-1">Blog Personal</h3>
-						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> Astro + taiwind </p>
+						<h3 class="text-center text-white text-xs sm:text-lg font-bold mb-1 leading-tight">Blog Personal</h3>
+						<p class="text-center text-[10px] sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 leading-tight">Astro + tailwind</p>
           <!-- Logos de tecnologías -->
-         <div class="flex justify-center gap-6 mt-3">
-            <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
-              <img src="/astro.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro" loading="lazy">
+         <div class="flex justify-center gap-3 sm:gap-6 mt-2 sm:mt-3">
+            <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
+              <img src="/astro.png" alt="Astro" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="Astro" loading="lazy">
             </div>
-            <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-              <img src="/tailwind.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS" loading="lazy">
+            <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
+              <img src="/tailwind.png" alt="Tailwind CSS" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="Tailwind CSS" loading="lazy">
             </div>
           </div>
 					<!-- Git-->
@@ -106,17 +106,17 @@ import Presentacion from '../components/Presentacion.tsx';
 					 </div>
 	        		  </div>    
 	        			<!-- Arkanoid JS  -->
-	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-					<div class="p-4 group relative overflow-hidden">
+	        			<div class="">
+					<div class="p-2 sm:p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/arka.webp" alt="Proyecto js" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
+						<img src="/arka.webp" alt="Proyecto js" class="w-full h-32 sm:h-52 object-cover rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
-						<h3 class="text-center text-white text-xl font-bold mb-1">Arkanoid Midu</h3>
-						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> JS Canvas Sprite </p>
+						<h3 class="text-center text-white text-xs sm:text-lg font-bold mb-1 leading-tight">Arkanoid Midu</h3>
+						<p class="text-center text-[10px] sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 leading-tight">JS Canvas Sprite</p>
 				<!-- Logos de tecnologías -->
-           <div class="flex justify-center gap-6 mt-3">
-              <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-                <img src="/javascript.png" alt="JavaScript" class="h-8 w-8 object-contain" title="JavaScript" loading="lazy">
+           <div class="flex justify-center gap-3 sm:gap-6 mt-2 sm:mt-3">
+              <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
+                <img src="/javascript.png" alt="JavaScript" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="JavaScript" loading="lazy">
               </div>
             </div>				
 						<!-- Git-->
@@ -126,20 +126,20 @@ import Presentacion from '../components/Presentacion.tsx';
 					</div>
 	        		    </div>    
 	        		<!-- Taxiaerovia web -->
-	        			 <div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-					<div class="p-4 group relative overflow-hidden">
+	        			 <div class="">
+					<div class="p-2 sm:p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/taxiaerovia.jpg" alt="Proyecto Taxi Aeropuerto" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
+						<img src="/taxiaerovia.jpg" alt="Proyecto Taxi Aeropuerto" class="w-full h-32 sm:h-52 object-cover rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
-						<h3 class="text-center text-white text-xl font-bold mb-1">Web Cliente Taxi</h3>
-						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">WebTaxis Aereopuerto</p>
+						<h3 class="text-center text-white text-xs sm:text-lg font-bold mb-1 leading-tight">Web Cliente Taxi</h3>
+						<p class="text-center text-[10px] sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 leading-tight">WebTaxis Aereopuerto</p>
 					                        <!-- Logos de tecnologías -->
-                       <div class="flex justify-center gap-6 mt-3">
-                          <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
-                            <img src="/javascript.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro">
+                       <div class="flex justify-center gap-3 sm:gap-6 mt-2 sm:mt-3">
+                          <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
+                            <img src="/javascript.png" alt="JavaScript" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="JavaScript" loading="lazy">
                           </div>
-                          <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-                            <img src="/trello.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS">
+                          <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
+                            <img src="/trello.png" alt="Trello" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="Trello" loading="lazy">
                           </div>
                         </div>
 						<!-- Git Taxi-->
@@ -149,20 +149,20 @@ import Presentacion from '../components/Presentacion.tsx';
 					 </div>
 	        		     </div>    
 	        		<!-- Css Bulma -->
-	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-						<div class=" p-4 group relative overflow-hidden">
+	        			<div class="">
+						<div class="p-2 sm:p-4 group relative overflow-hidden">
 							<div class="flex justify-center">
-								<img src="/Bulma.jpg" alt="Proyecto Bulma Framework" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
+								<img src="/Bulma.jpg" alt="Proyecto Bulma Framework" class="w-full h-32 sm:h-52 object-cover rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 							</div>
-								<h3 class="text-center text-white text-xl font-bold mb-1"> Bulma Framework</h3>
-								<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">Certificacion CSS Bulma </p>			
+								<h3 class="text-center text-white text-xs sm:text-lg font-bold mb-1 leading-tight">Bulma Framework</h3>
+								<p class="text-center text-[10px] sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 leading-tight">Cert. CSS Bulma</p>			
         			<!-- Logos de tecnologías -->
-                               <div class="flex justify-center gap-6 mt-3">
-                                  <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
-                                    <img src="/bulma.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro">
+                               <div class="flex justify-center gap-3 sm:gap-6 mt-2 sm:mt-3">
+                                  <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
+                                    <img src="/bulma.png" alt="Bulma" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="Bulma" loading="lazy">
                                   </div>
-                                  <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-                                    <img src="/trello.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS">
+                                  <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
+                                    <img src="/trello.png" alt="Trello" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="Trello" loading="lazy">
                                   </div>
                                 </div>			
         						<!-- Github Web-->
@@ -172,20 +172,20 @@ import Presentacion from '../components/Presentacion.tsx';
 						</div>
 	        			</div>
 	        		<!-- Web Desing -->
-	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-					<div class=" p-4 group relative overflow-hidden">
+	        			<div class="">
+					<div class="p-2 sm:p-4 group relative overflow-hidden">
 					<div class="flex justify-center">
-						<img src="/blog5.jpg" alt="Proyecto Web Design" class="w-auto h-52 rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
+						<img src="/blog5.jpg" alt="Proyecto Web Design" class="w-full h-32 sm:h-52 object-cover rounded mb-2 transform transition-transform duration-300 group-hover:scale-110" loading="lazy">
 					</div>
-						<h3 class="text-center text-white  text-xl font-bold mb-1">Cert. Web Desing</h3>
-						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400"> HTML + Css web Desing</p>
+						<h3 class="text-center text-white text-xs sm:text-lg font-bold mb-1 leading-tight">Cert. Web Design</h3>
+						<p class="text-center text-[10px] sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 leading-tight">HTML + CSS</p>
 				 <!-- Logos de tecnologías -->
-          <div class="flex justify-center gap-6 mt-3">
-             <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
-               <img src="/html.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro">
+          <div class="flex justify-center gap-3 sm:gap-6 mt-2 sm:mt-3">
+             <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
+               <img src="/html.png" alt="HTML" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="HTML">
              </div>
-             <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-               <img src="/css.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS">
+             <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
+               <img src="/css.png" alt="CSS" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="CSS">
              </div>
            </div>
 				<!-- Github Web-->
@@ -195,20 +195,20 @@ import Presentacion from '../components/Presentacion.tsx';
 					</div>
 	        			</div>
                     <!-- React -->
-	        			<div class="w-full md:w-1/2 lg:w-1/3 px-2 mb-4">
-					<div class=" p-4 group relative overflow-hidden">
+	        			<div class="">
+					<div class="p-2 sm:p-4 group relative overflow-hidden">
 						<div class="flex justify-center">
-						<img src="/calcu.jpg" alt="Proyecto Calculadora React" class="w-auto h-52 rounded mb-2 transform transition-transform duration-500 ease-in-out group-hover:scale-110" loading="lazy">
+						<img src="/calcu.jpg" alt="Proyecto Calculadora React" class="w-full h-32 sm:h-52 object-cover rounded mb-2 transform transition-transform duration-500 ease-in-out group-hover:scale-110" loading="lazy">
 						</div>
-						<h3 class="text-center text-white text-xl font-bold mb-1">Cert - React</h3>
-						<p class="text-center bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">Calculadora Cert cursera</p>
+						<h3 class="text-center text-white text-xs sm:text-lg font-bold mb-1 leading-tight">Cert - React</h3>
+						<p class="text-center text-[10px] sm:text-sm bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400 leading-tight">Calculadora Coursera</p>
 										 <!-- Logos de tecnologías -->
-          <div class="flex justify-center gap-6 mt-3">
-             <div class="p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
-               <img src="/react.png" alt="Astro" class="h-8 w-8 object-contain" title="Astro">
+          <div class="flex justify-center gap-3 sm:gap-6 mt-2 sm:mt-3">
+             <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-violet-500/20 hover:scale-110 transition-all duration-300">
+               <img src="/react.png" alt="React" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="React">
              </div>
-             <div class="p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
-               <img src="/css.png" alt="Tailwind CSS" class="h-8 w-8 object-contain" title="Tailwind CSS">
+             <div class="p-1 sm:p-2 rounded-full bg-white/10 hover:bg-sky-500/20 hover:scale-110 transition-all duration-300">
+               <img src="/css.png" alt="CSS" class="h-6 w-6 sm:h-8 sm:w-8 object-contain" title="CSS">
              </div>
            </div>   
             <!-- Github React Link -->
@@ -219,10 +219,10 @@ import Presentacion from '../components/Presentacion.tsx';
 	        			</div>
                 </section>
 			        	<!-- Experiencia laboral linea de tiempo-->
-			         	<section id="lineatiempo" class="mt-32">
-					      <div class="container mx-auto px-6">
+			         	<section id="lineatiempo" class="mt-12 sm:mt-20 -mx-3 sm:mx-0">
+					      <div class="container mx-auto px-3 sm:px-6">
 						<!-- Título de la sección -->
-						<div class="mb-10 animate-on-scroll" data-animation="animate__fadeInUp">
+						<div class="mb-6 sm:mb-10 animate-on-scroll" data-animation="animate__fadeInUp">
 							<div class="flex items-center justify-center gap-3 mb-2">
 								<div class="h-px w-8 bg-gradient-to-r from-transparent to-sky-400"></div>
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-sky-400">
@@ -230,34 +230,30 @@ import Presentacion from '../components/Presentacion.tsx';
 								</svg>
 								<div class="h-px w-8 bg-gradient-to-l from-transparent to-violet-500"></div>
 							</div>
-							<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+							<h2 class="text-lg sm:text-xl md:text-2xl font-bold text-center">
 								<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-400 to-violet-500">
 									Experiencia Laboral
 								</span>
 							</h2>
 						</div>			
 						<!-- Línea de tiempo -->
-						 <div class="relative border-l border-gray-700 pl-6">
+						 <div class="relative border-l-0 sm:border-l sm:border-gray-700 pl-0 sm:pl-6">
 							<!-- Primer evento -->
-                <div class="mb-10 ml-4 relative">
-							  	<h3 class="text-lg font-semibold text-sky-300">	Septiembre 2025 - actualidad</h3>
-							      	<p class="text-white">Administrador plataformas chatbot IA servicio al cliente,
-							    		<a href="https://www.lider.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Wallmart Chile 
-								      </a>front & back oficce RRSS whatsapp<p>
-                      <img src="/wall.png" alt="Walmart Chile" class="mt-4 rounded-lg max-w-xs md:max-w-sm w-auto h-auto mx-auto transform transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-sky-500/50" loading="lazy">
-								  	<br>									
-									<br>
-						   <div class="mb-10 ml-4 relative">
-							  	<h3 class="text-lg font-semibold text-sky-300">	Diciembre 2024 - Julio 2025 </h3>
-							        	<p class="text-white">Administrador de Construccion planta cosmetica de 
-								      	<a href="https://www.arensburg.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Arensburg Chile 
-								       </a>Administracion indpendiente de proyectos de construccion terminaciones.</p>
-								  	 <br>									
+                <div class="mb-8 sm:mb-10 ml-0 sm:ml-4 relative">
+							  	<h3 class="text-base sm:text-lg font-semibold text-sky-300">Septiembre 2025 - actualidad</h3>
+							      	<p class="text-white text-sm sm:text-base">Administrador plataformas chatbot IA servicio al cliente,
+							    		<a href="https://www.lider.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Wallmart Chile</a> front & back oficce RRSS whatsapp</p>
+                      <img src="/wall.png" alt="Walmart Chile" class="mt-4 rounded-lg w-full max-w-none sm:max-w-xs md:max-w-sm h-auto object-contain transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/50" loading="lazy">
+								  	<br>
+						   <div class="mb-8 sm:mb-10 ml-0 sm:ml-4 relative">
+							  	<h3 class="text-base sm:text-lg font-semibold text-sky-300">Diciembre 2024 - Julio 2025</h3>
+							        	<p class="text-white text-sm sm:text-base">Administrador de Construccion planta cosmetica de
+								      	<a href="https://www.arensburg.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600"> Arensburg Chile</a> Administracion indpendiente de proyectos de construccion terminaciones.</p>
 								  	<br>
 							 <!-- Slider de imágenes mejorado -->
-							 <div class="mt-5 relative">
+							 <div class="mt-4 sm:mt-5 relative -mx-3 sm:mx-0">
 								  <!-- Hint visual para indicar que se puede deslizar (solo visible en móviles) -->
-								  <div class="text-center mb-3 sm:hidden">
+								  <div class="text-center mb-2 sm:hidden">
 								    <p class="text-xs text-gray-400 flex items-center justify-center gap-2 animate-pulse">
 								      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18"></path>
@@ -268,27 +264,27 @@ import Presentacion from '../components/Presentacion.tsx';
 								      </svg>
 								    </p>
 								  </div>
-								  
+
 								  <!-- Contenedor con gradientes laterales para indicar scroll -->
 								  <div class="relative slider-container">
 								    <!-- Gradiente izquierdo (aparece cuando hay scroll a la izquierda) -->
-								    <div id="gradient-left" class="absolute left-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-r from-[#0e1621] to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300"></div>
+								    <div id="gradient-left" class="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#0e1621] to-transparent z-10 pointer-events-none opacity-0 transition-opacity duration-300"></div>
 								    <!-- Gradiente derecho (indica que hay más contenido) -->
-								    <div id="gradient-right" class="absolute right-0 top-0 bottom-0 w-12 sm:w-16 bg-gradient-to-l from-[#0e1621] to-transparent z-10 pointer-events-none transition-opacity duration-300"></div>
-								    
+								    <div id="gradient-right" class="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#0e1621] to-transparent z-10 pointer-events-none transition-opacity duration-300"></div>
+
 								    <!-- Contenedor del slider -->
-								    <div id="slider-scroll" class="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory px-4 cursor-grab" 
+								    <div id="slider-scroll" class="overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory px-2 sm:px-4 cursor-grab"
 								         style="scrollbar-width: none; -ms-overflow-style: none;"
 								         onscroll="updateGradients(this)">
-								      <div class="slider-gallery flex gap-4">
-								        <img src="/planta.webp" alt="Vista de la planta 1" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/2.png" alt="Vista de la planta 2" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/3.png" alt="Vista de la planta 3" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/4.png" alt="Vista de la planta 4" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/5.webp" alt="Vista de la planta 5" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/6.webp" alt="Vista de la planta 6" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/7.webp" alt="Vista de la planta 7" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
-								        <img src="/8.webp" alt="Vista de la planta 8" class="slider-image snap-center flex-shrink-0 w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								      <div class="slider-gallery flex gap-3 sm:gap-4">
+								        <img src="/planta.webp" alt="Vista de la planta 1" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/2.png" alt="Vista de la planta 2" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/3.png" alt="Vista de la planta 3" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/4.png" alt="Vista de la planta 4" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/5.webp" alt="Vista de la planta 5" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/6.webp" alt="Vista de la planta 6" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/7.webp" alt="Vista de la planta 7" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
+								        <img src="/8.webp" alt="Vista de la planta 8" class="slider-image snap-center flex-shrink-0 w-[85vw] h-[85vw] max-w-[320px] max-h-[320px] sm:w-[340px] sm:h-[340px] md:w-[420px] md:h-[420px] lg:w-[500px] lg:h-[500px] object-contain bg-gray-900/30 rounded-lg" loading="lazy">
 								      </div>
 								    </div>
 								  </div>
@@ -313,19 +309,19 @@ import Presentacion from '../components/Presentacion.tsx';
 							  </script>								
 						  </div>
 							<!-- Segundo evento -->
-							  <div class="mb-10 ml-4">
-							  	<div class="absolute -left-5 top-1 w-4 h-4 bg-blue-600 rounded-full animate-on-scroll" data-animation="animate__rubberBand"></div>
-							  	<h3 class="text-lg font-semibold text-sky-300">Marzo 2016 - Enero 2022</h3>
-							  	<p class="text-black-300">
+							  <div class="mb-8 sm:mb-10 ml-0 sm:ml-4">
+							  	<div class="hidden sm:block absolute -left-5 top-1 w-4 h-4 bg-blue-600 rounded-full animate-on-scroll" data-animation="animate__rubberBand"></div>
+							  	<h3 class="text-base sm:text-lg font-semibold text-sky-300">Marzo 2016 - Enero 2022</h3>
+							  	<p class="text-white text-sm sm:text-base">
 									Trabajé como Administrador del Software Calidad Cloud y Control de Calidad en
-									<a href="https://fundamenta.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600">Constructora ICF</a>, 
-									Anteriormente, en 
-									<a href="https://www.santolaya.cl" target="_blank" class="text-blue-400 underline hover:text-blue-600">Constructora Santolaya</a>, 
+									<a href="https://fundamenta.cl/" target="_blank" class="text-blue-400 underline hover:text-blue-600">Constructora ICF</a>,
+									Anteriormente, en
+									<a href="https://www.santolaya.cl" target="_blank" class="text-blue-400 underline hover:text-blue-600">Constructora Santolaya</a>,
 									desempeñé el rol de Inspector de Calidad en Terreno supervisando normativas y sistemas de autocontrol.
 							  	</p>
 						<!-- Slider de imágenes mejorado -->
 				        <section>
-				           <div class="mt-20 relative w-full max-w-4xl h-auto mx-auto px-4">
+				           <div class="mt-8 sm:mt-12 relative w-full max-w-4xl h-auto mx-auto px-2 sm:px-4">
 								<!-- Contenedor del marco mejorado -->
 								<div class="relative p-3 sm:p-4 border-2 border-sky-400/30 rounded-3xl shadow-2xl bg-gradient-to-br from-[#0e1621]/90 via-[#1a1f2e]/90 to-[#0e1621]/90 backdrop-blur-md">
 									<!-- Efecto de brillo sutil -->
@@ -418,9 +414,9 @@ import Presentacion from '../components/Presentacion.tsx';
 			        	</div>
 			        	</section>
 	                    <!-- About Me-->
-			        	<section id="aboutme" class="pt-12 my-20 mt-16">
-                  <div class="container pb-3 px-3 animate-on-scroll" data-animation="animate__heartBeat">
-                    <h3 class="flex justify-center items-center gap-3 text-2xl sm:text-3xl md:text-4xl font-semibold text-center pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+			        	<section id="aboutme" class="mt-12 sm:mt-20">
+                  <div class="container pb-3 px-1 sm:px-3 animate-on-scroll" data-animation="animate__heartBeat">
+                    <h3 class="flex justify-center items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl font-semibold text-center pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
                       <svg xmlns="http://www.w3.org/2000/svg" 
                            fill="none" 
                            viewBox="0 0 24 24" 
@@ -436,9 +432,9 @@ import Presentacion from '../components/Presentacion.tsx';
                   </div>                	
 					<!-- Contenedor de texto -->
 					<div class="flex justify-center">
-						<div class="w-full max-w-screen-sm sm:max-w-screen-md lg:max-w-screen-lg px-4 md:px-6 mb-4 mt-7">
+						<div class="w-full max-w-screen-sm sm:max-w-screen-md lg:max-w-screen-lg px-2 sm:px-4 md:px-6 mb-4 mt-4 sm:mt-7">
 							<div class="md:p-8 lg:p-10">
-								<h3 class="text-black-300 text-sm sm:text-base md:text-lg leading-relaxed font-light">
+								<p class="text-gray-200 text-sm sm:text-base md:text-lg leading-relaxed font-light">
 								"Optimicé procesos de control de calidad con el software Calidad Cloud, asegurando el cumplimiento 
                  de normas chilenas. un sistema de inspecciones en línea y offline, genere
 								 reportes semanales para detectar fallas y proponer mejoras. 
@@ -454,16 +450,16 @@ import Presentacion from '../components/Presentacion.tsx';
 					</div>
 			        	</section>		
                      <!-- Certificaciones -->
-                <section id="certifications" class="my-16 px-4">
-                  <h2 class="flex justify-center items-center gap-3 text-2xl sm:text-3xl md:text-4xl font-extrabold text-center pb-6 animate-on-scroll" 
+                <section id="certifications" class="mt-12 sm:mt-20 px-1 sm:px-4">
+                  <h2 class="flex justify-center items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl font-extrabold text-center pb-4 sm:pb-6 animate-on-scroll" 
                     data-animation="animate__flipInX">
                     <!-- Ícono -->
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                      class="w-10 h-10 md:w-12 md:h-12 text-sky-400">
+                      class="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-sky-400">
                       <path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
                     </svg>
                     <!-- Texto -->
-                    <span class="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-violet-400">
+                    <span class="ml-1 sm:ml-2 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-violet-400">
                       Certificaciones
                     </span>
                   </h2>
@@ -485,47 +481,47 @@ import Presentacion from '../components/Presentacion.tsx';
                 
                   <!-- Grid -->
                   <div id="cert-grid" class="flex justify-center">
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full max-w-6xl">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8 w-full max-w-6xl">
                       <!-- 2025 -->
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
                         <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="NetCore 9">
-                          <img src="/Net.png" alt="Certificación NetCore" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/Net.png" alt="Certificación NetCore" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
-                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                          NetCore 9 <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">Proceso</span>
+                        <figcaption class="text-white/90 italic text-xs sm:text-sm text-center group-hover:text-white group-hover:scale-105 transition">
+                          NetCore 9 <span class="hidden sm:inline ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">Proceso</span>
                         </figcaption>
                       </figure> 
                 
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2025">
                         <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="Angular">
-                          <img src="/angular.png" alt="Certificación Angular" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/angular.png" alt="Certificación Angular" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
-                        <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
-                          Angular <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">Proceso</span>
+                        <figcaption class="text-white/90 italic text-xs sm:text-sm text-center group-hover:text-white group-hover:scale-105 transition">
+                          Angular <span class="hidden sm:inline ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">Proceso</span>
                         </figcaption>
                       </figure>               
                       <!-- 2024 -->
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
                         <a href="https://coursera.org/share/d908350e4e4abc9f75902c57c136a297" target="_blank" aria-label="React">
-                          <img src="/react.webp" alt="Certificación React" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/react.webp" alt="Certificación React" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           React <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
                         </figcaption>
                       </figure>
                 
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
                         <a href="https://www.credly.com/badges/048cbeb3-f2a4-4879-b696-092e8152223a" target="_blank" aria-label="Cisco">
-                          <img src="/cisco.webp" alt="Certificación Cisco" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/cisco.webp" alt="Certificación Cisco" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           Cisco <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
                         </figcaption>
                       </figure>
                       
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2024">
                         <a href="https://www.credly.com/badges/2dd16662-3b17-4e52-b501-64b22be46e5e" target="_blank" aria-label="Node.js">
-                          <img src="/node.webp" alt="Certificación Node.js" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/node.webp" alt="Certificación Node.js" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           Node.js Intensive <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2024</span>
@@ -533,45 +529,45 @@ import Presentacion from '../components/Presentacion.tsx';
                       </figure>
                 
                       <!-- 2023 -->
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
                         <a href="https://www.credly.com/badges/a32e7174-3a73-4bff-96cc-a7c35c2ab87a" target="_blank" aria-label="JavaScript">
-                          <img src="/javascript.webp" alt="Certificación JavaScript" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/javascript.webp" alt="Certificación JavaScript" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           JavaScript <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
                         </figcaption>
                       </figure>
                 
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
                         <a href="https://www.credly.com/badges/5c34bbfb-e407-4ebb-a586-3239b47168f0" target="_blank" aria-label="MongoDB">
-                          <img src="/mongodb.webp" alt="Certificación MongoDB" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/mongodb.webp" alt="Certificación MongoDB" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           MongoDB <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
                         </figcaption>
                       </figure>
                 
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
                         <a href="https://www.credly.com/badges/3d69a6d9-3869-4b68-a640-7973d59684a0" target="_blank" aria-label="Bulma CSS">
-                          <img src="/bulma.webp" alt="Certificación Bulma" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/bulma.webp" alt="Certificación Bulma" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           Bulma <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
                         </figcaption>
                       </figure>
                 
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
                         <a href="https://www.credly.com/badges/3b7e959b-0771-431c-9602-6db178b914d8" target="_blank" aria-label="Desarrollo Web">
-                          <img src="/web.webp" alt="Certificación Desarrollo Web" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/web.webp" alt="Certificación Desarrollo Web" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           Desarrollo Web <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
                         </figcaption>
                       </figure>
                 
-                      <figure class="group flex flex-col items-center p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
+                      <figure class="group flex flex-col items-center p-2 sm:p-4 rounded-2xl bg-white/5 border border-white/10 shadow-sm hover:shadow-md transition transform hover:scale-105" data-year="2023">
                         <a href="https://www.credly.com/badges/8b1d97cd-2e1a-4022-8b6a-cd5b06d0b4c9" target="_blank" aria-label="Git">
-                          <img src="/git.webp" alt="Certificación Git" class="h-28 w-28 rounded mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
+                          <img src="/git.webp" alt="Certificación Git" class="h-20 w-20 sm:h-28 sm:w-28 rounded mb-2 sm:mb-4 object-cover group-hover:scale-110 transition" loading="lazy">
                         </a>
                         <figcaption class="text-white/90 italic text-sm group-hover:text-white group-hover:scale-105 transition">
                           Git <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-white/10 border border-white/10">2023</span>
@@ -585,58 +581,52 @@ import Presentacion from '../components/Presentacion.tsx';
                   </p>
                 </section>                                
                 <!-- Sección de Estudios-->
-                <section id="education" class="my-16">
-                <section id="education" class="my-16">
-                 <h2 class="flex justify-center items-center gap-3 text-4xl font-semibold text-center pb-6 text-gray-100 animate-on-scroll" 
+                <section id="education" class="mt-12 sm:mt-20">
+                 <h2 class="flex justify-center items-center gap-2 sm:gap-3 text-lg sm:text-xl md:text-2xl font-semibold text-center pb-4 sm:pb-6 text-gray-100 animate-on-scroll"
                    data-animation="animate__shakeY">
                    <!-- Ícono -->
-                   <svg xmlns="http://www.w3.org/2000/svg" 
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke-width="1.5" 
-                        stroke="currentColor" 
-                        class="size-8 text-purple-300">
-                     <path stroke-linecap="round" stroke-linejoin="round" 
+                   <svg xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-6 h-6 sm:w-8 sm:h-8 text-purple-300">
+                     <path stroke-linecap="round" stroke-linejoin="round"
                        d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0-6l6.16-3.422M12 14L5.84 10.578" />
                    </svg>
                    <!-- Texto -->
-                   <span class="ml-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-300">
+                   <span class="ml-2 sm:ml-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-300">
                      Mis Estudios
                    </span>
                  </h2>
-                    <div class="flex justify-center mt-8">
-                        <div class="space-y-8 max-w-4xl">
-                        <div class="bg-white-800 p-6">
-                          <h3 class="text-2xl font-semibold text-sky-300">Analista Programador</h3>
-                             <p class="text-green-300 rounded-lg shadow">Universidad Mayor | Enero 2024 - Marzo 2026</p>
-                             <p class="text-black-300 mt-4">"Profesionales capacitados para diseñar, gestionar y desarrollar 
-								              soluciones tecnológicas con herramientas y buenas prácticas, 
-								               respondiendo a necesidades organizacionales en sectores de alto crecimiento."</p>
+                    <div class="flex justify-center mt-4 sm:mt-8 px-2 sm:px-4">
+                        <div class="space-y-4 sm:space-y-6 max-w-4xl w-full">
+                        <div class="p-3 sm:p-6">
+                          <h3 class="text-base sm:text-lg md:text-xl font-semibold text-sky-300">Analista Programador</h3>
+                             <p class="text-emerald-400 text-sm sm:text-base">Universidad Mayor | Enero 2024 - Marzo 2026</p>
+                             <p class="text-gray-200 mt-2 sm:mt-4 text-sm sm:text-base">"Profesionales capacitados para diseñar, gestionar y desarrollar soluciones tecnológicas con herramientas y buenas prácticas, respondiendo a necesidades organizacionales en sectores de alto crecimiento."</p>
                      </div>
-                        <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-sky-300">Bootcamp Fullstack Javascript</h3>
-                            <p class="text-green-300 rounded-lg shadow">Programadores Chile | Abril 2021 -  Abril 2022</p>
-                            <p class="text-black-300 mt-4">  Habilidades esenciales que respaldan conocimiento fundamental en JavaScript tanto para herramientas de frontend como backend </p>
+                        <div class="p-3 sm:p-6">
+                            <h3 class="text-base sm:text-lg md:text-xl font-semibold text-sky-300">Bootcamp Fullstack Javascript</h3>
+                            <p class="text-emerald-400 text-sm sm:text-base">Programadores Chile | Abril 2021 - Abril 2022</p>
+                            <p class="text-gray-200 mt-2 sm:mt-4 text-sm sm:text-base">Habilidades esenciales que respaldan conocimiento fundamental en JavaScript tanto para herramientas de frontend como backend.</p>
                         </div>
-						<div class="p-6 ">
-                            <h3 class="text-2xl font-semibold text-sky-300">Tecnologo en Construccion
-							</h3>
-                            <p class="text-green-300 rounded-lg shadow">Universidad de Santiago de Chile | Marzo 2013 - dic 2016</p>
-                            <p class="text-black-300 mt-4">
-								"Profesional capaz de gestionar recursos humanos, materiales y datos técnicos; supervisar el cumplimiento de especificaciones, 
-								estándares de calidad, seguridad y normativas, asegurando la correcta ejecución del proyecto."  </p>
+						<div class="p-3 sm:p-6">
+                            <h3 class="text-base sm:text-lg md:text-xl font-semibold text-sky-300">Tecnólogo en Construcción</h3>
+                            <p class="text-emerald-400 text-sm sm:text-base">Universidad de Santiago de Chile | Marzo 2013 - Dic 2016</p>
+                            <p class="text-gray-200 mt-2 sm:mt-4 text-sm sm:text-base">"Profesional capaz de gestionar recursos humanos, materiales y datos técnicos; supervisar el cumplimiento de especificaciones, estándares de calidad, seguridad y normativas, asegurando la correcta ejecución del proyecto."</p>
                             </div>
                         </div>
                     </div>
                 </section>
 			        	<!-- gracias-->
-			        	<section id="closing" class="mt-16">	
+			        	<section id="closing" class="mt-12 sm:mt-20">	
 				      	<div class="container mx-auto text-center">
-					 <h2 class="text-3xl font-semibold text-center pb-6 text-gray-100 animate-on-scroll" data-animation="animate__shakeY">
+					 <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-center pb-4 sm:pb-6 text-gray-100 animate-on-scroll" data-animation="animate__shakeY">
 							<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-pink-500">
 								Gracias por visitar mi portafolio
 							</span></h2>
-						<p class="text-lg mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+						<p class="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 text-gray-200 animate__animated animate__fadeInUp animate__delay-1s">
 							¿Listo para comenzar tu próximo proyecto? ¡Contáctame!
 						</p>
 						<!-- iconos redes sociales -->
@@ -649,7 +639,7 @@ import Presentacion from '../components/Presentacion.tsx';
 						</a>
 					 </div>
 						<button>
-						<a href="mailto:rcidb31@gmail.com" class=" mt-4 inline-block  hover:bg-blue-400 text-balance font-bold py-3 px-6 rounded-full transition-transform duration-300 transform hover:scale-110 animate__animated animate__pulse animate__infinite">
+						<a href="mailto:rcidb31@gmail.com" class="mt-4 inline-block bg-sky-500 hover:bg-sky-400 text-white font-bold py-3 px-6 rounded-full transition-transform duration-300 transform hover:scale-110 animate__animated animate__pulse animate__infinite">
 							Vamos a Trabajar
 						</a>
 						</button>
@@ -659,8 +649,8 @@ import Presentacion from '../components/Presentacion.tsx';
 					      </div>
 			        	</section>
 			        	<!-- Redes sociales y contenido -->
-                <section> 
-                <h2  class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-8 animate-on-scroll" 
+                <section class="mt-12 sm:mt-20 mb-8">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-extrabold text-center mb-4 sm:mb-6 animate-on-scroll" 
                    data-animation="animate__fadeInUp">
                    <!-- Mobile: 2 líneas -->
                    <span class="block md:hidden bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
@@ -674,7 +664,7 @@ import Presentacion from '../components/Presentacion.tsx';
                      📡 Encuéntrame en redes
                    </span>
                  </h2>
-                   <p class="text-center text-gray-300 max-w-2xl mx-auto mb-10 text-lg">
+                   <p class="text-center text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-10 text-sm sm:text-base md:text-lg px-2">
                    Estare compartiendo contenido sobre mi transición de la construcción 🚧 al código 👨🏻‍💻. ¡Sígueme para ver más!
                    </p>
                    <div class="flex flex-wrap justify-center gap-6">

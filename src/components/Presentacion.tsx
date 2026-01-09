@@ -20,8 +20,8 @@ const Presentacion = () => {
   }, [isModalOpen]);
 
   return (
-    <section id="presentacion" className="min-h-screen px-6 pt-14">
-      <div className="max-w-4xl mx-auto text-center px-6">
+    <section id="presentacion" className="min-h-screen px-2 sm:px-6 pt-10 sm:pt-14">
+      <div className="max-w-4xl mx-auto text-center px-1 sm:px-6">
         
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans tracking-wide">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500">
@@ -30,12 +30,12 @@ const Presentacion = () => {
         </h1>
         
         <h2 className="font-extralight text-sm sm:text-lg md:text-2xl text-white mb-4 tracking-wide leading-snug min-h-[3rem] flex justify-center items-center animate-glow-reveal">
-          Desarrollador Frontend Jr 🇨🇱
+          Programador JR 🇨🇱
         </h2>
         
-        <p className="text-white text-sm sm:text-lg leading-loose mb-8
+        <p className="text-white text-sm sm:text-lg leading-relaxed sm:leading-loose mb-8
             text-center
-            max-w-sm sm:max-w-2xl mx-auto px-4 opacity-0 animate-fade-in-up"
+            max-w-none sm:max-w-2xl mx-auto px-1 sm:px-4 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '1.5s', animationFillMode: 'forwards' }}>
              Programador con formación universitaria.
              Además cuento con experiencia y estudios en el sector de la construcción. En el año 2017 gestioné el software chileno "Calidad Cloud" en proyectos de construcción,
