@@ -20,6 +20,9 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/log.ico" />
 
+    <!-- Preload imagen de fondo -->
+    <link rel="preload" href="/back.webp" as="image" type="image/webp" />
+
     <!-- Preconnect para Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,7 +106,7 @@ const { title } = Astro.props;
         scroll-behavior: smooth;
     }
     body {
-       background: url('/back.png') no-repeat center top;
+       background: url('/back.webp') no-repeat center top;
        background-size: cover;
        background-color: #1522;
        background-attachment: fixed;
@@ -115,8 +118,23 @@ const { title } = Astro.props;
        content: "";
        position: fixed;
        top: 0; left: 0; width: 100%; height: 100%;
-       background-color: rgba(255, 255, 255, 0.08);
+       background: linear-gradient(
+         125deg,
+         rgba(14, 165, 233, 0.08) 0%,
+         rgba(139, 92, 246, 0.08) 25%,
+         rgba(14, 165, 233, 0.05) 50%,
+         rgba(139, 92, 246, 0.08) 75%,
+         rgba(14, 165, 233, 0.08) 100%
+       );
+       background-size: 400% 400%;
+       animation: gradient-flow 18s ease infinite;
        z-index: -1;
+    }
+
+    @keyframes gradient-flow {
+       0% { background-position: 0% 50%; }
+       50% { background-position: 100% 50%; }
+       100% { background-position: 0% 50%; }
     }
     html, body {
         overflow-x: hidden;
