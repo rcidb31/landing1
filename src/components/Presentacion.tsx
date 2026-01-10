@@ -20,20 +20,20 @@ const Presentacion = () => {
   }, [isModalOpen]);
 
   return (
-    <section id="presentacion" className="px-2 sm:px-6 pt-6 sm:pt-10 pb-4">
+    <section id="presentacion" className="min-h-screen px-2 sm:px-6 pt-10 sm:pt-14">
       <div className="max-w-4xl mx-auto text-center px-1 sm:px-6">
         
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-4 font-sans tracking-wide">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 font-sans tracking-wide">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-violet-500">
             Raúl Cid
           </span>
         </h1>
-
-        <h2 className="font-extralight text-xs sm:text-lg md:text-2xl text-white mb-3 sm:mb-4 tracking-wide leading-snug min-h-[2rem] sm:min-h-[3rem] flex justify-center items-center animate-glow-reveal">
+        
+        <h2 className="font-extralight text-sm sm:text-lg md:text-2xl text-white mb-4 tracking-wide leading-snug min-h-[3rem] flex justify-center items-center animate-glow-reveal">
           Programador JR 🇨🇱
         </h2>
-
-        <p className="text-white text-xs sm:text-base md:text-lg leading-relaxed sm:leading-loose mb-6 sm:mb-8
+        
+        <p className="text-white text-sm sm:text-lg leading-relaxed sm:leading-loose mb-8
             text-center
             max-w-none sm:max-w-2xl mx-auto px-1 sm:px-4 opacity-0 animate-fade-in-up"
             style={{ animationDelay: '1.5s', animationFillMode: 'forwards' }}>

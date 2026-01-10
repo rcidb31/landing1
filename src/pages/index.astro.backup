@@ -68,21 +68,19 @@ import Presentacion from '../components/Presentacion.tsx';
                 </section>
                 <!-- Proyectos realizados -->
                 <section id="pro" class="mt-12 sm:mt-20">
-					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__pulse">
-						<div class="flex items-center justify-center gap-3 mb-2">
-							<div class="h-px w-8 bg-gradient-to-r from-transparent to-sky-400"></div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-sky-400">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-							</svg>
-							<div class="h-px w-8 bg-gradient-to-l from-transparent to-violet-400"></div>
-						</div>
-						<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-400 to-violet-400">
-								Proyectos
-							</span>
-						</h2>
-						<p class="text-center text-gray-400 text-sm sm:text-base mt-2">Trabajos realizados y en desarrollo</p>
-					</div>
+                    <h2 class="flex justify-center items-center text-xl sm:text-2xl md:text-3xl font-extrabold text-center pb-2 mb-8 sm:mb-12 animate-on-scroll" data-animation="animate__pulse">
+						 <svg xmlns="http://www.w3.org/2000/svg" 
+                             fill="none" 
+                             viewBox="0 0 24 24" 
+                             stroke-width="1.5" 
+                             stroke="currentColor" 
+                             class="w-10 h-10 sm:w-12 sm:h-12 text-sky-400 flex-shrink-0">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 7.5h6l1.5 1.5h10.5V18A1.5 1.5 0 0 1 19.5 19.5H4.5A1.5 1.5 0 0 1 3 18V7.5z" />
+                          </svg>
+					     	  <span class="ml-6 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
+						      Proyectos 
+						     </span>
+                    </h2>
                  <div class="flex flex-wrap justify-center">
 							<!-- blog  -->
 	        			<div class="w-full sm:w-1/2 lg:w-1/3 px-1 sm:px-2 mb-4">
@@ -428,21 +426,21 @@ import Presentacion from '../components/Presentacion.tsx';
 						</div>
 	                    <!-- About Me-->
 			        	<section id="aboutme" class="mt-12 sm:mt-20">
-					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__heartBeat">
-						<div class="flex items-center justify-center gap-3 mb-2">
-							<div class="h-px w-8 bg-gradient-to-r from-transparent to-blue-400"></div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-blue-400">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-							</svg>
-							<div class="h-px w-8 bg-gradient-to-l from-transparent to-cyan-400"></div>
-						</div>
-						<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">
-								About Me
-							</span>
-						</h2>
-						<p class="text-center text-gray-400 text-sm sm:text-base mt-2">Mi experiencia en control de calidad</p>
-					</div>                	
+                  <div class="container pb-3 px-3 animate-on-scroll" data-animation="animate__heartBeat">
+                    <h3 class="flex justify-center items-center gap-3 text-xl sm:text-2xl md:text-3xl font-semibold text-center pb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" 
+                           fill="none" 
+                           viewBox="0 0 24 24" 
+                           stroke-width="1.5" 
+                           stroke="currentColor" 
+                           class="w-8 h-8 text-blue-500">
+                        <path stroke-linecap="round" stroke-linejoin="round" 
+                              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Zm-9 12a6 6 0 1 1 12 0H6.75Z" />
+                       </svg>
+                <!-- Texto -->
+                    About Me
+                    </h3>				
+                  </div>                	
 					<!-- Contenedor de texto -->
 					<div class="flex justify-center">
 						<div class="w-full max-w-screen-sm sm:max-w-screen-md lg:max-w-screen-lg px-4 md:px-6 mb-4 mt-7">
@@ -492,7 +490,7 @@ import Presentacion from '../components/Presentacion.tsx';
 								<div class="aspect-video">
 									<iframe
 										class="w-full h-full"
-										src="https://youtu.be/84p-DJa0vDE"
+										src="https://www.youtube.com/embed/VIDEO_ID"
 										title="Presentación personal"
 										frameborder="0"
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -510,21 +508,18 @@ import Presentacion from '../components/Presentacion.tsx';
 					</section>
                      <!-- Certificaciones -->
                 <section id="certifications" class="mt-12 sm:mt-20 px-2 sm:px-4">
-					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__flipInX">
-						<div class="flex items-center justify-center gap-3 mb-2">
-							<div class="h-px w-8 bg-gradient-to-r from-transparent to-emerald-400"></div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-emerald-400">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
-							</svg>
-							<div class="h-px w-8 bg-gradient-to-l from-transparent to-teal-400"></div>
-						</div>
-						<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400">
-								Certificaciones
-							</span>
-						</h2>
-						<p class="text-center text-gray-400 text-sm sm:text-base mt-2">Credenciales y cursos completados</p>
-					</div>
+                  <h2 class="flex justify-center items-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-extrabold text-center pb-4 sm:pb-6 mb-6 sm:mb-8 animate-on-scroll" 
+                    data-animation="animate__flipInX">
+                    <!-- Ícono -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                      class="w-10 h-10 md:w-12 md:h-12 text-sky-400">
+                      <path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Texto -->
+                    <span class="ml-3 bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-blue-500 to-violet-400">
+                      Certificaciones
+                    </span>
+                  </h2>
                   <!-- Filtros por año -->
                   <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8" role="tablist" aria-label="Filtrar certificaciones por año">
                     <button data-filter="all"
@@ -644,21 +639,23 @@ import Presentacion from '../components/Presentacion.tsx';
                 </section>                                
                 <!-- Sección de Estudios-->
                 <section id="education" class="mt-12 sm:mt-20 px-2 sm:px-4">
-					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__fadeInUp">
-						<div class="flex items-center justify-center gap-3 mb-2">
-							<div class="h-px w-8 bg-gradient-to-r from-transparent to-purple-400"></div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-purple-400">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-							</svg>
-							<div class="h-px w-8 bg-gradient-to-l from-transparent to-indigo-400"></div>
-						</div>
-						<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-400 to-blue-400">
-								Mis Estudios
-							</span>
-						</h2>
-						<p class="text-center text-gray-400 text-sm sm:text-base mt-2">Formación académica y bootcamps</p>
-					</div>
+                 <h2 class="flex justify-center items-center gap-2 sm:gap-3 text-xl sm:text-2xl md:text-3xl font-semibold text-center pb-4 sm:pb-6 text-gray-100 animate-on-scroll" 
+                   data-animation="animate__fadeInUp">
+                   <!-- Ícono -->
+                   <svg xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke-width="1.5" 
+                        stroke="currentColor" 
+                        class="size-8 text-purple-300">
+                     <path stroke-linecap="round" stroke-linejoin="round" 
+                       d="M12 14l9-5-9-5-9 5 9 5zm0 0v6m0-6l6.16-3.422M12 14L5.84 10.578" />
+                   </svg>
+                   <!-- Texto -->
+                   <span class="ml-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-300">
+                     Mis Estudios
+                   </span>
+                 </h2>
                     <div class="flex justify-center mt-4 sm:mt-8">
                         <div class="space-y-6 sm:space-y-8 max-w-4xl w-full">
                         <div class="bg-white-800 p-3 sm:p-6">
@@ -682,20 +679,10 @@ import Presentacion from '../components/Presentacion.tsx';
 			        	<!-- gracias-->
 			        	<section id="closing" class="mt-12 sm:mt-20 px-2">
 				      	<div class="container mx-auto text-center">
-					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__shakeY">
-						<div class="flex items-center justify-center gap-3 mb-2">
-							<div class="h-px w-8 bg-gradient-to-r from-transparent to-rose-400"></div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-rose-400">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-							</svg>
-							<div class="h-px w-8 bg-gradient-to-l from-transparent to-pink-400"></div>
-						</div>
-						<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-rose-400 via-pink-400 to-fuchsia-400">
+					 <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-center pb-4 sm:pb-6 text-gray-100 animate-on-scroll" data-animation="animate__shakeY">
+							<span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-pink-500">
 								Gracias por visitar mi portafolio
-							</span>
-						</h2>
-					</div>
+							</span></h2>
 						<p class="text-lg mb-8 text-gray-100 animate__animated animate__fadeInUp animate__delay-1s">
 							¿Listo para comenzar tu próximo proyecto? ¡Contáctame!
 						</p>
@@ -720,21 +707,23 @@ import Presentacion from '../components/Presentacion.tsx';
 			        	</section>
 			        	<!-- Redes sociales y contenido -->
                 <section class="mt-12 sm:mt-20">
-					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__fadeInUp">
-						<div class="flex items-center justify-center gap-3 mb-2">
-							<div class="h-px w-8 bg-gradient-to-r from-transparent to-orange-400"></div>
-							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-orange-400">
-								<path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z" />
-							</svg>
-							<div class="h-px w-8 bg-gradient-to-l from-transparent to-yellow-400"></div>
-						</div>
-						<h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center">
-							<span class="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400">
-								Encuéntrame en redes
-							</span>
-						</h2>
-						<p class="text-center text-gray-400 text-sm sm:text-base mt-2">Compartiendo mi transición de la construcción al código</p>
-					</div>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-center mb-6 sm:mb-8 animate-on-scroll" 
+                   data-animation="animate__fadeInUp">
+                   <!-- Mobile: 2 líneas -->
+                   <span class="block md:hidden bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
+                     📡 Encuéntrame
+                   </span>
+                   <span class="block md:hidden bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
+                     en redes
+                   </span>
+                   <!-- Desktop: 1 sola línea -->
+                   <span class="hidden md:inline-block bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-500">
+                     📡 Encuéntrame en redes
+                   </span>
+                 </h2>
+                   <p class="text-center text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-10 text-sm sm:text-base px-2">
+                   Compartiendo contenido sobre mi transición de la construcción 🚧 al código 👨🏻‍💻
+                   </p>
                    <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
                 <!-- TikTok -->
                    <a href="https://www.tiktok.com/@cid.dev" target="_blank" aria-label="TikTok"
