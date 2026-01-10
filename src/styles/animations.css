@@ -194,3 +194,28 @@
   text-align: center;
   margin-top: 5px;
 }
+
+/* ===== Timeline Styles ===== */
+
+/* Línea vertical simple */
+.timeline-line {
+  background: linear-gradient(180deg, #38bdf8 0%, #8b5cf6 50%, #38bdf8 100%);
+}
+
+/* Puntos de la línea de tiempo */
+.timeline-dot {
+  z-index: 10;
+}
+
+/* Items de la línea de tiempo - sin animaciones */
+.timeline-item {
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* Responsive móvil */
+@media (max-width: 640px) {
+  .timeline-line {
+    width: 3px;
+  }
+}

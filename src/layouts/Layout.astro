@@ -108,35 +108,72 @@ const { title } = Astro.props;
         scroll-behavior: smooth;
     }
     body {
-       background: url('/back.webp') no-repeat center top;
-       background-size: cover;
-       background-color: #1522;
+       background-color: #0a0f1a;
+       background-image: url('/back.webp');
+       background-repeat: no-repeat;
+       background-position: center top;
+       background-size: 100% auto;
        background-attachment: fixed;
     }
     #page {
          filter: brightness(1.1);
     }
+    /* Capa base con gradiente animado */
     body::before {
        content: "";
        position: fixed;
        top: 0; left: 0; width: 100%; height: 100%;
-       background: linear-gradient(
-         125deg,
-         rgba(14, 165, 233, 0.08) 0%,
-         rgba(139, 92, 246, 0.08) 25%,
-         rgba(14, 165, 233, 0.05) 50%,
-         rgba(139, 92, 246, 0.08) 75%,
-         rgba(14, 165, 233, 0.08) 100%
-       );
-       background-size: 400% 400%;
-       animation: gradient-flow 18s ease infinite;
+       background:
+         radial-gradient(ellipse 80% 50% at 20% 40%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+         radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+         radial-gradient(ellipse 50% 30% at 50% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+       animation: aurora 15s ease-in-out infinite;
        z-index: -1;
     }
 
-    @keyframes gradient-flow {
-       0% { background-position: 0% 50%; }
-       50% { background-position: 100% 50%; }
-       100% { background-position: 0% 50%; }
+    /* Capa de orbes flotantes */
+    body::after {
+       content: "";
+       position: fixed;
+       top: 0; left: 0; width: 100%; height: 100%;
+       background:
+         radial-gradient(circle at 15% 25%, rgba(56, 189, 248, 0.08) 0%, transparent 25%),
+         radial-gradient(circle at 85% 75%, rgba(167, 139, 250, 0.08) 0%, transparent 25%),
+         radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 35%);
+       animation: float-orbs 20s ease-in-out infinite reverse;
+       z-index: -1;
+       pointer-events: none;
+    }
+
+    @keyframes aurora {
+       0%, 100% {
+         opacity: 1;
+         transform: translateY(0) scale(1);
+       }
+       25% {
+         opacity: 0.8;
+         transform: translateY(-2%) scale(1.02);
+       }
+       50% {
+         opacity: 1;
+         transform: translateY(0) scale(1);
+       }
+       75% {
+         opacity: 0.9;
+         transform: translateY(2%) scale(0.98);
+       }
+    }
+
+    @keyframes float-orbs {
+       0%, 100% {
+         transform: translate(0, 0) rotate(0deg);
+       }
+       33% {
+         transform: translate(2%, -2%) rotate(1deg);
+       }
+       66% {
+         transform: translate(-1%, 1%) rotate(-1deg);
+       }
     }
     html, body {
         overflow-x: hidden;
