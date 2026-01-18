@@ -23,8 +23,8 @@ import Presentacion from '../components/Presentacion.tsx';
 			          </section>
                   <div class="flex flex-col items-center space-y-4">
               <Presentacion client:load />
-              <section id="pro">
-                <h2 class="flex items-center gap-2 text-xl sm:text-2xl font-extrabold">
+              <section id="pro" class="mb-8 sm:mb-12">
+                <h2 class="mb-5 flex items-center justify-center gap-2 text-xl sm:text-2xl font-extrabold">
                   <svg class="w-8 h-8 text-sky-400">...</svg>
                   <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-violet-400">
                     Proyecto en Desarrollo
@@ -33,38 +33,41 @@ import Presentacion from '../components/Presentacion.tsx';
               </section>
                   </div>
                 <!-- Proyecto proceso-->
-                <section class="px-2 sm:px-4 py-8 sm:py-12 bg-gradient-to-b from-slate-900/90 via-slate-800/95 to-slate-900/90 backdrop-blur-sm">
-                  <div class="grid md:grid-cols-2 gap-6 sm:gap-10 items-center max-w-6xl mx-auto">
+                <section class="mx-2 sm:mx-4 px-4 sm:px-8 py-10 sm:py-16 bg-gradient-to-b from-slate-900/50 via-slate-800/40 to-slate-900/50 backdrop-blur-sm rounded-3xl border border-white/5">
+                  <div class="max-w-5xl mx-auto">
 
-                <!-- Texto -->
-                <div class="bg-slate-800/80 p-4 sm:p-8 rounded-2xl shadow-xl border border-sky-500/20 backdrop-blur-md transition-transform duration-300 hover:scale-[1.02]">
+                    <!-- Mockup prominente -->
+                    <div class="mb-12 sm:mb-16">
+                      <img
+                        src="/lod-mockup.png"
+                        alt="Libro de Obras Digital - App Mockup"
+                        class="w-full max-w-4xl mx-auto object-contain rounded-2xl shadow-2xl shadow-sky-500/20 transition-transform duration-500 hover:scale-[1.02]">
+                    </div>
 
-                  <h3 class="text-xl sm:text-2xl font-extrabold text-sky-300 mb-4">Libro de Obras Digital</h3>
-                  <p class="text-base text-gray-100 leading-relaxed mb-6">Aplicación <span class="text-sky-400 font-medium">mobile-first</span> 
-                         para registro de entregas en terreno. Incluye formularios dinámicos, 
-                         fotografías, firmas y generación de actas PDF. Inspirada en flujos reales de     
-                     <span class="italic">control de calidad</span> en obras.
-                  </p>
-                  <a href="https://github.com/rcidb31/lod" target="_blank"
-                   class="inline-block px-5 py-2 bg-sky-500 text-white rounded-md font-medium hover:bg-sky-400 transition-colors duration-200">
-                   Ver más →
-                  </a>        
-                  <!-- Tecnologías -->
-                  <div class="flex items-center gap-4 mt-6">
-                     <img src="/angular.png" alt="Angular" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="Angular" loading="lazy">
-                     <img src="/Net.png" alt=".NET" class="h-8 w-8 md:h-10 md:w-10 object-contain" title=".NET" loading="lazy">
+                    <!-- Info card centrada -->
+                    <div class="bg-slate-800/50 p-4 sm:p-8 rounded-2xl shadow-xl border border-sky-500/20 backdrop-blur-md max-w-3xl mx-auto">
+                      <h3 class="text-xl sm:text-2xl font-extrabold text-sky-300 mb-4 text-center">Libro de Obras Digital</h3>
+                      <p class="text-sm sm:text-base text-gray-100 leading-relaxed mb-6 text-center">
+                        Aplicación <span class="text-sky-400 font-medium">mobile-first</span>
+                        para registro de entregas en terreno. Incluye formularios dinámicos,
+                        fotografías, análisis con IA, mapa de contratistas y generación de reportes PDF.
+                        Inspirada en flujos reales de <span class="italic">control de calidad</span> en obras.
+                      </p>
+
+                      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                        <a href="https://github.com/rcidb31/lod" target="_blank"
+                          class="inline-block px-5 py-2 bg-sky-500 text-white rounded-md font-medium hover:bg-sky-400 transition-colors duration-200">
+                          Ver más →
+                        </a>
+                        <!-- Tecnologías -->
+                        <div class="flex items-center gap-3">
+                          <img src="/react.png" alt="React Native" class="h-8 w-8 md:h-10 md:w-10 object-contain" title="React Native" loading="lazy">
+                          <span class="text-sm text-gray-300 font-medium">React Native</span>
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
-                </div>
-                <!-- Imagen -->
-                <div class="flex justify-center">
-      <img 
-        src="/lod.webp" 
-        alt="Proyecto LOD"
-        class="h-64 md:h-80 w-auto object-contain rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105">
-                </div>
-                 </div>
-                </section>
-                <!-- Imagen -->
                 </section>
                 <!-- Proyectos realizados -->
                 <section id="pro" class="mt-12 sm:mt-20">
@@ -220,10 +223,10 @@ import Presentacion from '../components/Presentacion.tsx';
 					</div>
 	        			</div>
                 </section>
-			        	<!-- Experiencia laboral linea de tiempo-->
+			    <!-- Experiencia laboral linea de tiempo-->
 			         	<section id="lineatiempo" class="mt-12 sm:mt-20">
 					      <div class="container mx-auto px-1 sm:px-6">
-						<!-- Título de la sección -->
+				<!-- Título experiencia -->
 						<div class="mb-8 sm:mb-12 animate-on-scroll" data-animation="animate__fadeInUp">
 							<div class="flex items-center justify-center gap-3 mb-2">
 								<div class="h-px w-8 bg-gradient-to-r from-transparent to-sky-400"></div>
@@ -238,7 +241,7 @@ import Presentacion from '../components/Presentacion.tsx';
 								</span>
 							</h2>
 						</div>			
-						<!-- Línea de tiempo -->
+				<!-- Línea de tiempo -->
 						 <div class="relative pl-6 sm:pl-8 ml-2 sm:ml-4">
 							<!-- Primer evento - Walmart -->
 							<div class="mb-10 relative timeline-item">
@@ -426,7 +429,7 @@ import Presentacion from '../components/Presentacion.tsx';
 								</script>
 							</div>
 						</div>
-	                    <!-- About Me-->
+	            <!-- About Me-->
 			        	<section id="aboutme" class="mt-12 sm:mt-20">
 					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__heartBeat">
 						<div class="flex items-center justify-center gap-3 mb-2">
@@ -449,7 +452,7 @@ import Presentacion from '../components/Presentacion.tsx';
 							<div class="md:p-8 lg:p-10">
 								<p class="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-light">
 								"Optimicé procesos de control de calidad con el software Calidad Cloud, asegurando el cumplimiento
-                 de normas chilenas. Un sistema de inspecciones en línea y offline, generé
+                                 de normas chilenas. Un sistema de inspecciones en línea y offline, generé
 								 reportes semanales para detectar fallas y proponer mejoras.
 								 Colaboré con equipos de programación para adaptar la interfaz a las necesidades de la obra."
 								</p>
@@ -463,7 +466,7 @@ import Presentacion from '../components/Presentacion.tsx';
 						<img src="/edi4.jpeg" alt="Edificio3" loading="lazy" class="w-32 h-32 sm:w-40 sm:h-40 md:w-60 md:h-60 lg:w-72 lg:h-72 rounded-lg shadow-lg transition-transform transform hover:scale-110 hover:-rotate-3 duration-300 ease-in-out mb-6">
 					</div>
 			        	</section>
-					<!-- Video Presentación -->
+				<!-- Video Presentación -->
 					<section id="video-intro" class="mt-12 sm:mt-20 px-2 sm:px-4">
 						<div class="container mx-auto max-w-4xl">
 							<!-- Título -->
@@ -508,7 +511,7 @@ import Presentacion from '../components/Presentacion.tsx';
 							</p>
 						</div>
 					</section>
-                     <!-- Certificaciones -->
+                <!-- Certificaciones -->
                 <section id="certifications" class="mt-12 sm:mt-20 px-2 sm:px-4">
 					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__flipInX">
 						<div class="flex items-center justify-center gap-3 mb-2">
@@ -679,8 +682,8 @@ import Presentacion from '../components/Presentacion.tsx';
                         </div>
                     </div>
                 </section>
-			        	<!-- gracias-->
-			        	<section id="closing" class="mt-12 sm:mt-20 px-2">
+			    <!-- gracias-->
+			    <section id="closing" class="mt-12 sm:mt-20 px-2">
 				      	<div class="container mx-auto text-center">
 					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__shakeY">
 						<div class="flex items-center justify-center gap-3 mb-2">
@@ -717,8 +720,8 @@ import Presentacion from '../components/Presentacion.tsx';
 							<img src="/pc.svg" alt="Gracias" class=" mx-auto w-32 opacity-80 hover:opacity-100 transition-opacity duration-500 transform hover:rotate-12 hover:scale-105">
 						</div>
 					      </div>
-			        	</section>
-			        	<!-- Redes sociales y contenido -->
+			    </section>
+			    <!-- Redes sociales y contenido -->
                 <section class="mt-12 sm:mt-20">
 					<div class="mb-8 sm:mb-10 animate-on-scroll" data-animation="animate__fadeInUp">
 						<div class="flex items-center justify-center gap-3 mb-2">
@@ -756,8 +759,8 @@ import Presentacion from '../components/Presentacion.tsx';
                   </a>
                 </div>
                 </section>
-				        <!-- visita-->
-				        <p class="visitas"id="visitas"></p>				
+				<!-- contador visita-->
+				 <p class="visitas"id="visitas"></p>				
 	      </main>
 </Layout>
      

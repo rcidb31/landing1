@@ -1,8 +1,8 @@
 // certifications.js
 // Filtrado por año (sin dependencias)
-document.addEventListener('DOMContentLoaded', () => {
-  const root = document.querySelector('#certifications');
-  if (!root) return;
+document.addEventListener('DOMContentLoaded', () => {.    // Espera a que el DOM esté listo
+  const root = document.querySelector('#certifications'); // Contenedor principal
+  if (!root) return; // Si no existe, salir
 
   const buttons = root.querySelectorAll('.year-filter');
   const cards = root.querySelectorAll('[data-year]');
