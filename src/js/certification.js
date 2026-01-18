@@ -1,6 +1,6 @@
 // certifications.js
 // Filtrado por año (sin dependencias)
-document.addEventListener('DOMContentLoaded', () => {.    // Espera a que el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {    // Espera a que el DOM esté listo
   const root = document.querySelector('#certifications'); // Contenedor principal
   if (!root) return; // Si no existe, salir
 
