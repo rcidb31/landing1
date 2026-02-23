@@ -87,6 +87,7 @@ function toggleChatbot() {
     if (chatbotOpen) {
         chatbotWindow.classList.add('show');
         chatbotButton.classList.add('active');
+        chatbotButton.classList.remove('pulse');
 
         if (isMobile) {
             if (overlay) {
