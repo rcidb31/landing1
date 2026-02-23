@@ -1,29 +1,93 @@
 // Variables globales
 let chatbotOpen = false;
+let chatbotLoaded = false;
 let isMobile = window.innerWidth <= 480;
+let conversationHistory = [];
 
 // Detectar cambios de tamaño de pantalla
 window.addEventListener('resize', () => {
     isMobile = window.innerWidth <= 480;
 });
 
+// Cargar la ventana del chatbot desde el template (lazy load)
+function loadChatbotWindow() {
+    if (chatbotLoaded) return;
+
+    const template = document.getElementById('chatbotTemplate');
+    const container = document.querySelector('.chatbot-container');
+    if (!template || !container) return;
+
+    const clone = template.content.cloneNode(true);
+    container.appendChild(clone);
+    chatbotLoaded = true;
+
+    // Vincular event listeners en los elementos recién creados
+    const closeBtn = document.getElementById('chatbotClose');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleChatbot();
+        });
+    }
+
+    const overlay = document.getElementById('chatbotOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            if (chatbotOpen) toggleChatbot();
+        });
+    }
+
+    const chatbotWindow = document.getElementById('chatbotWindow');
+    if (chatbotWindow) {
+        chatbotWindow.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+    const sendBtn = document.getElementById('chatbotSend');
+    if (sendBtn) {
+        sendBtn.addEventListener('click', sendMessage);
+    }
+
+    const input = document.getElementById('chatbotInput');
+    if (input) {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+    }
+
+    // Quick action buttons
+    document.querySelectorAll('.quick-action-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const msg = btn.getAttribute('data-quick-msg');
+            if (msg) sendQuickMessage(msg);
+        });
+    });
+}
+
 // Función principal para toggle del chatbot
 function toggleChatbot() {
+    // Lazy load on first open
+    if (!chatbotLoaded) {
+        loadChatbotWindow();
+    }
+
     const chatbotWindow = document.getElementById('chatbotWindow');
     const chatbotButton = document.querySelector('.chatbot-button');
     const overlay = document.getElementById('chatbotOverlay');
     const body = document.body;
-    
+
     if (!chatbotWindow || !chatbotButton) return;
-    
+
     chatbotOpen = !chatbotOpen;
-    
+
     if (chatbotOpen) {
-        // Abrir chatbot
         chatbotWindow.classList.add('show');
         chatbotButton.classList.add('active');
-        
-        // En móviles, mostrar overlay y prevenir scroll
+
         if (isMobile) {
             if (overlay) {
                 overlay.classList.add('show');
@@ -31,27 +95,23 @@ function toggleChatbot() {
             body.classList.add('chatbot-open');
             body.style.top = `-${window.scrollY}px`;
         }
-        
-        // Focus en el input
+
         setTimeout(() => {
             const input = document.getElementById('chatbotInput');
-            if (input && !isMobile) { // No hacer focus automático en móviles
+            if (input && !isMobile) {
                 input.focus();
             }
         }, 300);
-        
+
     } else {
-        // Cerrar chatbot
         chatbotWindow.classList.remove('show');
         chatbotButton.classList.remove('active');
-        
-        // En móviles, ocultar overlay y restaurar scroll
+
         if (isMobile) {
             if (overlay) {
                 overlay.classList.remove('show');
             }
-            
-            // Restaurar scroll del body
+
             const scrollY = body.style.top;
             body.classList.remove('chatbot-open');
             body.style.top = '';
@@ -63,48 +123,82 @@ function toggleChatbot() {
 }
 
 // Función para enviar mensaje
-function sendMessage() {
+async function sendMessage() {
     const input = document.getElementById('chatbotInput');
     const messagesContainer = document.getElementById('chatbotMessages');
-    
+
     if (!input || !messagesContainer) return;
-    
+
     const message = input.value.trim();
     if (!message) return;
-    
-    // Limpiar input
+
+    // Limpiar input y deshabilitar mientras se procesa
     input.value = '';
-    
+    input.disabled = true;
+    const sendBtn = document.getElementById('chatbotSend');
+    if (sendBtn) sendBtn.disabled = true;
+
     // Agregar mensaje del usuario
     addMessage(message, 'user');
-    
+
     // Mostrar indicador de escritura
     showTypingIndicator();
-    
-    // Simular respuesta del bot (reemplaza con tu lógica)
-    setTimeout(() => {
+
+    try {
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message,
+                history: conversationHistory,
+            }),
+        });
+
+        const data = await response.json();
+
         hideTypingIndicator();
-        const response = getBotResponse(message);
-        addMessage(response, 'bot');
-    }, 1000 + Math.random() * 1000); // Delay aleatorio más realista
+
+        if (data.error) {
+            addMessage(data.error, 'bot', true);
+        } else {
+            // Guardar en historial
+            conversationHistory.push(
+                { role: 'user', content: message },
+                { role: 'assistant', content: data.reply }
+            );
+
+            // Limitar historial a últimos 20 mensajes para no exceder contexto
+            if (conversationHistory.length > 20) {
+                conversationHistory = conversationHistory.slice(-20);
+            }
+
+            addMessage(data.reply, 'bot');
+        }
+    } catch (error) {
+        hideTypingIndicator();
+        addMessage('Error de conexión. Verifica tu internet e intenta de nuevo.', 'bot', true);
+    } finally {
+        input.disabled = false;
+        if (sendBtn) sendBtn.disabled = false;
+        input.focus();
+    }
 }
 
 // Función para agregar mensaje
-function addMessage(text, sender) {
+function addMessage(text, sender, isError = false) {
     const messagesContainer = document.getElementById('chatbotMessages');
     if (!messagesContainer) return;
-    
+
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${sender}`;
-    
+
     const bubbleDiv = document.createElement('div');
-    bubbleDiv.className = 'message-bubble';
+    bubbleDiv.className = `message-bubble${isError ? ' error' : ''}`;
     bubbleDiv.textContent = text;
-    
+
     messageDiv.appendChild(bubbleDiv);
     messagesContainer.appendChild(messageDiv);
-    
-    // Scroll al final
+
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }
 
@@ -117,21 +211,12 @@ function sendQuickMessage(message) {
     }
 }
 
-// Función para manejar Enter
-function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        sendMessage();
-    }
-}
-
 // Mostrar indicador de escritura
 function showTypingIndicator() {
     const indicator = document.getElementById('typingIndicator');
     if (indicator) {
         indicator.style.display = 'block';
-        
-        // Scroll al final
+
         const messagesContainer = document.getElementById('chatbotMessages');
         if (messagesContainer) {
             setTimeout(() => {
@@ -149,91 +234,21 @@ function hideTypingIndicator() {
     }
 }
 
-// Función para obtener respuesta del bot (personaliza según tus necesidades)
-function getBotResponse(message) {
-    const responses = {
-        'ver proyectos': '🚀 Puedo mostrarte proyectos increíbles desarrollados con tecnologías modernas como React, Node.js, Python y más. ¿Te interesa alguna tecnología en particular?',
-        'proyectos': '🚀 Puedo mostrarte proyectos increíbles desarrollados con tecnologías modernas como React, Node.js, Python y más. ¿Te interesa alguna tecnología en particular?',
-        'experiencia técnica': '💻 Tengo experiencia en desarrollo Full Stack, especializándome en JavaScript, TypeScript, React, Node.js, Python, bases de datos y arquitectura de software. ¿Sobre qué tecnología te gustaría saber más?',
-        'experiencia': '💻 Tengo experiencia en desarrollo Full Stack, especializándome en JavaScript, TypeScript, React, Node.js, Python, bases de datos y arquitectura de software. ¿Sobre qué tecnología te gustaría saber más?',
-        'contacto': '📧 Puedes contactarme a través de mi email o LinkedIn. ¿Prefieres que te comparta los enlaces directos?',
-        'hola': '👋 ¡Hola! Es genial tenerte aquí. ¿En qué puedo ayudarte hoy? Puedo contarte sobre proyectos, experiencia técnica o ayudarte con información de contacto.',
-        'hello': '👋 Hello! Great to have you here. How can I help you today? I can tell you about projects, technical experience, or help you with contact information.'
-    };
-    
-    const lowerMessage = message.toLowerCase();
-    
-    // Buscar coincidencias exactas
-    for (const [key, response] of Object.entries(responses)) {
-        if (lowerMessage.includes(key)) {
-            return response;
-        }
-    }
-    
-    // Respuesta por defecto más inteligente
-    if (lowerMessage.includes('react') || lowerMessage.includes('javascript')) {
-        return '⚛️ ¡Excelente! React y JavaScript son mis especialidades. He desarrollado múltiples aplicaciones SPA, hooks personalizados, y optimizado rendimiento. ¿Hay algún aspecto específico que te interese?';
-    }
-    
-    if (lowerMessage.includes('python') || lowerMessage.includes('backend')) {
-        return '🐍 Python es fantástico para backend! He trabajado con Django, FastAPI, y Flask, además de integrar APIs y manejar bases de datos. ¿Te interesa algún framework en particular?';
-    }
-    
-    if (lowerMessage.includes('trabajo') || lowerMessage.includes('colaborar')) {
-        return '🤝 ¡Me encanta colaborar en proyectos interesantes! Cuéntame más sobre lo que tienes en mente. ¿Es desarrollo web, una aplicación móvil, o algo diferente?';
-    }
-    
-    return `🤔 Entiendo que preguntas sobre "${message}". Te puedo ayudar con información sobre proyectos, experiencia técnica, o detalles de contacto. ¿Podrías ser más específico sobre lo que necesitas?`;
-}
-
 // Event listeners cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    // Asegurar estado inicial cerrado
-    const chatbotWindow = document.getElementById('chatbotWindow');
-    const overlay = document.getElementById('chatbotOverlay');
-    const button = document.querySelector('.chatbot-button');
-    
-    if (chatbotWindow) chatbotWindow.classList.remove('show');
-    if (overlay) overlay.classList.remove('show');
-    if (button) button.classList.remove('active');
-    
-    // Event listener para cerrar con overlay
-    if (overlay) {
-        overlay.addEventListener('click', () => {
-            if (chatbotOpen) {
-                toggleChatbot();
-            }
-        });
+    const button = document.getElementById('chatbotToggle');
+    if (button) {
+        button.addEventListener('click', toggleChatbot);
     }
-    
-    // Event listener para Escape
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && chatbotOpen) {
             toggleChatbot();
         }
     });
-    
-    // Prevenir que clics dentro de la ventana cierren el chatbot
-    if (chatbotWindow) {
-        chatbotWindow.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    }
-    
-    // Event listener para el botón cerrar (si existe)
-    const closeButton = document.querySelector('.chatbot-close');
-    if (closeButton) {
-        closeButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (chatbotOpen) {
-                toggleChatbot();
-            }
-        });
-    }
 });
 
 // Hacer funciones disponibles globalmente
 window.toggleChatbot = toggleChatbot;
 window.sendMessage = sendMessage;
 window.sendQuickMessage = sendQuickMessage;
-window.handleKeyPress = handleKeyPress;

@@ -7,8 +7,8 @@ export interface Props {
 }
 
 const {
-  title = "Asistente cidev.dev",
-  welcomeMessage = "¡Hola! 👋 Soy el asistente de cidev.dev. Puedo ayudarte con información sobre proyectos, experiencia técnica y servicios. ¿En qué puedo asistirte?",
+  title = "Agente IA de Raúl",
+  welcomeMessage = "¡Hola! Soy el agente IA de Raúl Cid. Puedo contarte sobre sus proyectos, experiencia, certificaciones y más. ¿En qué te puedo ayudar?",
   theme = 'light'
 } = Astro.props;
 ---
@@ -17,64 +17,66 @@ const {
   <!-- Botón flotante -->
   <button
     class="chatbot-button"
-    onclick="toggleChatbot()"
+    id="chatbotToggle"
     aria-label="Abrir chatbot"
     title="¿Necesitas ayuda? ¡Pregúntame!"
   >💬</button>
 
-  <!-- Ventana del chatbot -->
-  <div
-    class="chatbot-window"
-    id="chatbotWindow"
-    role="dialog"
-    aria-labelledby="chatbot-title"
-    data-theme={theme}
-  >
-    <div class="chatbot-header">
-      <!-- Botón cerrar para móviles -->
-      <button 
-        class="chatbot-close" 
-        onclick="toggleChatbot()"
-        aria-label="Cerrar chatbot"
-        title="Cerrar"
-      >✕</button>
-      
-      <h3 id="chatbot-title">{title}</h3>
-      <div class="status">🟢 En línea</div>
-    </div>
+  <!-- Template para lazy load -->
+  <template id="chatbotTemplate">
+    <div
+      class="chatbot-window"
+      id="chatbotWindow"
+      role="dialog"
+      aria-labelledby="chatbot-title"
+      data-theme={theme}
+    >
+      <div class="chatbot-header">
+        <button
+          class="chatbot-close"
+          id="chatbotClose"
+          aria-label="Cerrar chatbot"
+          title="Cerrar"
+        >✕</button>
 
-    <div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite">
-      <div class="message bot">
-        <div class="message-bubble">{welcomeMessage}</div>
+        <h3 id="chatbot-title">{title}</h3>
+        <div class="status">🟢 En línea</div>
       </div>
+
+      <div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite">
+        <div class="message bot">
+          <div class="message-bubble">{welcomeMessage}</div>
+        </div>
+      </div>
+
+      <div class="quick-actions" role="group" aria-label="Acciones rápidas">
+        <button class="quick-action-btn" data-quick-msg="¿Cuáles son los proyectos de Raúl?">Proyectos</button>
+        <button class="quick-action-btn" data-quick-msg="¿Cuál es la experiencia laboral de Raúl?">Experiencia</button>
+        <button class="quick-action-btn" data-quick-msg="¿Cómo puedo contactar a Raúl?">Contacto</button>
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator" style="display:none">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+
+      <div class="chatbot-input">
+        <label for="chatbotInput" class="sr-only">Escribe tu mensaje</label>
+        <input
+          id="chatbotInput"
+          type="text"
+          placeholder="Escribe tu mensaje…"
+          autocomplete="off"
+          maxlength="500"
+        />
+        <button class="send-btn" id="chatbotSend" aria-label="Enviar">➤</button>
+      </div>
+      <div class="chatbot-powered">Powered by Gemini</div>
     </div>
 
-    <div class="quick-actions" role="group" aria-label="Acciones rápidas">
-      <button class="quick-action-btn" onclick="sendQuickMessage('Ver proyectos')">🚀 Ver proyectos</button>
-      <button class="quick-action-btn" onclick="sendQuickMessage('Experiencia técnica')">💻 Experiencia</button>
-      <button class="quick-action-btn" onclick="sendQuickMessage('Contacto')">📧 Contacto</button>
-    </div>
-
-    <div class="typing-indicator" id="typingIndicator" style="display:none">
-      Escribiendo<span class="typing-dots">...</span>
-    </div>
-
-    <div class="chatbot-input">
-      <label for="chatbotInput" class="sr-only">Escribe tu mensaje</label>
-      <input 
-        id="chatbotInput" 
-        type="text" 
-        placeholder="Escribe tu mensaje…" 
-        onkeydown="handleKeyPress(event)" 
-        autocomplete="off" 
-        maxlength="500" 
-      />
-      <button class="send-btn" onclick="sendMessage()" aria-label="Enviar">➤</button>
-    </div>
-  </div>
-
-  <!-- Overlay para cerrar tocando fuera en móviles -->
-  <div id="chatbotOverlay" class="chatbot-overlay" aria-hidden="true"></div>
+    <div id="chatbotOverlay" class="chatbot-overlay" aria-hidden="true"></div>
+  </template>
 </div>
 
 <style>
@@ -91,4 +93,5 @@ const {
     border: 0;
   }
 
-  
+
+</style>

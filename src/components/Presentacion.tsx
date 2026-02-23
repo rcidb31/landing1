@@ -1,7 +1,12 @@
 import { useState, useEffect } from "react";  // useState es para manejar el estado de la modal, useEffect es para manejar el efecto de la modal.
 
+const roles = ["Programador Full Stack", "Analista de Software", "Developer Chile"];
+
 const Presentacion = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [displayText, setDisplayText] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const email = "rcidb31@gmail.com";
 
   const copiarCorreo = () => {
@@ -19,6 +24,32 @@ const Presentacion = () => {
     }
   }, [isModalOpen]);
 
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+    const speed = isDeleting ? 40 : 80;
+
+    if (!isDeleting && displayText === currentRole) {
+      const pause = setTimeout(() => setIsDeleting(true), 1500);
+      return () => clearTimeout(pause);
+    }
+
+    if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setDisplayText(
+        isDeleting
+          ? currentRole.substring(0, displayText.length - 1)
+          : currentRole.substring(0, displayText.length + 1)
+      );
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, roleIndex]);
+
   return (
     <section id="presentacion" className="min-h-screen px-2 sm:px-6 pt-10 sm:pt-14">
       <div className="max-w-4xl mx-auto text-center px-1 sm:px-6">
@@ -30,7 +61,8 @@ const Presentacion = () => {
         </h1>
         
         <h2 className="font-extralight text-sm sm:text-lg md:text-2xl text-white mb-4 tracking-wide leading-snug min-h-[3rem] flex justify-center items-center animate-glow-reveal">
-          Programador JR 🇨🇱
+          <span>{displayText}</span>
+          <span className="typing-cursor">|</span>
         </h2>
         
         <p className="text-white text-sm sm:text-lg leading-relaxed sm:leading-loose mb-8
@@ -132,6 +164,17 @@ const Presentacion = () => {
         
         .animate-fade-in-up {
           animation: fade-in-up 0.8s ease-out;
+        }
+
+        @keyframes blink-cursor {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0; }
+        }
+        .typing-cursor {
+          animation: blink-cursor 0.7s step-end infinite;
+          margin-left: 2px;
+          font-weight: 100;
+          color: #38bdf8;
         }
       `}</style>
     </section>

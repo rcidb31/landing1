@@ -63,18 +63,3 @@ const observer = new IntersectionObserver((entries) => {
             burger.setAttribute('aria-expanded', false);
         });
      });
-
-
-
-////////////// contador de visitas //////////////////////
-
- let visitas = localStorage.getItem("visitas"); 
-    if (!visitas) {
-         visitas = 1;
-        } else {
-    visitas = parseInt(visitas) + 1;
-      }
-
-  localStorage.setItem("visitas", visitas);
-  document.getElementById("visitas").textContent = 
-    `Esta es tu visita número: ${visitas}`;

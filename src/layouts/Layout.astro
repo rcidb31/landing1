@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Chatbot from '../components/chatbot.astro';
@@ -8,17 +9,38 @@ import '../styles/chatbot.css';
 
 interface Props {
     title: string;
+    description?: string;
+    ogImage?: string;
+    ogUrl?: string;
 }
 
-const { title } = Astro.props;
+const {
+    title,
+    description = 'Portafolio de Raúl Cid - Programador Full Stack con experiencia en construcción y tecnología.',
+    ogImage = '/logos3s.webp',
+    ogUrl = 'https://cidev.dev',
+} = Astro.props;
 ---
 
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portafolio de Raul Cid" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="/log.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={ogUrl} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Preload imagen de fondo -->
     <link rel="preload" href="/back.webp" as="image" type="image/webp" />
@@ -28,10 +50,11 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="/src/styles/animations.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
 </head>
   <body>
     <div>
@@ -104,8 +127,11 @@ const { title } = Astro.props;
     }
     /* Estilo general */
     html {
-        font-family: 'Press Start 2P', monospace;
+        font-family: 'Inter', sans-serif;
         scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+        font-family: 'Press Start 2P', monospace;
     }
     body {
        background-color: #0a0f1a;
@@ -246,6 +272,35 @@ const { title } = Astro.props;
         height: 2px;
         background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
         border-radius: 2px;
+    }
+
+    /* Tech Stack chips */
+    .tech-chip {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #cbd5e1;
+        font-size: 0.8rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(8px);
+        cursor: default;
+    }
+    .tech-chip:hover {
+        background: rgba(56, 189, 248, 0.1);
+        border-color: rgba(56, 189, 248, 0.3);
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.15), inset 0 0 20px rgba(56, 189, 248, 0.05);
+        color: #f1f5f9;
+        transform: translateY(-2px);
+    }
+    .tech-chip img {
+        transition: transform 0.3s ease;
+    }
+    .tech-chip:hover img {
+        transform: scale(1.15);
     }
 
     .chatbot-container {
